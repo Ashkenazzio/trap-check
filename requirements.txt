@@ -1,0 +1,19 @@
+# Core - minimal dependencies for basic pipeline
+anthropic>=0.39.0
+python-dotenv>=1.0.0
+httpx>=0.25.0
+
+# SerpAPI (optional - mock data works without it)
+google-search-results>=2.4.2
+
+# UI
+gradio>=4.0.0
+
+# === OPTIONAL - uncomment when needed ===
+
+# RAG (adds ~2GB for PyTorch)
+# chromadb>=0.4.0
+# sentence-transformers>=2.2.0
+
+# Screenshots
+# playwright>=1.40.0

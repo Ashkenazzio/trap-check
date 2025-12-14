@@ -155,6 +155,7 @@ class ExperimentConfig:
     runs_per_venue: int = 5
     temperature: Optional[float] = None
     use_rag: bool = False
+    rag_mode: str = "vector"  # "vector" or "keyword"
     delay_seconds: float = 8.0
     compare_to: Optional[str] = None
 
@@ -179,6 +180,7 @@ def run_single_analysis(
     run_number: int,
     temperature: Optional[float] = None,
     use_rag: bool = False,
+    rag_mode: str = "vector",
 ) -> RunResult:
     """Run a single analysis and capture comprehensive metrics."""
     print(f"  Run {run_number}: ", end="", flush=True)
@@ -192,6 +194,7 @@ def run_single_analysis(
             location,
             temperature=temperature,
             use_rag=use_rag,
+            rag_mode=rag_mode,
         )
         elapsed = time.time() - start_time
         result.latency_seconds = elapsed
@@ -318,13 +321,15 @@ def run_venue_test(
     delay: float,
     temperature: Optional[float] = None,
     use_rag: bool = False,
+    rag_mode: str = "vector",
 ) -> VenueMetrics:
     """Run multiple analyses for a single venue."""
     print(f"\n{'='*70}")
     print(f"Testing: {venue['query']} ({venue['location']})")
     print(f"Expected: {venue['expected_category']} (score {venue['expected_score_range'][0]}-{venue['expected_score_range'][1]})")
     print(f"Ground Truth: {venue['ground_truth_score']}")
-    config_str = f"Temperature: {temperature if temperature is not None else 'default'}, RAG: {use_rag}"
+    rag_str = f"RAG: {use_rag}" + (f" ({rag_mode})" if use_rag else "")
+    config_str = f"Temperature: {temperature if temperature is not None else 'default'}, {rag_str}"
     print(f"Config: {config_str}")
     print(f"{'='*70}")
 
@@ -338,6 +343,7 @@ def run_venue_test(
             i + 1,
             temperature=temperature,
             use_rag=use_rag,
+            rag_mode=rag_mode,
         )
         runs.append(result)
 
@@ -596,7 +602,8 @@ def run_experiment(config: ExperimentConfig, venues: list[dict]) -> ExperimentRe
     print(f"Runs per venue: {config.runs_per_venue}")
     print(f"Venues: {len(venues)}")
     print(f"Temperature: {config.temperature if config.temperature is not None else 'default'}")
-    print(f"RAG: {config.use_rag}")
+    rag_str = f"{config.use_rag}" + (f" ({config.rag_mode})" if config.use_rag else "")
+    print(f"RAG: {rag_str}")
     print(f"Delay: {config.delay_seconds}s")
 
     total_requests = config.runs_per_venue * len(venues)
@@ -614,6 +621,7 @@ def run_experiment(config: ExperimentConfig, venues: list[dict]) -> ExperimentRe
             config.delay_seconds,
             temperature=config.temperature,
             use_rag=config.use_rag,
+            rag_mode=config.rag_mode,
         )
         venue_results.append(metrics)
 
@@ -682,6 +690,8 @@ def main():
     parser.add_argument("--runs", type=int, default=5, help="Runs per venue (default: 5)")
     parser.add_argument("--temperature", type=float, default=None, help="Gemini temperature (0.0-2.0)")
     parser.add_argument("--rag", action="store_true", help="Enable RAG calibration")
+    parser.add_argument("--rag-mode", type=str, default="vector", choices=["vector", "keyword"],
+                        help="RAG retrieval mode: vector (ChromaDB) or keyword (lightweight)")
     parser.add_argument("--compare", type=str, default=None, help="Baseline experiment to compare against")
     parser.add_argument("--venue", type=str, default=None, help="Test single venue (partial match)")
     parser.add_argument("--delay", type=float, default=8.0, help="Delay between runs (default: 8s)")
@@ -709,6 +719,7 @@ def main():
         runs_per_venue=args.runs,
         temperature=args.temperature,
         use_rag=args.rag,
+        rag_mode=args.rag_mode,
         delay_seconds=args.delay,
         compare_to=args.compare,
     )

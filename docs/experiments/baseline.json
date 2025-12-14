@@ -1,0 +1,856 @@
+{
+  "config": {
+    "name": "baseline",
+    "runs_per_venue": 5,
+    "temperature": null,
+    "use_rag": false,
+    "delay_seconds": 8.0,
+    "compare_to": null
+  },
+  "timestamp": "2025-12-14T21:57:38.278690",
+  "venue_results": [
+    {
+      "venue_name": "Pizzeria Da Michele",
+      "venue_location": "Naples",
+      "expected_category": "authentic",
+      "expected_range": [
+        5,
+        35
+      ],
+      "ground_truth": 25,
+      "runs": [
+        {
+          "score": 25,
+          "classification": "likely_authentic",
+          "confidence": "high",
+          "verdict": "L'Antica Pizzeria Da Michele is likely authentic, with overwhelmingly positive reviews.",
+          "reasoning_length": 627,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 87,
+          "latency_seconds": 3.5026540756225586,
+          "signals_detected": [],
+          "signals_count": 0,
+          "computed_metrics": {
+            "total_low_rating_reviews": 5,
+            "total_high_rating_reviews": 6,
+            "avg_credibility_low_rating": 52.0,
+            "avg_credibility_high_rating": 78.3,
+            "credibility_gap": -26.3,
+            "local_guides_in_negative": 1,
+            "local_guides_in_positive": 5,
+            "trap_warning_count": 0,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 66.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 25,
+          "classification": "likely_authentic",
+          "confidence": "high",
+          "verdict": "L'Antica Pizzeria Da Michele appears to be a genuine, highly-regarded pizzeria, despite its popularity.",
+          "reasoning_length": 614,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 103,
+          "latency_seconds": 3.1411240100860596,
+          "signals_detected": [],
+          "signals_count": 0,
+          "computed_metrics": {
+            "total_low_rating_reviews": 5,
+            "total_high_rating_reviews": 6,
+            "avg_credibility_low_rating": 52.0,
+            "avg_credibility_high_rating": 78.3,
+            "credibility_gap": -26.3,
+            "local_guides_in_negative": 1,
+            "local_guides_in_positive": 5,
+            "trap_warning_count": 0,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 66.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 25,
+          "classification": "likely_authentic",
+          "confidence": "high",
+          "verdict": "L'Antica Pizzeria Da Michele appears to be an authentic, albeit popular, pizza restaurant.",
+          "reasoning_length": 526,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 90,
+          "latency_seconds": 3.1772727966308594,
+          "signals_detected": [],
+          "signals_count": 0,
+          "computed_metrics": {
+            "total_low_rating_reviews": 5,
+            "total_high_rating_reviews": 6,
+            "avg_credibility_low_rating": 52.0,
+            "avg_credibility_high_rating": 78.3,
+            "credibility_gap": -26.3,
+            "local_guides_in_negative": 1,
+            "local_guides_in_positive": 5,
+            "trap_warning_count": 0,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 66.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 25,
+          "classification": "likely_authentic",
+          "confidence": "high",
+          "verdict": "L'Antica Pizzeria Da Michele appears to be an authentic, though crowded, Neapolitan pizza experience.",
+          "reasoning_length": 708,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 101,
+          "latency_seconds": 3.865159273147583,
+          "signals_detected": [],
+          "signals_count": 0,
+          "computed_metrics": {
+            "total_low_rating_reviews": 5,
+            "total_high_rating_reviews": 6,
+            "avg_credibility_low_rating": 52.0,
+            "avg_credibility_high_rating": 78.3,
+            "credibility_gap": -26.3,
+            "local_guides_in_negative": 1,
+            "local_guides_in_positive": 5,
+            "trap_warning_count": 0,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 66.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 25,
+          "classification": "likely_authentic",
+          "confidence": "high",
+          "verdict": "L'Antica Pizzeria Da Michele appears to be an authentic, though very popular, pizzeria in Naples.",
+          "reasoning_length": 507,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 97,
+          "latency_seconds": 2.948174476623535,
+          "signals_detected": [],
+          "signals_count": 0,
+          "computed_metrics": {
+            "total_low_rating_reviews": 5,
+            "total_high_rating_reviews": 6,
+            "avg_credibility_low_rating": 52.0,
+            "avg_credibility_high_rating": 78.3,
+            "credibility_gap": -26.3,
+            "local_guides_in_negative": 1,
+            "local_guides_in_positive": 5,
+            "trap_warning_count": 0,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 66.0
+          },
+          "error": null,
+          "rate_limited": false
+        }
+      ],
+      "valid_runs": 5,
+      "failed_runs": 0,
+      "scores": [
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "mean_score": 25,
+      "stdev_score": 0.0,
+      "min_score": 25,
+      "max_score": 25,
+      "score_range": 0,
+      "mae": 0,
+      "in_expected_range": true,
+      "classification_accuracy": 1.0,
+      "classifications": [
+        "likely_authentic",
+        "likely_authentic",
+        "likely_authentic",
+        "likely_authentic",
+        "likely_authentic"
+      ],
+      "most_common_classification": "likely_authentic",
+      "classification_consistency": 1.0,
+      "confidence_distribution": {
+        "high": 5
+      },
+      "avg_reasoning_length": 596.4,
+      "avg_evidence_count": 6,
+      "avg_verdict_length": 95.6,
+      "avg_latency": 3.326876926422119,
+      "latency_stdev": 0.36088314522803167,
+      "total_latency": 16.634384632110596,
+      "signal_stability": 1.0,
+      "all_signals_detected": {}
+    },
+    {
+      "venue_name": "Olive Garden Times Square",
+      "venue_location": "New York",
+      "expected_category": "trap",
+      "expected_range": [
+        65,
+        95
+      ],
+      "ground_truth": 85,
+      "runs": [
+        {
+          "score": 95,
+          "classification": "definite_trap",
+          "confidence": "high",
+          "verdict": "Olive Garden in Times Square is a textbook tourist trap, overwhelmingly criticized for price and quality.",
+          "reasoning_length": 561,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 105,
+          "latency_seconds": 3.2169909477233887,
+          "signals_detected": [
+            "tourist_hotspot_location",
+            "external_negative_reputation"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 70.0,
+            "avg_credibility_high_rating": 65.0,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 2,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 1,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 57.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 95,
+          "classification": "definite_trap",
+          "confidence": "high",
+          "verdict": "Olive Garden in Times Square is a textbook tourist trap, avoid at all costs.",
+          "reasoning_length": 574,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 1,
+          "verdict_length": 76,
+          "latency_seconds": 2.8990211486816406,
+          "signals_detected": [
+            "tourist_hotspot_location",
+            "external_negative_reputation"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 70.0,
+            "avg_credibility_high_rating": 65.0,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 2,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 1,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 57.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 95,
+          "classification": "definite_trap",
+          "confidence": "high",
+          "verdict": "Olive Garden in Times Square is a textbook tourist trap, best avoided by anyone seeking a genuine experience.",
+          "reasoning_length": 589,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 1,
+          "verdict_length": 109,
+          "latency_seconds": 3.032837152481079,
+          "signals_detected": [
+            "tourist_hotspot_location",
+            "external_negative_reputation"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 70.0,
+            "avg_credibility_high_rating": 65.0,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 2,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 1,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 57.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 95,
+          "classification": "definite_trap",
+          "confidence": "high",
+          "verdict": "Olive Garden in Times Square is a textbook tourist trap, best avoided by discerning travelers.",
+          "reasoning_length": 497,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 1,
+          "verdict_length": 94,
+          "latency_seconds": 3.02384352684021,
+          "signals_detected": [
+            "tourist_hotspot_location",
+            "external_negative_reputation"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 70.0,
+            "avg_credibility_high_rating": 65.0,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 2,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 1,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 57.0
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 95,
+          "classification": "definite_trap",
+          "confidence": "high",
+          "verdict": "Olive Garden in Times Square is a textbook tourist trap, best avoided by all visitors.",
+          "reasoning_length": 570,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 1,
+          "verdict_length": 86,
+          "latency_seconds": 3.1669180393218994,
+          "signals_detected": [
+            "tourist_hotspot_location",
+            "external_negative_reputation"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 70.0,
+            "avg_credibility_high_rating": 65.0,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 2,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 1,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 57.0
+          },
+          "error": null,
+          "rate_limited": false
+        }
+      ],
+      "valid_runs": 5,
+      "failed_runs": 0,
+      "scores": [
+        95,
+        95,
+        95,
+        95,
+        95
+      ],
+      "mean_score": 95,
+      "stdev_score": 0.0,
+      "min_score": 95,
+      "max_score": 95,
+      "score_range": 0,
+      "mae": 10,
+      "in_expected_range": true,
+      "classification_accuracy": 1.0,
+      "classifications": [
+        "definite_trap",
+        "definite_trap",
+        "definite_trap",
+        "definite_trap",
+        "definite_trap"
+      ],
+      "most_common_classification": "definite_trap",
+      "classification_consistency": 1.0,
+      "confidence_distribution": {
+        "high": 5
+      },
+      "avg_reasoning_length": 558.2,
+      "avg_evidence_count": 4.4,
+      "avg_verdict_length": 94,
+      "avg_latency": 3.0679221630096434,
+      "latency_stdev": 0.12621719660394873,
+      "total_latency": 15.339610815048218,
+      "signal_stability": 1.0,
+      "all_signals_detected": {
+        "tourist_hotspot_location": 5,
+        "external_negative_reputation": 5
+      }
+    },
+    {
+      "venue_name": "Carlo Menta",
+      "venue_location": "Rome",
+      "expected_category": "mixed",
+      "expected_range": [
+        35,
+        65
+      ],
+      "ground_truth": 50,
+      "runs": [
+        {
+          "score": 85,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Ristorante Carlo Menta exhibits strong tourist trap signals, particularly related to quality and pricing.",
+          "reasoning_length": 648,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 105,
+          "latency_seconds": 3.3491859436035156,
+          "signals_detected": [
+            "credibility_inversion",
+            "explicit_trap_warnings",
+            "local_guide_warnings",
+            "tourist_hotspot_location"
+          ],
+          "signals_count": 4,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 85.0,
+            "avg_credibility_high_rating": 55.0,
+            "credibility_gap": 30.0,
+            "local_guides_in_negative": 4,
+            "local_guides_in_positive": 0,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 2,
+            "avg_specificity_positive": 59.5
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 85,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Ristorante Carlo Menta is likely a tourist trap due to credibility issues and explicit warnings.",
+          "reasoning_length": 521,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 96,
+          "latency_seconds": 2.962299346923828,
+          "signals_detected": [
+            "credibility_inversion",
+            "explicit_trap_warnings",
+            "local_guide_warnings",
+            "tourist_hotspot_location"
+          ],
+          "signals_count": 4,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 85.0,
+            "avg_credibility_high_rating": 55.0,
+            "credibility_gap": 30.0,
+            "local_guides_in_negative": 4,
+            "local_guides_in_positive": 0,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 2,
+            "avg_specificity_positive": 59.5
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 85,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Ristorante Carlo Menta exhibits strong tourist trap signals, particularly targeting budget travelers.",
+          "reasoning_length": 679,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 101,
+          "latency_seconds": 3.364701509475708,
+          "signals_detected": [
+            "credibility_inversion",
+            "explicit_trap_warnings",
+            "local_guide_warnings",
+            "tourist_hotspot_location"
+          ],
+          "signals_count": 4,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 85.0,
+            "avg_credibility_high_rating": 55.0,
+            "credibility_gap": 30.0,
+            "local_guides_in_negative": 4,
+            "local_guides_in_positive": 0,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 2,
+            "avg_specificity_positive": 59.5
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 85,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Ristorante Carlo Menta is likely a tourist trap due to credibility inversion and negative reviews from local guides.",
+          "reasoning_length": 649,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 116,
+          "latency_seconds": 3.518831491470337,
+          "signals_detected": [
+            "credibility_inversion",
+            "explicit_trap_warnings",
+            "local_guide_warnings",
+            "tourist_hotspot_location"
+          ],
+          "signals_count": 4,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 85.0,
+            "avg_credibility_high_rating": 55.0,
+            "credibility_gap": 30.0,
+            "local_guides_in_negative": 4,
+            "local_guides_in_positive": 0,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 2,
+            "avg_specificity_positive": 59.5
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 85,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Ristorante Carlo Menta is a likely tourist trap, prioritizing volume and price over quality.",
+          "reasoning_length": 532,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 92,
+          "latency_seconds": 3.3190410137176514,
+          "signals_detected": [
+            "credibility_inversion",
+            "explicit_trap_warnings",
+            "local_guide_warnings",
+            "tourist_hotspot_location"
+          ],
+          "signals_count": 4,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 85.0,
+            "avg_credibility_high_rating": 55.0,
+            "credibility_gap": 30.0,
+            "local_guides_in_negative": 4,
+            "local_guides_in_positive": 0,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 2,
+            "avg_specificity_positive": 59.5
+          },
+          "error": null,
+          "rate_limited": false
+        }
+      ],
+      "valid_runs": 5,
+      "failed_runs": 0,
+      "scores": [
+        85,
+        85,
+        85,
+        85,
+        85
+      ],
+      "mean_score": 85,
+      "stdev_score": 0.0,
+      "min_score": 85,
+      "max_score": 85,
+      "score_range": 0,
+      "mae": 35,
+      "in_expected_range": false,
+      "classification_accuracy": 1.0,
+      "classifications": [
+        "likely_trap",
+        "likely_trap",
+        "likely_trap",
+        "likely_trap",
+        "likely_trap"
+      ],
+      "most_common_classification": "likely_trap",
+      "classification_consistency": 1.0,
+      "confidence_distribution": {
+        "high": 5
+      },
+      "avg_reasoning_length": 605.8,
+      "avg_evidence_count": 6,
+      "avg_verdict_length": 102,
+      "avg_latency": 3.302811861038208,
+      "latency_stdev": 0.2054613847628754,
+      "total_latency": 16.51405930519104,
+      "signal_stability": 1.0,
+      "all_signals_detected": {
+        "credibility_inversion": 5,
+        "explicit_trap_warnings": 5,
+        "local_guide_warnings": 5,
+        "tourist_hotspot_location": 5
+      }
+    },
+    {
+      "venue_name": "Katz's Delicatessen",
+      "venue_location": "New York",
+      "expected_category": "mixed",
+      "expected_range": [
+        25,
+        55
+      ],
+      "ground_truth": 35,
+      "runs": [
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Katz's Delicatessen is a likely tourist trap due to high prices and warnings despite quality food.",
+          "reasoning_length": 648,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 98,
+          "latency_seconds": 3.5532171726226807,
+          "signals_detected": [
+            "explicit_trap_warnings",
+            "local_guide_warnings"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 77.5,
+            "avg_credibility_high_rating": 72.5,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 3,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 58.8
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Katz's Delicatessen is likely a tourist trap due to high prices and negative reviews from local guides.",
+          "reasoning_length": 663,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 103,
+          "latency_seconds": 3.468404531478882,
+          "signals_detected": [
+            "explicit_trap_warnings",
+            "local_guide_warnings"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 77.5,
+            "avg_credibility_high_rating": 72.5,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 3,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 58.8
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Katz's Delicatessen shows significant tourist trap indicators despite its iconic status.",
+          "reasoning_length": 495,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 88,
+          "latency_seconds": 3.007427930831909,
+          "signals_detected": [
+            "explicit_trap_warnings",
+            "local_guide_warnings"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 77.5,
+            "avg_credibility_high_rating": 72.5,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 3,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 58.8
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Katz's Delicatessen is likely a tourist trap due to high prices and negative reviews from local guides.",
+          "reasoning_length": 641,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 2,
+          "verdict_length": 103,
+          "latency_seconds": 3.2349627017974854,
+          "signals_detected": [
+            "explicit_trap_warnings",
+            "local_guide_warnings"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 77.5,
+            "avg_credibility_high_rating": 72.5,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 3,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 58.8
+          },
+          "error": null,
+          "rate_limited": false
+        },
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Katz's Delicatessen is likely a tourist trap due to high prices and negative reviews from local guides.",
+          "reasoning_length": 576,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 3,
+          "verdict_length": 103,
+          "latency_seconds": 3.188796281814575,
+          "signals_detected": [
+            "explicit_trap_warnings",
+            "local_guide_warnings"
+          ],
+          "signals_count": 2,
+          "computed_metrics": {
+            "total_low_rating_reviews": 4,
+            "total_high_rating_reviews": 4,
+            "avg_credibility_low_rating": 77.5,
+            "avg_credibility_high_rating": 72.5,
+            "credibility_gap": 5.0,
+            "local_guides_in_negative": 3,
+            "local_guides_in_positive": 2,
+            "trap_warning_count": 3,
+            "manipulation_accusation_count": 0,
+            "quality_complaint_count": 0,
+            "avg_specificity_positive": 58.8
+          },
+          "error": null,
+          "rate_limited": false
+        }
+      ],
+      "valid_runs": 5,
+      "failed_runs": 0,
+      "scores": [
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "mean_score": 75,
+      "stdev_score": 0.0,
+      "min_score": 75,
+      "max_score": 75,
+      "score_range": 0,
+      "mae": 40,
+      "in_expected_range": false,
+      "classification_accuracy": 1.0,
+      "classifications": [
+        "likely_trap",
+        "likely_trap",
+        "likely_trap",
+        "likely_trap",
+        "likely_trap"
+      ],
+      "most_common_classification": "likely_trap",
+      "classification_consistency": 1.0,
+      "confidence_distribution": {
+        "high": 5
+      },
+      "avg_reasoning_length": 604.6,
+      "avg_evidence_count": 5.8,
+      "avg_verdict_length": 99,
+      "avg_latency": 3.2905617237091063,
+      "latency_stdev": 0.22035661448545982,
+      "total_latency": 16.452808618545532,
+      "signal_stability": 1.0,
+      "all_signals_detected": {
+        "explicit_trap_warnings": 5,
+        "local_guide_warnings": 5
+      }
+    }
+  ],
+  "summary": {
+    "status": "COMPLETE",
+    "venues_tested": 4,
+    "venues_successful": 4,
+    "total_runs": 20,
+    "successful_runs": 20,
+    "failed_runs": 0,
+    "classification_accuracy": 1.0,
+    "score_calibration": 0.5,
+    "avg_mae": 21.25,
+    "avg_stdev": 0.0,
+    "avg_score_range": 0,
+    "avg_classification_consistency": 1.0,
+    "avg_reasoning_length": 591.25,
+    "avg_evidence_count": 5.55,
+    "avg_latency": 3.247043168544769,
+    "latency_stdev": 0.22822958527007892,
+    "total_time": 64.94086337089539,
+    "avg_signal_stability": 1.0
+  },
+  "comparison": null
+}

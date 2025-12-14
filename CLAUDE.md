@@ -105,10 +105,11 @@ Four pre-configured venues in `src/tools/mock_data.py` for testing without SerpA
 
 ## RAG System
 
-RAG integration provides similar venue examples for calibration:
+RAG integration provides similar venue examples for calibration using vector embeddings:
 - **Database:** `RAG/rag_master.json` (149 examples)
 - **Module:** `src/rag/retriever.py`
 - **Dependencies:** `chromadb`, `sentence-transformers`
+- **Embedding Model:** `all-MiniLM-L6-v2` (sentence-transformers)
 
 **Venue type filtering:** RAG retriever maps venue types to relevant categories:
 - restaurant → restaurant, cafe, bar, street_food
@@ -119,12 +120,39 @@ RAG integration provides similar venue examples for calibration:
 
 **Current coverage:** Restaurants (55), attractions (39), cafes (15), street_food (13), markets (13), bars (11), tours (3)
 
+### Native Library Setup (ChromaDB/sentence-transformers)
+
+RAG requires native libraries (`libz`, `libstdc++`) which are automatically available on most systems.
+If you encounter import errors on Nix-based or minimal environments:
+
 ```bash
-# Test RAG retriever
+# Option 1: Use the wrapper script (recommended)
+./scripts/run_with_libs.sh python -m src.rag.retriever
+
+# Option 2: Set library paths manually
+eval $(python -m src.lib_setup --export)
 python -m src.rag.retriever
 
-# Run variance tests
-python scripts/variance_test.py --runs 5
+# Option 3: Set custom paths via environment variable
+export TRAPCHECK_LIB_PATHS="/path/to/libz:/path/to/libstdc++"
+python -m src.rag.retriever
+
+# Option 4: Skip library setup if your system handles it
+export TRAPCHECK_SKIP_LIB_SETUP=1
+```
+
+The `src/lib_setup.py` module handles automatic detection for:
+- Standard Linux (Ubuntu, Fedora, etc.) - usually works out of the box
+- Conda/Miniconda environments - usually works out of the box
+- Nix-based environments - may need wrapper script
+- Custom environments - use `TRAPCHECK_LIB_PATHS`
+
+```bash
+# Test RAG retriever
+./scripts/run_with_libs.sh python -m src.rag.retriever
+
+# Run evaluation with RAG
+./scripts/run_with_libs.sh python scripts/evaluation.py --name rag_test --rag --runs 5
 ```
 
 ## Testing & Experiments

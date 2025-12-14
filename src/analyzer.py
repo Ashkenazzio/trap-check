@@ -99,6 +99,7 @@ def analyze_venue(
     location: str | None = None,
     temperature: float | None = None,
     use_rag: bool = False,
+    rag_mode: str = "vector",
 ) -> dict:
     """
     Analyze a venue for tourist trap indicators using metrics + Gemini.
@@ -108,6 +109,7 @@ def analyze_venue(
         location: City/region (optional if URL provided)
         temperature: Gemini temperature setting (0.0-2.0, None for default)
         use_rag: Whether to use RAG calibration examples in prompt
+        rag_mode: RAG retrieval mode - "vector" (ChromaDB/embeddings) or "keyword" (lightweight)
 
     Returns:
         Analysis result dict
@@ -129,13 +131,24 @@ def analyze_venue(
     rag_examples = None
     if use_rag:
         try:
-            from src.rag.retriever import retrieve_calibration_examples
-            print("Retrieving RAG calibration examples...")
-            rag_examples = retrieve_calibration_examples(
-                query=f"{place['name']} {venue_type} {location or ''}",
-                venue_type=venue_type,
-                n_per_verdict=2
-            )
+            rag_query = f"{place['name']} {venue_type} {location or ''}"
+            if rag_mode == "keyword":
+                from src.rag.retriever_lightweight import retrieve_calibration_examples_lightweight
+                print("Retrieving RAG calibration examples (keyword mode)...")
+                rag_examples = retrieve_calibration_examples_lightweight(
+                    query=rag_query,
+                    venue_type=venue_type,
+                    n_per_verdict=2
+                )
+            else:
+                # Default: vector mode
+                from src.rag.retriever import retrieve_calibration_examples
+                print("Retrieving RAG calibration examples (vector mode)...")
+                rag_examples = retrieve_calibration_examples(
+                    query=rag_query,
+                    venue_type=venue_type,
+                    n_per_verdict=2
+                )
             print(f"Retrieved {rag_examples['total']} RAG examples ({len(rag_examples['traps'])} traps, {len(rag_examples['gems'])} gems, {len(rag_examples['mixed'])} mixed)")
         except Exception as e:
             print(f"RAG retrieval failed: {e}")
@@ -296,7 +309,10 @@ Higher specificity scores indicate more detailed, specific reviews.
 
     # Build full prompt with optional RAG calibration examples
     if rag_examples and rag_examples["total"] > 0:
-        from src.rag.retriever import format_examples_for_prompt
+        if rag_mode == "keyword":
+            from src.rag.retriever_lightweight import format_examples_for_prompt
+        else:
+            from src.rag.retriever import format_examples_for_prompt
         rag_section = format_examples_for_prompt(rag_examples)
         full_prompt = f"{SYSTEM_PROMPT}\n\n{rag_section}\n\n{prompt}"
     else:
@@ -346,6 +362,7 @@ Higher specificity scores indicate more detailed, specific reviews.
         # Experiment configuration tracking
         "temperature": temperature,
         "rag_enabled": use_rag,
+        "rag_mode": rag_mode if use_rag else None,
         "rag_examples_count": rag_examples["total"] if rag_examples else 0,
     }
     analysis["computed_metrics"] = metrics["summary"]

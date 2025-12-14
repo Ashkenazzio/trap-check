@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**TrapCheck** - A tourist trap detector that analyzes Google Maps reviews using computed metrics + Google AI (Gemini) API to determine if a restaurant/venue is a tourist trap.
+**TrapCheck** - A tourist trap detector that analyzes Google Maps reviews using computed metrics + Google AI (Gemini) API to determine if a venue is a tourist trap.
+
+**Supported Venue Types:** Restaurants, cafes, bars, museums, attractions, tours, shops, and markets.
 
 ## Development Commands
 
@@ -35,13 +37,13 @@ Copy `.env.example` to `.env`:
 
 ### Data Flow
 ```
-User Input → search_place() → fetch_stratified_reviews()
-                                    ↓
-                         compute_metrics() [pre-computed signals]
-                                    ↓
-                         Gemini API [interprets metrics, generates verdict]
-                                    ↓
-                         Structured JSON → UI
+User Input → search_place() → infer_venue_type() → fetch_stratified_reviews()
+                                                          ↓
+                                           compute_metrics(venue_type) [pre-computed signals]
+                                                          ↓
+                                           Gemini API [interprets metrics, generates verdict]
+                                                          ↓
+                                           Structured JSON → UI
 ```
 
 ### Key Design Decision
@@ -58,10 +60,22 @@ Metrics are computed BEFORE the LLM sees the data (`src/metrics.py`). This preve
 | `app.py` | Gradio web UI with dark theme |
 | `main.py` | CLI entry point |
 | `src/analyzer.py` | Core analysis pipeline, Gemini prompt construction |
-| `src/metrics.py` | Pre-LLM metrics computation (credibility, keywords, signals) |
+| `src/metrics.py` | Pre-LLM metrics computation (credibility, keywords, signals, venue type detection) |
 | `src/tools/serpapi.py` | Google Maps place search and review fetching |
 | `src/tools/mock_data.py` | Development data (Da Michele, Olive Garden, Katz's, Hard Rock) |
 | `src/config.py` | Environment variable loading and validation |
+
+### Venue Type Detection
+
+The system auto-detects venue type from Google Place types and applies venue-specific analysis:
+
+| Venue Type | Google Place Types | Specific Keywords |
+|------------|-------------------|-------------------|
+| restaurant | restaurant, cafe, bar, bakery, etc. | Food/service quality, wait times |
+| museum | museum, art_gallery | Crowds, exhibits, audio guides |
+| attraction | tourist_attraction, amusement_park | Crowds, photos, wait times |
+| tour | travel_agency | Guide quality, group size, rushed |
+| shop | store, shopping_mall, market | Pricing, pressure tactics |
 
 ### Signal Detection
 
@@ -71,7 +85,7 @@ Signals computed in `src/metrics.py` before Gemini analysis:
 - `manipulation_accusations` - Reviews claiming fake/bought reviews
 - `review_clustering` - Many positive reviews on same days (manipulation indicator)
 - `local_guide_warnings` - Local Guides disproportionately in negative reviews
-- `service_food_disparity` - High service ratings but low food ratings
+- `service_food_disparity` - High service ratings but low food ratings (restaurant-only)
 
 ### Output Schema
 
@@ -95,6 +109,15 @@ RAG integration provides similar venue examples for calibration:
 - **Database:** `RAG/rag_master.json` (149 examples)
 - **Module:** `src/rag/retriever.py`
 - **Dependencies:** `chromadb`, `sentence-transformers`
+
+**Venue type filtering:** RAG retriever maps venue types to relevant categories:
+- restaurant → restaurant, cafe, bar, street_food
+- museum → attraction, museum
+- attraction → attraction, museum
+- tour → attraction, tour
+- shop → market, shop
+
+**Current coverage:** Restaurants (55), attractions (39), cafes (15), street_food (13), markets (13), bars (11), tours (3)
 
 ```bash
 # Test RAG retriever

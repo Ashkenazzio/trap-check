@@ -7,7 +7,7 @@ import httpx
 from src.config import GOOGLE_API_KEY, SERPAPI_KEY
 from src.tools.serpapi import search_place, fetch_stratified_reviews
 from src.tools.web_search import search_external_opinions, check_tourist_proximity, get_mock_web_search, get_mock_proximity
-from src.metrics import compute_metrics
+from src.metrics import compute_metrics, infer_venue_type
 
 USE_MOCK = not SERPAPI_KEY
 
@@ -114,6 +114,10 @@ def analyze_venue(query: str, location: str | None = None) -> dict:
 
     print(f"Found: {place['name']} ({place['rating']}* from {place['review_count']} reviews)")
 
+    # Step 1.5: Detect venue type
+    venue_type = infer_venue_type(place)
+    print(f"Detected venue type: {venue_type}")
+
     # Step 2: Fetch stratified reviews
     if not place.get("data_id"):
         return {"error": "No data_id available for this place"}
@@ -125,9 +129,9 @@ def analyze_venue(query: str, location: str | None = None) -> dict:
     reviews_high = review_data.get("reviews_high", [])
     print(f"Retrieved {len(reviews_low)} low-rated + {len(reviews_high)} high-rated reviews")
 
-    # Step 3: Compute metrics BEFORE Claude sees anything
+    # Step 3: Compute metrics BEFORE Claude sees anything (with venue-specific keywords)
     print("Computing metrics...")
-    metrics = compute_metrics(reviews_low, reviews_high)
+    metrics = compute_metrics(reviews_low, reviews_high, venue_type=venue_type)
 
     # Step 4: Get external signals (web search + proximity) - run in PARALLEL
     print("Fetching external signals (parallel)...")
@@ -139,7 +143,7 @@ def analyze_venue(query: str, location: str | None = None) -> dict:
         # Run both API calls in parallel to save ~5-10 seconds
         with ThreadPoolExecutor(max_workers=2) as executor:
             future_opinions = executor.submit(
-                search_external_opinions, place["name"], location or ""
+                search_external_opinions, place["name"], location or "", venue_type
             )
             future_proximity = executor.submit(
                 check_tourist_proximity,
@@ -304,6 +308,7 @@ Higher specificity scores indicate more detailed, specific reviews.
         "place_review_count": place["review_count"],
         "google_maps_url": place["google_maps_url"],
         "reviews_analyzed": len(reviews_low) + len(reviews_high),
+        "venue_type": venue_type,
     }
     analysis["computed_metrics"] = metrics["summary"]
     analysis["signals"] = metrics["signals"]

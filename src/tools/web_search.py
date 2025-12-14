@@ -10,14 +10,15 @@ from src.config import GOOGLE_API_KEY
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent"
 
 
-def search_external_opinions(venue_name: str, location: str) -> dict:
+def search_external_opinions(venue_name: str, location: str, venue_type: str = "general") -> dict:
     """
-    Search Reddit, TripAdvisor forums, food blogs for external opinions.
+    Search Reddit, TripAdvisor forums, and relevant blogs for external opinions.
     Uses Gemini 2.0 Flash with Google Search grounding.
 
     Args:
         venue_name: Name of the venue (e.g., "Pizzeria Da Michele")
         location: City/region (e.g., "Naples, Italy")
+        venue_type: Type of venue (restaurant, museum, attraction, tour, shop, general)
 
     Returns:
         {
@@ -42,12 +43,42 @@ def search_external_opinions(venue_name: str, location: str) -> dict:
             "summary": "Web search unavailable - no API key"
         }
 
-    prompt = f"""Search for opinions about "{venue_name}" in {location} from Reddit, TripAdvisor forums, and food blogs.
+    # Venue-type specific sources and subreddits
+    source_config = {
+        "restaurant": {
+            "subreddits": "r/travel, r/foodie, r/food, city-specific subreddits",
+            "blogs": "Food blogger opinions and restaurant review articles",
+        },
+        "museum": {
+            "subreddits": "r/travel, r/museums, r/ArtHistory, city-specific subreddits",
+            "blogs": "Travel blogger opinions, museum review articles, and art blogs",
+        },
+        "attraction": {
+            "subreddits": "r/travel, r/solotravel, city-specific subreddits",
+            "blogs": "Travel blogger opinions and destination review articles",
+        },
+        "tour": {
+            "subreddits": "r/travel, r/solotravel, city-specific subreddits",
+            "blogs": "Travel blogger opinions and tour review articles",
+        },
+        "shop": {
+            "subreddits": "r/travel, r/shopping, city-specific subreddits",
+            "blogs": "Travel blogger opinions and shopping guide articles",
+        },
+        "general": {
+            "subreddits": "r/travel, city-specific subreddits",
+            "blogs": "Travel blogger opinions and review articles",
+        },
+    }
+
+    config = source_config.get(venue_type, source_config["general"])
+
+    prompt = f"""Search for opinions about "{venue_name}" in {location} from Reddit, TripAdvisor forums, and relevant blogs.
 
 Focus on finding:
-1. Reddit discussions (r/travel, r/foodie, city-specific subreddits)
+1. Reddit discussions ({config['subreddits']})
 2. TripAdvisor forum posts (not just reviews, but forum discussions)
-3. Food blogger opinions and articles
+3. {config['blogs']}
 
 For each source, determine:
 - Is the sentiment positive, negative, mixed, or no mentions found?

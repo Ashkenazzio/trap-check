@@ -6,6 +6,12 @@ import re
 from collections import Counter
 from datetime import datetime
 
+try:
+    from langdetect import detect, LangDetectException
+    LANGDETECT_AVAILABLE = True
+except ImportError:
+    LANGDETECT_AVAILABLE = False
+
 
 # Keywords that indicate awareness of tourist trap behavior (in negative reviews)
 TRAP_AWARENESS_KEYWORDS = [
@@ -26,6 +32,40 @@ QUALITY_KEYWORDS = [
     "sick", "food poisoning", "diarrhea", "stomach", "bland", "tasteless",
     "frozen", "microwave", "premade", "pre-made", "canned",
 ]
+
+# Generic praise patterns (low specificity)
+GENERIC_PRAISE_PATTERNS = [
+    r"\bgreat\b", r"\bamazing\b", r"\bawesome\b", r"\bwonderful\b",
+    r"\bdelicious\b", r"\byummy\b", r"\btasty\b", r"\bgood\b",
+    r"\bloved it\b", r"\bhighly recommend\b", r"\bmust visit\b",
+    r"\b10/10\b", r"\bfive stars\b", r"\b5 stars\b",
+]
+
+# Specific detail indicators (high specificity)
+SPECIFICITY_INDICATORS = [
+    # Cooking methods
+    r"\bwood[- ]?fired\b", r"\bcharred\b", r"\bcrispy\b", r"\bcaramelized\b",
+    r"\bslow[- ]?cooked\b", r"\bbraised\b", r"\bgrilled\b", r"\broasted\b",
+    # Ingredients
+    r"\bmozzarella\b", r"\bburrata\b", r"\bprosciutto\b", r"\bguanciale\b",
+    r"\bpancetta\b", r"\bpecorino\b", r"\bparmigiano\b", r"\bsan marzano\b",
+    r"\bnduja\b", r"\btruffle\b", r"\bsaffron\b",
+    # Texture/quality descriptors
+    r"\bal dente\b", r"\bchewy\b", r"\btender\b", r"\bflaky\b", r"\bcrust\b",
+    r"\bferment\b", r"\baged\b", r"\bfresh[- ]?made\b", r"\bhouse[- ]?made\b",
+    # Comparisons
+    r"\bbetter than\b", r"\breminds me of\b", r"\bjust like\b", r"\bauthentic\b",
+    r"\btraditional\b", r"\boriginal recipe\b",
+    # Specific dish names (partial)
+    r"\bmargherita\b", r"\bmarinara\b", r"\bcarbonara\b", r"\bamatriciana\b",
+    r"\bcacio e pepe\b", r"\bneapolitan\b",
+]
+
+# Tourist languages for non-English speaking countries
+TOURIST_LANGUAGES = {"en", "zh-cn", "zh-tw", "ja", "ko"}
+
+# English-speaking countries (where English reviews are expected)
+ENGLISH_SPEAKING_COUNTRIES = {"US", "USA", "UK", "GB", "AU", "CA", "NZ", "IE"}
 
 
 def compute_reviewer_credibility(user: dict) -> dict:
@@ -86,6 +126,86 @@ def detect_keywords(text: str, keywords: list[str]) -> list[str]:
         return []
     text_lower = text.lower()
     return [kw for kw in keywords if kw.lower() in text_lower]
+
+
+def compute_specificity(text: str) -> int:
+    """
+    Score 0-100 based on how specific/detailed the review is.
+    Higher = more specific details, lower = generic praise.
+    """
+    if not text:
+        return 0
+
+    text_lower = text.lower()
+    score = 50  # Base score
+
+    # Penalize generic praise
+    generic_count = sum(1 for pattern in GENERIC_PRAISE_PATTERNS if re.search(pattern, text_lower))
+    score -= min(generic_count * 5, 25)  # Max -25 for generic
+
+    # Reward specific details
+    specific_count = sum(1 for pattern in SPECIFICITY_INDICATORS if re.search(pattern, text_lower))
+    score += min(specific_count * 8, 40)  # Max +40 for specificity
+
+    # Reward longer reviews (more detail)
+    word_count = len(text.split())
+    if word_count > 100:
+        score += 15
+    elif word_count > 50:
+        score += 10
+    elif word_count > 25:
+        score += 5
+    elif word_count < 10:
+        score -= 15  # Very short = likely generic
+
+    # Reward comparisons and context
+    if re.search(r"\bcompared to\b|\bunlike\b|\bsimilar to\b", text_lower):
+        score += 10
+
+    # Reward price mentions (shows value assessment)
+    if re.search(r"\$|\bprice\b|\bworth\b|\bexpensive\b|\bcheap\b|\bvalue\b", text_lower):
+        score += 5
+
+    return max(0, min(100, score))
+
+
+def analyze_language_distribution(reviews: list[dict]) -> dict:
+    """
+    Detect language distribution in reviews.
+    High % of tourist languages (English, Chinese, Japanese) in non-English
+    speaking country = potential tourist trap signal.
+    """
+    if not LANGDETECT_AVAILABLE:
+        return {"detected": False, "error": "langdetect not installed"}
+
+    languages = []
+    for r in reviews:
+        text = r.get("text") or r.get("snippet") or ""
+        if len(text) > 30:  # Need enough text for reliable detection
+            try:
+                lang = detect(text)
+                languages.append(lang)
+            except LangDetectException:
+                pass
+
+    if not languages:
+        return {"detected": False, "total_analyzed": 0}
+
+    dist = Counter(languages)
+    total = len(languages)
+
+    # Calculate tourist language percentage
+    tourist_count = sum(dist.get(lang, 0) for lang in TOURIST_LANGUAGES)
+    tourist_pct = (tourist_count / total) * 100 if total > 0 else 0
+
+    return {
+        "detected": True,
+        "total_analyzed": total,
+        "distribution": dict(dist),
+        "tourist_language_pct": round(tourist_pct, 1),
+        "dominant_language": dist.most_common(1)[0][0] if dist else None,
+        "english_pct": round((dist.get("en", 0) / total) * 100, 1) if total > 0 else 0,
+    }
 
 
 def analyze_review(review: dict) -> dict:
@@ -250,6 +370,24 @@ def compute_metrics(reviews_low: list[dict], reviews_high: list[dict]) -> dict:
     total_likes_low = sum(a["likes"] for a in analyzed_low)
     avg_likes_low = total_likes_low / len(analyzed_low) if analyzed_low else 0
 
+    # === LANGUAGE ANALYSIS (positive vs negative separately) ===
+
+    lang_positive = analyze_language_distribution(reviews_high)
+    lang_negative = analyze_language_distribution(reviews_low)
+
+    # === SPECIFICITY ANALYSIS (for positive reviews) ===
+
+    # Compute specificity scores for high-rated reviews
+    for i, r in enumerate(reviews_high):
+        text = r.get("text") or r.get("snippet") or ""
+        if i < len(analyzed_high):
+            analyzed_high[i]["specificity_score"] = compute_specificity(text)
+
+    avg_specificity_high = (
+        sum(a.get("specificity_score", 50) for a in analyzed_high) / len(analyzed_high)
+        if analyzed_high else 50
+    )
+
     # === COMPUTE TRAP SIGNALS ===
 
     signals = []
@@ -306,10 +444,33 @@ def compute_metrics(reviews_low: list[dict], reviews_high: list[dict]) -> dict:
             "detail": f"{len(disparity_reviews)} reviews rate service high but food low",
         })
 
-    # === EXTRACT KEY NEGATIVE REVIEWS FOR CLAUDE ===
+    # === LANGUAGE-BASED SIGNALS ===
+
+    # Signal: Tourists dominate positive reviews, locals dominate negative
+    if (lang_positive.get("detected") and lang_negative.get("detected") and
+        lang_positive.get("tourist_language_pct", 0) > 70 and
+        lang_negative.get("tourist_language_pct", 100) < 50):
+        signals.append({
+            "signal": "language_credibility_split",
+            "severity": "high",
+            "detail": f"Positive reviews: {lang_positive['tourist_language_pct']}% tourist languages, Negative: {lang_negative['tourist_language_pct']}%",
+        })
+
+    # Signal: Low specificity in positive reviews (generic praise)
+    if avg_specificity_high < 40:
+        signals.append({
+            "signal": "generic_positive_reviews",
+            "severity": "medium",
+            "detail": f"Positive reviews lack specific details (avg specificity: {avg_specificity_high:.0f}/100)",
+        })
+
+    # === EXTRACT KEY REVIEWS FOR CLAUDE ===
 
     # Get the most credible negative reviews for Claude to analyze
     credible_negative = sorted(analyzed_low, key=lambda x: x["credibility"]["score"], reverse=True)[:10]
+
+    # Get the most credible positive reviews for Claude to analyze (NEW)
+    credible_positive = sorted(analyzed_high, key=lambda x: x["credibility"]["score"], reverse=True)[:10]
 
     return {
         "summary": {
@@ -323,9 +484,14 @@ def compute_metrics(reviews_low: list[dict], reviews_high: list[dict]) -> dict:
             "trap_warning_count": reviews_mentioning_trap,
             "manipulation_accusation_count": reviews_mentioning_manipulation,
             "quality_complaint_count": reviews_mentioning_quality,
+            "avg_specificity_positive": round(avg_specificity_high, 1),
         },
         "signals": signals,
         "date_clustering": date_clustering,
+        "language_analysis": {
+            "positive_reviews": lang_positive,
+            "negative_reviews": lang_negative,
+        },
         "credible_negative_reviews": [
             {
                 "text": reviews_low[i].get("text") or reviews_low[i].get("snippet"),
@@ -338,5 +504,17 @@ def compute_metrics(reviews_low: list[dict], reviews_high: list[dict]) -> dict:
             }
             for i, a in enumerate(credible_negative[:10])
             if i < len(reviews_low)
+        ],
+        "credible_positive_reviews": [
+            {
+                "text": reviews_high[i].get("text") or reviews_high[i].get("snippet"),
+                "rating": analyzed_high[i]["rating"],
+                "credibility_score": analyzed_high[i]["credibility"]["score"],
+                "is_local_guide": analyzed_high[i]["credibility"]["is_local_guide"],
+                "reviewer_total_reviews": analyzed_high[i]["credibility"]["reviews_count"],
+                "specificity_score": analyzed_high[i].get("specificity_score", 50),
+            }
+            for i, a in enumerate(credible_positive[:10])
+            if i < len(reviews_high)
         ],
     }

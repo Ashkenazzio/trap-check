@@ -1,5 +1,4 @@
 # Core - minimal dependencies for basic pipeline
-anthropic>=0.39.0
 python-dotenv>=1.0.0
 httpx>=0.25.0
 
@@ -9,11 +8,11 @@ google-search-results>=2.4.2
 # UI
 gradio>=4.0.0
 
-# === OPTIONAL - uncomment when needed ===
+# Language detection for review analysis
+langdetect>=1.0.9
 
-# RAG (adds ~2GB for PyTorch)
-# chromadb>=0.4.0
-# sentence-transformers>=2.2.0
+# === RAG Dependencies ===
+# Adds ~2GB for PyTorch - required for RAG integration
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
 
-# Screenshots
-# playwright>=1.40.0

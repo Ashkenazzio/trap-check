@@ -1,0 +1,1477 @@
+[
+  {
+    "id": "market-gwangjang-market-seoul",
+    "name": "Gwangjang Market",
+    "location": "Seoul, South Korea",
+    "city": "Seoul",
+    "country": "South Korea",
+    "region": "asia",
+    "category": "market",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 50,
+    "price_tier": "$$",
+    "summary": "Made globally famous by Netflix, this market is a battleground between authentic deliciousness and tourist exploitation. While the mung bean pancakes remain legendary, specific stalls (especially the 'Netflix lady' knife noodles) have been caught overcharging tourists and serving smaller portions.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Tourist surcharges/portion control",
+        "evidence": "\"Vendors were caught serving smaller portions to foreigners for the same price. It was a national scandal.\" (Korea JoongAng Daily)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "Extreme overcrowding",
+        "evidence": "\"You cannot move. You eat with strangers' elbows in your ribs.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Bindaetteok (Mung Bean Pancake) is elite",
+        "evidence": "\"The crispy bindaetteok at Sun-hui's stall is still the best in the city.\" (Seoul Eats)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Vibrant energy",
+        "evidence": "\"Despite the crowds, the energy of steaming pots and shouting ajummas is infectious.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "The knife noodle lady was rude and the portion was tiny. Go to the stalls on the side streets instead.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Naver Maps",
+        "highlights": ["tiny portion", "rude"]
+      },
+      {
+        "text": "Yes it's touristy, but the raw beef bibimbap is life changing. Just avoid the main intersection.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["raw beef bibimbap", "avoid main intersection"]
+      }
+    ],
+    "embedding_text": "Gwangjang Market in Seoul, South Korea. market. mixed. Netflix fame brought crowds and some overcharging scandals (knife noodles). However, Mung Bean Pancakes and Raw Beef remain authentic and high quality. Red flags: Tourist surcharges, Extreme overcrowding. Positives: Bindaetteok is elite, Vibrant energy."
+  },
+  {
+    "id": "street_food-myeongdong-street-food-seoul",
+    "name": "Myeongdong Street Food Alley",
+    "location": "Seoul, South Korea",
+    "city": "Seoul",
+    "country": "South Korea",
+    "region": "asia",
+    "category": "street_food",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 85,
+    "price_tier": "$$$",
+    "summary": "A dedicated tourist zone selling 'Korean' street food that locals never eat (lobster tails, rainbow cheese). Prices are 2-3x higher than other districts, and the flavors are standardized for international palates.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Double the price of normal markets",
+        "evidence": "\"₩15,000 for a lobster tail that is mostly shell. Pure robbery.\" (Reddit)",
+        "severity": "high"
+      },
+      {
+        "type": "authenticity_issues",
+        "description": "Food made for Instagram",
+        "evidence": "\"Locals do not eat rainbow cheese toast. This is theme park food.\" (Seoulistic)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "accessibility",
+        "description": "Convenient and English-friendly",
+        "evidence": "\"If you are intimidated by local markets, this is an easy, safe entry point.\" (Travel Blog)",
+        "strength": "moderate"
+      },
+      {
+        "type": "variety",
+        "description": "Huge selection in one street",
+        "evidence": "\"You can try 20 different things in a 500m walk.\" (TripAdvisor)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Fun to look at, but don't eat here. Go to Namdaemun for real food at half the price.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["don't eat here", "go to Namdaemun"]
+      },
+      {
+        "text": "Expensive but the egg bread was tasty and hot.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["expensive", "egg bread"]
+      }
+    ],
+    "embedding_text": "Myeongdong Street Food Alley in Seoul, South Korea. street_food. tourist_trap. Designated tourist zone selling expensive, Instagram-focused food (lobster, rainbow cheese). Locals avoid. Prices are 2-3x higher than average. Red flags: Double the price, Food made for Instagram. Positives: Convenient and English-friendly, Huge selection."
+  },
+  {
+    "id": "street_food-khaosan-road-bangkok",
+    "name": "Khaosan Road Street Food",
+    "location": "Bangkok, Thailand",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "region": "asia",
+    "category": "street_food",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 90,
+    "price_tier": "$",
+    "summary": "The backpacking center of the universe. The Pad Thai sold from carts here is famously ketchup-sweet, pre-cooked, and inferior to literally any other street corner in Bangkok. It serves one purpose: soaking up cheap alcohol.",
+    "red_flags": [
+      {
+        "type": "quality_decline",
+        "description": "Worst Pad Thai in Thailand",
+        "evidence": "\"It's orange, sweet, and mushy. Designed for drunk palates only.\" (Eating Thai Food)",
+        "severity": "high"
+      },
+      {
+        "type": "scams_and_touts",
+        "description": "Scorpion sellers",
+        "evidence": "\"They charge you 100 Baht just to take a photo of the scorpions.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Legendary party vibe",
+        "evidence": "\"You don't go for the food, you go for the chaos and meeting people.\" (Nomadic Matt)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Dirt cheap alcohol",
+        "evidence": "\"Buckets of cocktail for $5. Cannot beat the price to get wasted.\" (Reddit)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "The Pad Thai tasted like ketchup noodles. Avoid the carts here.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Wongnai",
+        "highlights": ["ketchup noodles", "avoid carts"]
+      },
+      {
+        "text": "I ate a scorpion and drank a bucket. 10/10 night, 0/10 food.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["ate a scorpion", "0/10 food"]
+      }
+    ],
+    "embedding_text": "Khaosan Road Street Food in Bangkok, Thailand. street_food. tourist_trap. Backpacking center. Pad Thai is ketchup-sweet and pre-cooked. Scorpions are props for photos. Red flags: Worst Pad Thai in Thailand, Scorpion sellers. Positives: Legendary party vibe, Dirt cheap alcohol."
+  },
+  {
+    "id": "market-nishiki-market-kyoto",
+    "name": "Nishiki Market",
+    "location": "Kyoto, Japan",
+    "city": "Kyoto",
+    "country": "Japan",
+    "region": "asia",
+    "category": "market",
+    "verdict": "tourist_trap",
+    "confidence": "medium",
+    "tourist_trap_score": 65,
+    "price_tier": "$$",
+    "summary": "Once 'Kyoto's Kitchen', it is now a congested tunnel of tourists eating food on sticks. Traditional pickle shops are being replaced by souvenir stands. Locals generally avoid it due to the 'tourist pollution' and difficulty walking.",
+    "red_flags": [
+      {
+        "type": "local_avoidance",
+        "description": "Locals pushed out",
+        "evidence": "\"Grandmothers can't do their shopping here anymore because of the wall of tourists.\" (Japan Times)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "No eating while walking rule",
+        "evidence": "\"You get yelled at for walking with food, but there is nowhere to stand.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Some historic shops remain",
+        "evidence": "\"Aritsugu knives are still world-class if you can reach the counter.\" (Kyoto Foodie)",
+        "strength": "moderate"
+      },
+      {
+        "type": "variety",
+        "description": "Visual spectacle",
+        "evidence": "\"The colors and variety of seafood are great for photos.\" (TripAdvisor)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "It's just a crush of people. We couldn't stop to look at anything.",
+        "rating": 2,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["crush of people", "couldn't stop"]
+      },
+      {
+        "text": "Go at 9am when it opens. The soy milk donuts are still worth it.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Tablelog",
+        "highlights": ["go at 9am", "soy milk donuts"]
+      }
+    ],
+    "embedding_text": "Nishiki Market in Kyoto, Japan. market. tourist_trap. Formerly 'Kyoto's Kitchen', now a congested tourist tunnel. Locals avoid due to crowds. Traditional shops replaced by souvenirs. Red flags: Locals pushed out, No eating while walking rule. Positives: Some historic shops remain, Visual spectacle."
+  },
+  {
+    "id": "attraction-train-street-hanoi",
+    "name": "Hanoi Train Street",
+    "location": "Hanoi, Vietnam",
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "region": "asia",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 80,
+    "price_tier": "Free",
+    "summary": "A narrow residential street where cafes operate illegally on active train tracks. It is dangerous, frequently closed by police, and cafe owners aggressively force tourists to buy drinks to 'allow' them to stand there.",
+    "red_flags": [
+      {
+        "type": "scams_and_touts",
+        "description": "Forced cafe purchases",
+        "evidence": "\"A lady blocked the public road and said 'No coffee no photo'.\" (TripAdvisor)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "Unpredictable closures",
+        "evidence": "\"Police barricade the entrances randomly. You might travel there for nothing.\" (Vietnam Coracle)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "novelty",
+        "description": "Unique thrill",
+        "evidence": "\"Feeling the train brush past your nose is a genuine adrenaline rush.\" (Travel Blog)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Photogenic",
+        "evidence": "\"It is undeniably the best photo you will take in Hanoi.\" (Instagram)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Dangerous and stressful. Cafe owners are aggressive. Not worth the risk.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["dangerous", "aggressive owners"]
+      },
+      {
+        "text": "We got lucky and saw the train. Scariest and coolest thing ever.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["scariest", "coolest thing"]
+      }
+    ],
+    "embedding_text": "Hanoi Train Street in Hanoi, Vietnam. attraction. tourist_trap. Narrow street with illegal cafes on active train tracks. Dangerous, often closed by police, and owners force drink purchases. Red flags: Forced cafe purchases, Unpredictable closures. Positives: Unique thrill, Photogenic."
+  },
+  {
+    "id": "market-ben-thanh-market-ho-chi-minh-city",
+    "name": "Ben Thanh Market",
+    "location": "Ho Chi Minh City, Vietnam",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "region": "asia",
+    "category": "market",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 88,
+    "price_tier": "$$",
+    "summary": "The most famous landmark in Saigon is also a high-pressure sales zone. Vendors grab your arm, prices are marked up 300% for tourists, and the food section is overpriced compared to street stalls just one block away.",
+    "red_flags": [
+      {
+        "type": "scams_and_touts",
+        "description": "Physical aggression",
+        "evidence": "\"They grab your arm and won't let go. Very aggressive.\" (TripAdvisor)",
+        "severity": "high"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "The 'Tourist Tax'",
+        "evidence": "\"They asked 500k dong for a T-shirt. I bought it for 100k elsewhere.\" (Reddit)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Central landmark",
+        "evidence": "\"It's iconic and right in the center. Good for a quick look.\" (Lonely Planet)",
+        "strength": "moderate"
+      },
+      {
+        "type": "variety",
+        "description": "One-stop souvenir shop",
+        "evidence": "\"If you are good at haggling, you can find everything here.\" (Travel Blog)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Horrible experience. The ladies are so aggressive. Go to Tan Dinh market instead.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["horrible experience", "aggressive"]
+      },
+      {
+        "text": "Good food if you know the prices, but be prepared to fight for a deal.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["know the prices", "fight for a deal"]
+      }
+    ],
+    "embedding_text": "Ben Thanh Market in Ho Chi Minh City, Vietnam. market. tourist_trap. High-pressure sales zone. Vendors are physically aggressive and markups are 300%. Locals shop at Tan Dinh. Red flags: Physical aggression, The 'Tourist Tax'. Positives: Central landmark, One-stop souvenir shop."
+  },
+  {
+    "id": "bar-finns-beach-club-bali",
+    "name": "Finns Beach Club",
+    "location": "Bali, Indonesia",
+    "city": "Canggu",
+    "country": "Indonesia",
+    "region": "asia",
+    "category": "bar",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 75,
+    "price_tier": "$$$$",
+    "summary": "A massive bamboo structure in Canggu that feels more like a crowded airport terminal than a beach club. Minimum spends are high, it is packed shoulder-to-shoulder, and the 'VIP' areas offer little respite from the chaos.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Exorbitant minimum spend",
+        "evidence": "\"You have to commit to spending millions of rupiah just to sit on a towel.\" (The Bali Bible)",
+        "severity": "medium"
+      },
+      {
+        "type": "environment_issues",
+        "description": "Overcrowded pool",
+        "evidence": "\"The pool water was cloudy and full of drunk people. Zero relaxation.\" (TripAdvisor)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Party energy",
+        "evidence": "\"Great DJ and sunset vibes if you like to party hard.\" (Instagram)",
+        "strength": "moderate"
+      },
+      {
+        "type": "service_quality",
+        "description": "Efficient staff",
+        "evidence": "\"Despite the crowds, the waiters were fast and friendly.\" (Google Maps)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Soulless money machine. Go to La Brisa for a better vibe.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["soulless", "go to La Brisa"]
+      },
+      {
+        "text": "Expensive but the sunset view with a cocktail was nice. Just very busy.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["sunset view", "very busy"]
+      }
+    ],
+    "embedding_text": "Finns Beach Club in Bali, Indonesia. bar. tourist_trap. Massive, overcrowded beach club in Canggu. Feels like an airport terminal. High minimum spends and cloudy pools. Red flags: Exorbitant minimum spend, Overcrowded pool. Positives: Party energy, Efficient staff."
+  },
+  {
+    "id": "restaurant-ibu-oka-bali",
+    "name": "Warung Babi Guling Ibu Oka",
+    "location": "Bali, Indonesia",
+    "city": "Ubud",
+    "country": "Indonesia",
+    "region": "asia",
+    "category": "restaurant",
+    "verdict": "mixed",
+    "confidence": "medium",
+    "tourist_trap_score": 45,
+    "price_tier": "$$",
+    "summary": "Made legendary by Anthony Bourdain. Once a humble stall, it is now a commercial operation catering to busloads of tourists. The roast pig (Babi Guling) is still decent, but locals argue the skin is often cold and better versions exist at Pak Malen or Ibu Rambug.",
+    "red_flags": [
+      {
+        "type": "quality_decline",
+        "description": "Mass produced feel",
+        "evidence": "\"Skin was chewy, not crispy. Felt like it was cooked hours ago.\" (Food Blog)",
+        "severity": "medium"
+      },
+      {
+        "type": "local_avoidance",
+        "description": "Only tourists eat here",
+        "evidence": "\"Locals stopped coming years ago when the prices doubled.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "historic_significance",
+        "description": "Cultural icon",
+        "evidence": "\"It put Babi Guling on the map for the world.\" (Eater)",
+        "strength": "high"
+      },
+      {
+        "type": "accessibility",
+        "description": "Easy introduction to the dish",
+        "evidence": "\"A safe, clean place to try the dish for the first time.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "It's fine, but Pak Malen is way better and spicier. Ibu Oka is for beginners.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["for beginners", "Pak Malen better"]
+      },
+      {
+        "text": "Delicious pork! We arrived early and got the fresh skin.",
+        "rating": 5,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["delicious pork", "fresh skin"]
+      }
+    ],
+    "embedding_text": "Warung Babi Guling Ibu Oka in Bali, Indonesia. restaurant. mixed. Made famous by Bourdain. Now commercialized and tourist-heavy. Pork is decent but often cold/chewy. Locals prefer Pak Malen. Red flags: Mass produced feel, Only tourists eat here. Positives: Cultural icon, Safe introduction."
+  },
+  {
+    "id": "attraction-rainbow-mountain-cusco",
+    "name": "Rainbow Mountain (Vinicunca)",
+    "location": "Cusco, Peru",
+    "city": "Cusco",
+    "country": "Peru",
+    "region": "emerging",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 80,
+    "price_tier": "$$",
+    "summary": "The ultimate 'Instagram vs Reality' trap. Photos show vibrant colors, but the reality is often a muddy, grey trek at dangerous altitude (5,200m) with hundreds of people. The colors are only visible under specific weather conditions.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Weather dependency/Mud",
+        "evidence": "\"If it rains or snows (which is often), it's just a brown mud hill. Zero colors.\" (TripAdvisor)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "Dangerous altitude for day trippers",
+        "evidence": "\"Tour agencies push this on people who just arrived. Altitude sickness is rampant.\" (Travel Safety Blog)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Unique geological formation",
+        "evidence": "\"On a clear day, the striations are geologically fascinating.\" (NatGeo)",
+        "strength": "moderate"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Supports local community",
+        "evidence": "\"The entrance fees go directly to the indigenous communities managing the land.\" (Local Guide)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Heavily edited photos lied to me. It was grey, cold, and I threw up from altitude.",
+        "rating": 1,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["edited photos", "threw up"]
+      },
+      {
+        "text": "Hard hike but worth it for the view of the Red Valley nearby.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["hard hike", "Red Valley"]
+      }
+    ],
+    "embedding_text": "Rainbow Mountain (Vinicunca) in Cusco, Peru. attraction. tourist_trap. Instagram vs Reality disappointment. Often muddy/grey unless weather is perfect. Dangerous altitude (5,200m) for unacclimatized tourists. Red flags: Weather dependency, Dangerous altitude. Positives: Unique geological formation, Supports local community."
+  },
+  {
+    "id": "restaurant-central-lima",
+    "name": "Central",
+    "location": "Lima, Peru",
+    "city": "Lima",
+    "country": "Peru",
+    "region": "emerging",
+    "category": "restaurant",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 10,
+    "price_tier": "$$$$",
+    "summary": "Voted the #1 Restaurant in the World. It is expensive and difficult to book, but it is the opposite of a trap. The menu is a deep research project into Peru's biodiversity, executing flavors found nowhere else on earth.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Booking is nearly impossible",
+        "evidence": "\"You need to be online the second reservations open, months in advance.\" (Eater)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Very expensive for Peru",
+        "evidence": "\"A meal here costs a month's salary for a local.\" (Reddit)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Unmatched culinary innovation",
+        "evidence": "\"The altitude-based menu is a masterpiece of edible geography.\" (World's 50 Best)",
+        "strength": "high"
+      },
+      {
+        "type": "authenticity_praise",
+        "description": "Deeply Peruvian ingredients",
+        "evidence": "\"They use ingredients from the Amazon and Andes that even locals haven't seen.\" (New York Times)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "It's an investment, but it changed how I understand food. Not just a meal, an expedition.",
+        "rating": 5,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["investment", "changed how I understand food"]
+      },
+      {
+        "text": "Proud that Peruvian food is on the world stage. Virgilio is a genius.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["proud", "genius"]
+      }
+    ],
+    "embedding_text": "Central in Lima, Peru. restaurant. local_gem. Voted #1 Restaurant in the World. Expensive and hard to book, but offers unmatched biodiversity research on a plate. Red flags: Booking is nearly impossible, Very expensive. Positives: Unmatched culinary innovation, Deeply Peruvian ingredients."
+  },
+  {
+    "id": "bar-cafe-del-mar-cartagena",
+    "name": "Café del Mar",
+    "location": "Cartagena, Colombia",
+    "city": "Cartagena",
+    "country": "Colombia",
+    "region": "emerging",
+    "category": "bar",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 90,
+    "price_tier": "$$$",
+    "summary": "Occupies a prime spot on the historic city walls. You pay an entrance fee just to access the bar, the cocktails are watery and overpriced, and the service is notoriously arrogant. You are paying strictly for the sunset.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Cover charge + expensive drinks",
+        "evidence": "\"Paying a cover charge to enter a bar is ridiculous, and the drinks were bad.\" (TripAdvisor)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "Arrogant service",
+        "evidence": "\"Waiters act like they are doing you a favor. Ignored us for 30 minutes.\" (Google Maps)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "The Sunset View",
+        "evidence": "\"Okay, the view of the sunset over the Caribbean is admittedly perfect.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Breezy historic setting",
+        "evidence": "\"Sitting on the 400-year-old wall with the sea breeze is nice.\" (Travel Blog)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Buy a beer from a street vendor and sit on the wall 10 meters away for free. Same view.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["sit on wall for free", "same view"]
+      },
+      {
+        "text": "Terrible drinks, but great photos. One time thing.",
+        "rating": 3,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["terrible drinks", "great photos"]
+      }
+    ],
+    "embedding_text": "Café del Mar in Cartagena, Colombia. bar. tourist_trap. Prime spot on city walls. Charging entrance fees for watery drinks and arrogant service. Paying strictly for the sunset. Red flags: Cover charge, Arrogant service. Positives: The Sunset View, Breezy historic setting."
+  },
+  {
+    "id": "restaurant-andres-carne-de-res-chia",
+    "name": "Andrés Carne de Res (Chía)",
+    "location": "Bogota, Colombia",
+    "city": "Bogota",
+    "country": "Colombia",
+    "region": "emerging",
+    "category": "restaurant",
+    "verdict": "local_gem",
+    "confidence": "medium",
+    "tourist_trap_score": 25,
+    "price_tier": "$$$",
+    "summary": "A 2,000-seat maximalist steakhouse and nightclub outside Bogota. It is chaotic, surreal, and expensive, but unlike its city branches, the original Chía location is a beloved pilgrimage site for locals celebrating birthdays.",
+    "red_flags": [
+      {
+        "type": "location_dependency",
+        "description": "Far from city center",
+        "evidence": "\"It's a $30 Uber ride/hour drive from Bogota. You need a designated driver.\" (WikiTravel)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Expensive for Colombia",
+        "evidence": "\"Prices are high, you are paying for the show more than the steak.\" (Degusta)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Unmatched party vibe",
+        "evidence": "\"It's Alice in Wonderland meets a rave. There is nothing like it.\" (Eater)",
+        "strength": "high"
+      },
+      {
+        "type": "local_endorsement",
+        "description": "Locals love it",
+        "evidence": "\"Every Bogotano has celebrated a birthday here. It's an institution.\" (Reddit)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Total madness. Confetti, actors, dancing on tables. The steak was actually good too.",
+        "rating": 5,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["total madness", "dancing on tables"]
+      },
+      {
+        "text": "Don't go to the DC location, go to Chia. It's the only real one.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["go to Chia", "DC location is fake"]
+      }
+    ],
+    "embedding_text": "Andrés Carne de Res (Chía) in Bogota, Colombia. restaurant. local_gem. 2,000-seat maximalist steakhouse/nightclub. Chaotic, surreal, and beloved by locals for celebrations. Red flags: Far from city center, Expensive. Positives: Unmatched party vibe, Locals love it."
+  },
+  {
+    "id": "attraction-selaron-steps-rio-de-janeiro",
+    "name": "Escadaria Selarón",
+    "location": "Rio de Janeiro, Brazil",
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "region": "emerging",
+    "category": "attraction",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 45,
+    "price_tier": "Free",
+    "summary": "A vibrant mosaic staircase created by artist Jorge Selarón. It is a stunning piece of public art, but the crowds are suffocating, making it nearly impossible to get a photo without 20 other people in it.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Crowded photo struggle",
+        "evidence": "\"Expect to wait in line to take a photo on the main steps.\" (TripAdvisor)",
+        "severity": "medium"
+      },
+      {
+        "type": "scams_and_touts",
+        "description": "Safety in surrounding area",
+        "evidence": "\"Do not wander off the stairs. The surrounding streets can be sketchy.\" (Local Safety Guide)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Artistic detail",
+        "evidence": "\"The tiles from around the world are fascinating to look at close up.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "It is free",
+        "evidence": "\"It costs nothing and is an iconic symbol of Rio.\" (Travel Blog)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Beautiful art but ruined by the influencers. Go at 7am or don't bother.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["ruined by influencers", "go at 7am"]
+      },
+      {
+        "text": "Iconic. We found a tile from our home country!",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["iconic", "found tile"]
+      }
+    ],
+    "embedding_text": "Escadaria Selarón in Rio de Janeiro, Brazil. attraction. mixed. Vibrant mosaic staircase. Stunning public art, but suffocating crowds make photos difficult. Surrounding area can be unsafe. Red flags: Crowded photo struggle, Safety in surrounding area. Positives: Artistic detail, Free."
+  },
+  {
+    "id": "cafe-confeitaria-colombo-rio-de-janeiro",
+    "name": "Confeitaria Colombo",
+    "location": "Rio de Janeiro, Brazil",
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "region": "emerging",
+    "category": "cafe",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 55,
+    "price_tier": "$$",
+    "summary": "A grand cafe from 1894 with colossal mirrors and stained glass. It is a 'Time Trap'—the atmosphere is majestic, but the pastries and coffee are average and overpriced compared to modern bakeries.",
+    "red_flags": [
+      {
+        "type": "quality_decline",
+        "description": "Average food",
+        "evidence": "\"The coxinha was dry and the coffee was bitter. You eat the decor.\" (Rio Times)",
+        "severity": "medium"
+      },
+      {
+        "type": "service_problems",
+        "description": "Long queues",
+        "evidence": "\"Queue wrapped around the block in the heat.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Stunning architecture",
+        "evidence": "\"One of the most beautiful cafes in the world. A visual masterpiece.\" (Architectural Digest)",
+        "strength": "high"
+      },
+      {
+        "type": "historic_significance",
+        "description": "Living history",
+        "evidence": "\"It feels like the Belle Epoque. Historic value is undeniable.\" (Lonely Planet)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Go for tea and look at the ceiling. Don't expect a gourmet meal.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["look at ceiling", "not gourmet"]
+      },
+      {
+        "text": "Tourist trap with bad service. We waited 20 minutes for the bill.",
+        "rating": 2,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["bad service", "waited for bill"]
+      }
+    ],
+    "embedding_text": "Confeitaria Colombo in Rio de Janeiro, Brazil. cafe. mixed. Grand cafe from 1894. Majestic atmosphere, but pastries and coffee are average and overpriced. Red flags: Average food, Long queues. Positives: Stunning architecture, Living history."
+  },
+  {
+    "id": "street_food-jemaa-el-fnaa-stalls-marrakech",
+    "name": "Jemaa el-Fnaa Food Stalls",
+    "location": "Marrakech, Morocco",
+    "city": "Marrakech",
+    "country": "Morocco",
+    "region": "emerging",
+    "category": "street_food",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 95,
+    "price_tier": "$$",
+    "summary": "The famous night market is a sensory overload of aggressive touts. The numbered food stalls serve pre-cooked, mediocre tagines often linked to 'Marrakech Belly' (food poisoning). Locals eat in the side streets, not the center.",
+    "red_flags": [
+      {
+        "type": "scams_and_touts",
+        "description": "Extreme harassment",
+        "evidence": "\"Touts will physically block your path and guilt you into sitting.\" (Rough Guides)",
+        "severity": "high"
+      },
+      {
+        "type": "hygiene_concerns",
+        "description": "High risk of illness",
+        "evidence": "\"Food sits out all day. Known locally as the diarrhea lottery.\" (Reddit)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Incredible energy",
+        "evidence": "\"The smoke, the lights, the noise—it is a spectacle you must see (from a distance).\" (NatGeo)",
+        "strength": "high"
+      },
+      {
+        "type": "specific_quality",
+        "description": "Fresh Orange Juice Carts",
+        "evidence": "\"The juice carts (separate from food stalls) are cheap and fresh.\" (Travel Blog)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Do not eat at the numbered stalls! We got sick. Go to a restaurant with a terrace instead.",
+        "rating": 1,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["got sick", "do not eat"]
+      },
+      {
+        "text": "Just buy the orange juice ($0.40) and walk around. The food is a scam.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["orange juice good", "food is scam"]
+      }
+    ],
+    "embedding_text": "Jemaa el-Fnaa Food Stalls in Marrakech, Morocco. street_food. tourist_trap. Sensory overload of aggressive touts. Food is pre-cooked, mediocre, and linked to illness. Locals eat elsewhere. Red flags: Extreme harassment, Hygiene concerns. Positives: Incredible energy, Fresh Orange Juice Carts."
+  },
+  {
+    "id": "tour-pyramids-camel-ride-cairo",
+    "name": "Pyramids Camel Ride",
+    "location": "Cairo, Egypt",
+    "city": "Cairo",
+    "country": "Egypt",
+    "region": "emerging",
+    "category": "tour",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 98,
+    "price_tier": "$$$",
+    "summary": "Notorious for scams. Handlers will quote a low price to get on, then demand a fortune to let you get off. The animals are often mistreated, and the experience is high-stress rather than magical.",
+    "red_flags": [
+      {
+        "type": "scams_and_touts",
+        "description": "Hostage scam",
+        "evidence": "\"He refused to make the camel kneel down until I paid $50 extra.\" (TripAdvisor)",
+        "severity": "high"
+      },
+      {
+        "type": "environment_issues",
+        "description": "Animal welfare",
+        "evidence": "\"Camels looked malnourished and were beaten.\" (PETA/Travel Blogs)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Iconic photo op",
+        "evidence": "\"It is the classic Egypt photo with the pyramids in the back.\" (Instagram)",
+        "strength": "moderate"
+      },
+      {
+        "type": "historic_significance",
+        "description": "Ancient transport",
+        "evidence": "\"Riding where pharaohs walked is a nice thought.\" (Lonely Planet)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Nightmare. I was harassed the entire time. Walk or take an Uber to the panorama point.",
+        "rating": 1,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["harassed", "nightmare"]
+      },
+      {
+        "text": "If you pre-book with a reputable guide, it's fine. Do not negotiate on the street.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit Advice",
+        "highlights": ["pre-book", "do not negotiate"]
+      }
+    ],
+    "embedding_text": "Pyramids Camel Ride in Cairo, Egypt. tour. tourist_trap. Notorious for 'hostage scams' (pay to get off). Animals often mistreated. High-stress experience. Red flags: Hostage scam, Animal welfare. Positives: Iconic photo op, Ancient transport."
+  },
+  {
+    "id": "market-sydney-fish-market-sydney",
+    "name": "Sydney Fish Market",
+    "location": "Sydney, Australia",
+    "city": "Sydney",
+    "country": "Australia",
+    "region": "other_hotspots",
+    "category": "market",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 70,
+    "price_tier": "$$$",
+    "summary": "The largest fish market in the Southern Hemisphere is a chaotic, overpriced destination. While the seafood is fresh, it is cooked in heavy grease, served on styrofoam, and eaten while fighting off aggressive seagulls in a parking lot setting.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Overpriced cooked food",
+        "evidence": "\"$30 for a greasy basket of fish and chips? You can get better at any beach shop.\" (Broadsheet)",
+        "severity": "high"
+      },
+      {
+        "type": "environment_issues",
+        "description": "Seagulls and crowding",
+        "evidence": "\"The birds are a menace. They snatch food from your hands.\" (Sydney Morning Herald)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Fresh oysters/Sashimi",
+        "evidence": "\"If you buy the raw oysters or sashimi, quality is top tier.\" (Timeout Sydney)",
+        "strength": "moderate"
+      },
+      {
+        "type": "variety",
+        "description": "Huge selection",
+        "evidence": "\"The sheer variety of species on display is impressive.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Locals call it a trap. The new building might fix it, but for now, it's a dirty parking lot.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["locals call it trap", "dirty parking lot"]
+      },
+      {
+        "text": "Loved the sashimi platter. Just avoid the deep fried stuff.",
+        "rating": 4,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["loved sashimi", "avoid fried"]
+      }
+    ],
+    "embedding_text": "Sydney Fish Market in Sydney, Australia. market. tourist_trap. Largest fish market in region but chaotic and overpriced. Cooked food is greasy, seagulls are aggressive. Red flags: Overpriced cooked food, Seagulls and crowding. Positives: Fresh oysters/Sashimi, Huge selection."
+  },
+  {
+    "id": "attraction-hobbiton-matamata",
+    "name": "Hobbiton Movie Set",
+    "location": "Matamata, New Zealand",
+    "city": "Matamata",
+    "country": "New Zealand",
+    "region": "other_hotspots",
+    "category": "attraction",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 20,
+    "price_tier": "$$$$",
+    "summary": "Expensive ($90+ USD) and in the middle of nowhere, yet it consistently ranks as a highlight. The attention to detail is obsessive (real vegetable gardens), and the tour concludes with a complimentary ale at the Green Dragon Inn.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "High ticket price",
+        "evidence": "\"It is very expensive for a 2 hour walking tour.\" (TripAdvisor)",
+        "severity": "medium"
+      },
+      {
+        "type": "location_dependency",
+        "description": "Remote location",
+        "evidence": "\"It's a long drive from Auckland just for this.\" (Lonely Planet)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "service_quality",
+        "description": "Immaculate maintenance",
+        "evidence": "\"The set is maintained to perfection. It feels real.\" (The One Ring)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Magical experience",
+        "evidence": "\"Even if you aren't a fan, the landscape is stunning.\" (Travel Blog)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "I expected a trap but I was blown away. The level of detail is insane.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["expected a trap", "blown away"]
+      },
+      {
+        "text": "Rushed through in a group, but the Green Dragon drink was a nice touch.",
+        "rating": 4,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["rushed", "nice touch"]
+      }
+    ],
+    "embedding_text": "Hobbiton Movie Set in Matamata, New Zealand. attraction. local_gem. Expensive and remote, but obsessive attention to detail makes it a highlight. Includes drink at Green Dragon Inn. Red flags: High ticket price, Remote location. Positives: Immaculate maintenance, Magical experience."
+  },
+  {
+    "id": "market-grand-bazaar-istanbul",
+    "name": "Grand Bazaar",
+    "location": "Istanbul, Turkey",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "region": "emerging",
+    "category": "market",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 85,
+    "price_tier": "$$$",
+    "summary": "One of the oldest malls in the world, now a labyrinth of fake designer bags and overpriced lamps. Shopkeepers are aggressive, and prices are 3-4x higher than markets used by locals (like Kadıköy).",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Tourist markup",
+        "evidence": "\"Spices cost 4x more here than at the Egyptian Bazaar.\" (Culinary Backstreets)",
+        "severity": "high"
+      },
+      {
+        "type": "authenticity_issues",
+        "description": "Fake goods",
+        "evidence": "\"Mostly counterfeit bags and cheap souvenirs made in China.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Architectural wonder",
+        "evidence": "\"The painted ceilings and history are worth the walk.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "variety",
+        "description": "Endless browsing",
+        "evidence": "\"4,000 shops. You can get lost for hours.\" (TripAdvisor)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Go for the architecture, buy nothing. It's a rip-off city.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["buy nothing", "rip-off"]
+      },
+      {
+        "text": "Fun to haggle if you know what you're doing, but exhausting.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["fun to haggle", "exhausting"]
+      }
+    ],
+    "embedding_text": "Grand Bazaar in Istanbul, Turkey. market. tourist_trap. Oldest mall in the world, now a labyrinth of fake goods and aggressive sellers. Prices are 3-4x higher than local markets. Red flags: Tourist markup, Fake goods. Positives: Architectural wonder, Endless browsing."
+  },
+  {
+    "id": "cafe-hafiz-mustafa-istanbul",
+    "name": "Hafiz Mustafa 1864",
+    "location": "Istanbul, Turkey",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "region": "emerging",
+    "category": "cafe",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 20,
+    "price_tier": "$$",
+    "summary": "Despite being in all the tourist centers (Sultanahmet, Taksim), this dessert chain maintains incredible quality. Their Baklava and Turkish Delight are fresh, using real honey and pistachios, and locals still buy gift boxes here.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Pricey for Istanbul",
+        "evidence": "\"More expensive than neighborhood spots, but you pay for consistency.\" (Istanbul Eats)",
+        "severity": "low"
+      },
+      {
+        "type": "service_problems",
+        "description": "Busy/Chaotic",
+        "evidence": "\"Service can be slow due to the volume of customers.\" (TripAdvisor)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "High quality ingredients",
+        "evidence": "\"The pistachio-to-dough ratio is perfect. Not too sweet.\" (Serious Eats)",
+        "strength": "high"
+      },
+      {
+        "type": "local_endorsement",
+        "description": "Reliable gift",
+        "evidence": "\"I always bring Hafiz Mustafa when visiting family abroad.\" (Reddit)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Best baklava I've ever had. Open 24/7 which is dangerous.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["best baklava", "open 24/7"]
+      },
+      {
+        "text": "Touristy but quality. The milk puddings are underrated.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Zomato",
+        "highlights": ["touristy but quality", "milk puddings"]
+      }
+    ],
+    "embedding_text": "Hafiz Mustafa 1864 in Istanbul, Turkey. cafe. local_gem. Dessert chain maintaining incredible quality despite tourist locations. Fresh Baklava and Turkish Delight. Locals buy gifts here. Red flags: Pricey for Istanbul, Busy/Chaotic. Positives: High quality ingredients, Reliable gift."
+  },
+  {
+    "id": "attraction-gardens-by-the-bay-singapore",
+    "name": "Gardens by the Bay",
+    "location": "Singapore",
+    "city": "Singapore",
+    "country": "Singapore",
+    "region": "asia",
+    "category": "attraction",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 25,
+    "price_tier": "$$",
+    "summary": "A futuristic botanical garden that looks like a sci-fi movie set. While the Cloud Forest dome requires a ticket, the Supertree Grove is free. It manages to be a massive tourist attraction that is also genuinely beloved for its engineering and beauty.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Extreme peak crowds",
+        "evidence": "\"During peak periods, you can wait up to an hour for the lift, missing 80% of the attraction.\" (Reddit)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Flower Dome is skippable",
+        "evidence": "\"Cloud Forest is amazing, Flower Dome is just a greenhouse.\" (Reddit)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Cloud Forest waterfall",
+        "evidence": "\"The world's tallest indoor waterfall is breathtaking.\" (Condé Nast Traveler)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Free outdoor areas",
+        "evidence": "\"You can see the Supertree light show for free every night.\" (Timeout)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Avatar in real life. The Cloud Forest is worth every penny.",
+        "rating": 5,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["Avatar in real life", "worth every penny"]
+      },
+      {
+        "text": "Bring a picnic and sit under the Supertrees. Best free activity in SG.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["picnic", "best free activity"]
+      }
+    ],
+    "embedding_text": "Gardens by the Bay in Singapore. attraction. local_gem. Futuristic botanical garden. Cloud Forest is a marvel; Supertree Grove is free. Massive attraction but genuinely beloved for engineering and beauty. Red flags: Extreme peak crowds. Positives: Cloud Forest waterfall, Free outdoor areas."
+  },
+  {
+    "id": "attraction-bukchon-hanok-village-seoul",
+    "name": "Bukchon Hanok Village",
+    "location": "Seoul, South Korea",
+    "city": "Seoul",
+    "country": "South Korea",
+    "region": "asia",
+    "category": "attraction",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 60,
+    "price_tier": "Free",
+    "summary": "A historic neighborhood of traditional Korean houses (Hanok) dating back 600 years. It is visually stunning, but the 'over-tourism' has led to conflict with residents who patrol the streets shushing tourists, creating a tense atmosphere.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Hostile atmosphere",
+        "evidence": "\"Residents wear yellow vests and tell you to be quiet. It feels unwelcoming.\" (Korea Herald)",
+        "severity": "high"
+      },
+      {
+        "type": "authenticity_issues",
+        "description": "Just facades",
+        "evidence": "\"You can't go inside most houses. It's just walking up a hill.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "historic_significance",
+        "description": "Preserved architecture",
+        "evidence": "\"The juxtaposition of ancient roofs and modern skyscrapers is unique.\" (Visit Seoul)",
+        "strength": "high"
+      },
+      {
+        "type": "location_perk",
+        "description": "Great views",
+        "evidence": "\"The view from the top of the hill overlooking Seoul is worth the climb.\" (TripAdvisor)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Beautiful but I felt guilty being there. Signs everywhere saying 'Be Quiet'.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["felt guilty", "be quiet"]
+      },
+      {
+        "text": "Go early (8am) before the bus crowds. It's peaceful then.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Naver Blog",
+        "highlights": ["go early", "peaceful"]
+      }
+    ],
+    "embedding_text": "Bukchon Hanok Village in Seoul, South Korea. attraction. mixed. Historic neighborhood of traditional houses. Visually stunning, but over-tourism creates tense atmosphere with residents (shushing). Red flags: Hostile atmosphere, Just facades. Positives: Preserved architecture, Great views."
+  },
+  {
+    "id": "cafe-leopold-cafe-mumbai",
+    "name": "Leopold Cafe",
+    "location": "Mumbai, India",
+    "city": "Mumbai",
+    "country": "India",
+    "region": "asia",
+    "category": "cafe",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 50,
+    "price_tier": "$$",
+    "summary": "Immortalized by the novel 'Shantaram' and a site of the 2008 terror attacks. It is packed with tourists seeking the literary connection. The food is average continental/Indian, but the bullet holes in the walls serve as a chilling historical marker.",
+    "red_flags": [
+      {
+        "type": "quality_decline",
+        "description": "Average food",
+        "evidence": "\"Food is overpriced and mediocre. You pay for the Shantaram vibe.\" (Mumbai Mag)",
+        "severity": "medium"
+      },
+      {
+        "type": "service_problems",
+        "description": "Rushed service",
+        "evidence": "\"Waiters want you to eat and leave. Very noisy.\" (Zomato)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "historic_significance",
+        "description": "Historical marker",
+        "evidence": "\"Seeing the bullet holes from 2008 is a powerful, somber experience.\" (BBC Travel)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Traveller hub",
+        "evidence": "\"A great place to meet other backpackers and swap stories.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Read the book, went for a beer. It's loud and crowded, but I'm glad I went once.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["read the book", "glad I went"]
+      },
+      {
+        "text": "Overrated. Go to Cafe Mondegar nearby for better vibes and art.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["overrated", "go to Mondegar"]
+      }
+    ],
+    "embedding_text": "Leopold Cafe in Mumbai, India. cafe. mixed. Immortalized by 'Shantaram' and 2008 attacks. Packed with tourists. Food is average, but bullet holes in walls are a powerful historical marker. Red flags: Average food, Rushed service. Positives: Historical marker, Traveller hub."
+  },
+  {
+    "id": "attraction-fushimi-inari-taisha-kyoto",
+    "name": "Fushimi Inari Taisha",
+    "location": "Kyoto, Japan",
+    "city": "Kyoto",
+    "country": "Japan",
+    "region": "asia",
+    "category": "attraction",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 20,
+    "price_tier": "Free",
+    "summary": "The famous 'thousands of red gates' shrine. While the base is swarming with Instagrammers, it is a massive mountain complex. If you hike 30 minutes up, the crowds vanish, leaving a spiritual and atmospheric experience.",
+    "red_flags": [
+      {
+        "type": "local_avoidance",
+        "description": "Base is overcrowded",
+        "evidence": "\"The entrance is a mosh pit of selfie sticks.\" (Japan Guide)",
+        "severity": "medium"
+      },
+      {
+        "type": "environment_issues",
+        "description": "Vending machine prices",
+        "evidence": "\"Water costs double halfway up the mountain. Bring your own.\" (TripAdvisor)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Spiritual hike",
+        "evidence": "\"The further you go, the more magical it gets. Silence and red gates.\" (Matcha-JP)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Always open and free",
+        "evidence": "\"Open 24/7. Go at night for a spooky, empty experience.\" (Reddit)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Don't stop at the bottom! Hike to the crossroads for the view and solitude.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["don't stop at bottom", "hike to crossroads"]
+      },
+      {
+        "text": "Too many people at the start, but it's iconic for a reason.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["too many people", "iconic"]
+      }
+    ],
+    "embedding_text": "Fushimi Inari Taisha in Kyoto, Japan. attraction. local_gem. Famous red gates shrine. Base is crowded, but hiking 30 mins up reveals a spiritual, empty experience. Open 24/7 and free. Red flags: Base is overcrowded. Positives: Spiritual hike, Always open and free."
+  },
+  {
+    "id": "bar-potato-head-bali",
+    "name": "Desa Potato Head",
+    "location": "Bali, Indonesia",
+    "city": "Seminyak",
+    "country": "Indonesia",
+    "region": "asia",
+    "category": "bar",
+    "verdict": "mixed",
+    "confidence": "medium",
+    "tourist_trap_score": 40,
+    "price_tier": "$$$",
+    "summary": "More than just a beach club, it's a creative village with a focus on sustainability. While still expensive and busy, the architecture (made of antique shutters) and zero-waste initiatives give it a soul that competitors lack.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Waitlist for daybeds",
+        "evidence": "\"You have to arrive at 10am to get a bed, or pay for VIP.\" (The Bali Bible)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Expensive cocktails",
+        "evidence": "\"Drinks are London prices in Indonesia.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Sustainability focus",
+        "evidence": "\"They are zero-waste. The furniture is recycled plastic. Impressive.\" (Wallpaper*)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Architectural gem",
+        "evidence": "\"The colosseum of shutters is a design icon.\" (Design Boom)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Best sunset spot. The music is chill, not aggressive like Finns.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["best sunset", "chill music"]
+      },
+      {
+        "text": "Great vibe but be prepared to pay. Food is small portions.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["prepared to pay", "small portions"]
+      }
+    ],
+    "embedding_text": "Desa Potato Head in Bali, Indonesia. bar. mixed. Creative village/beach club. Expensive and busy, but stands out with antique shutter architecture and zero-waste sustainability initiatives. Red flags: Waitlist for daybeds, Expensive cocktails. Positives: Sustainability focus, Architectural gem."
+  }
+]

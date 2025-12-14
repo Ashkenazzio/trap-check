@@ -1,0 +1,1418 @@
+[
+  {
+    "id": "bar-the-temple-bar-dublin",
+    "name": "The Temple Bar",
+    "location": "Dublin, Ireland",
+    "city": "Dublin",
+    "country": "Ireland",
+    "region": "western_europe",
+    "category": "bar",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 95,
+    "price_tier": "$$$",
+    "summary": "The most famous pub in Dublin is also the most expensive. It charges 'tourist prices' (€10+ for a pint) that increase as the night goes on. Locals avoid it entirely, citing the fake 'trad' music and crushing crowds.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Price gouging",
+        "evidence": "\"They charge nearly €11 for a pint of Guinness. It's a tax on ignorance.\" (Dublin Live)",
+        "severity": "high"
+      },
+      {
+        "type": "authenticity_issues",
+        "description": "Artificial atmosphere",
+        "evidence": "\"It's Disneyland for drinking. No actual Irish person drinks here.\" (Reddit)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Lively energy",
+        "evidence": "\"The live music is constant and the crowd is always happy (if drunk).\" (TripAdvisor)",
+        "strength": "moderate"
+      },
+      {
+        "type": "location_perk",
+        "description": "Iconic exterior",
+        "evidence": "\"The red facade with hanging flowers is the classic Dublin photo.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Robbery in broad daylight. Go to The Palace Bar or Grogan's for a real pint.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["robbery", "go to Palace Bar"]
+      },
+      {
+        "text": "Expensive? Yes. Fun? Absolutely. The band played Galway Girl three times.",
+        "rating": 4,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["expensive", "fun"]
+      }
+    ],
+    "embedding_text": "The Temple Bar in Dublin, Ireland. bar. tourist_trap. Most famous pub in Dublin, charging €10+ for a pint. Locals avoid due to price gouging and fake atmosphere. Red flags: Price gouging, Artificial atmosphere. Positives: Lively energy, Iconic exterior."
+  },
+  {
+    "id": "attraction-guinness-storehouse-dublin",
+    "name": "Guinness Storehouse",
+    "location": "Dublin, Ireland",
+    "city": "Dublin",
+    "country": "Ireland",
+    "region": "western_europe",
+    "category": "attraction",
+    "verdict": "mixed",
+    "confidence": "medium",
+    "tourist_trap_score": 45,
+    "price_tier": "$$$",
+    "summary": "Dublin's #1 attraction is essentially a 7-story commercial for beer. It is expensive and crowded, but the production value is high, and the Gravity Bar view (with a complimentary pint) is genuinely one of the best in the city.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Expensive corporate tour",
+        "evidence": "\"€30 to walk through a museum about a company. It feels like a long ad.\" (Rick Steves)",
+        "severity": "medium"
+      },
+      {
+        "type": "local_avoidance",
+        "description": "Crowds",
+        "evidence": "\"Packed like sardines. Hard to enjoy the exhibits.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Gravity Bar view",
+        "evidence": "\"The 360-degree view of Dublin is unmatched, especially with a fresh pint.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "service_quality",
+        "description": "Well-designed experience",
+        "evidence": "\"Slick, modern, and interactive. They know how to put on a show.\" (Irish Times)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "It's a trap, but a good one. The view at the top makes the ticket price swallowable.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["trap but good", "view at top"]
+      },
+      {
+        "text": "Overrated. Just go to a pub. You don't learn much about brewing.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["overrated", "go to a pub"]
+      }
+    ],
+    "embedding_text": "Guinness Storehouse in Dublin, Ireland. attraction. mixed. Dublin's #1 attraction. Expensive 7-story commercial, but high production value and Gravity Bar views make it worth it for many. Red flags: Expensive corporate tour, Crowds. Positives: Gravity Bar view, Well-designed experience."
+  },
+  {
+    "id": "street_food-trdelnik-stands-prague",
+    "name": "Trdelník Stands (Old Town)",
+    "location": "Prague, Czech Republic",
+    "city": "Prague",
+    "country": "Czech Republic",
+    "region": "eastern_europe",
+    "category": "street_food",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 90,
+    "price_tier": "$$",
+    "summary": "Sold as 'Traditional Old Bohemian Pastry', this chimney cake is actually a Hungarian import popularized in Prague for tourists in the 2000s. It is overpriced, messy, and locals never eat it.",
+    "red_flags": [
+      {
+        "type": "authenticity_issues",
+        "description": "Fake tradition",
+        "evidence": "\"It's not Czech. It's a marketing scam invented for tourists.\" (Honest Guide Prague)",
+        "severity": "high"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Overpriced sugar dough",
+        "evidence": "\"150 CZK for dough and sugar? You can get a full lunch for that.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Smells good",
+        "evidence": "\"The smell of cinnamon sugar wafting through the square is enticing.\" (Travel Blog)",
+        "strength": "low"
+      },
+      {
+        "type": "novelty",
+        "description": "Instagrammable",
+        "evidence": "\"Looks great filled with ice cream for photos.\" (Instagram)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Don't buy the 'chimney cake'. It's a tourist tax. Get a Vetruas instead.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["tourist tax", "don't buy"]
+      },
+      {
+        "text": "Delicious but very messy. The ice cream melts everywhere.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["delicious", "messy"]
+      }
+    ],
+    "embedding_text": "Trdelník Stands (Old Town) in Prague, Czech Republic. street_food. tourist_trap. Sold as 'Traditional Bohemian', but actually a recent marketing invention. Overpriced and ignored by locals. Red flags: Fake tradition, Overpriced sugar dough. Positives: Smells good, Instagrammable."
+  },
+  {
+    "id": "attraction-heineken-experience-amsterdam",
+    "name": "Heineken Experience",
+    "location": "Amsterdam, Netherlands",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "region": "western_europe",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 85,
+    "price_tier": "$$$",
+    "summary": "A loud, crowded, interactive commercial. Unlike Guinness, this feels more like a frat party with sticky floors and aggressive branding. Beer aficionados find the brewing info shallow.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Rowdy atmosphere",
+        "evidence": "\"Full of drunk stag parties shouting. Unpleasant.\" (TripAdvisor)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Expensive for what it is",
+        "evidence": "\"€23 entry is steep just to drink two small beers.\" (Reddit)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "novelty",
+        "description": "Fun for groups",
+        "evidence": "\"If you are with a group of friends wanting to party, it's a good start.\" (Travel Blog)",
+        "strength": "moderate"
+      },
+      {
+        "type": "location_perk",
+        "description": "Historic building",
+        "evidence": "\"The old brewery building itself is impressive architecture.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Skip it. Go to Brouwerij 't IJ under the windmill for better beer and vibes.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["skip it", "go to Brouwerij 't IJ"]
+      },
+      {
+        "text": "We had fun making custom bottles. A bit commercial but entertaining.",
+        "rating": 4,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["fun", "commercial"]
+      }
+    ],
+    "embedding_text": "Heineken Experience in Amsterdam, Netherlands. attraction. tourist_trap. Loud, crowded commercial that feels like a frat party. Shallow brewing info and expensive. Locals prefer microbreweries. Red flags: Rowdy atmosphere, Expensive for what it is. Positives: Fun for groups, Historic building."
+  },
+  {
+    "id": "attraction-oia-sunset-santorini",
+    "name": "Oia Sunset View Points",
+    "location": "Santorini, Greece",
+    "city": "Oia",
+    "country": "Greece",
+    "region": "eastern_europe",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 92,
+    "price_tier": "Free",
+    "summary": "The world's most famous sunset is a contact sport. Thousands of tourists cram into narrow alleys hours in advance. When the sun sets, people clap. It is claustrophobic, stressful, and ruins the romance.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Extreme overcrowding",
+        "evidence": "\"You are crushed against strangers. I saw people fighting over spots.\" (Santorini Dave)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "Impossible logistics",
+        "evidence": "\"Traffic leaving Oia after sunset is a gridlock nightmare.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Undeniably beautiful",
+        "evidence": "\"If you can block out the people, the view of the caldera is world-class.\" (NatGeo)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Technically free",
+        "evidence": "\"It costs nothing if you just stand on the castle walls.\" (Travel Blog)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Horrific. Like being in a mosh pit. Watch the sunset from Imerovigli instead.",
+        "rating": 1,
+        "is_local": false,
+        "source": "Reddit",
+        "highlights": ["horrific", "mosh pit"]
+      },
+      {
+        "text": "Beautiful, but the clapping when the sun went down was weird.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["beautiful", "clapping was weird"]
+      }
+    ],
+    "embedding_text": "Oia Sunset View Points in Santorini, Greece. attraction. tourist_trap. The world's most famous sunset is a claustrophobic contact sport. Extreme crowding and traffic gridlock ruin the romance. Red flags: Extreme overcrowding, Impossible logistics. Positives: Undeniably beautiful, Technically free."
+  },
+  {
+    "id": "restaurant-plaka-restaurants-athens",
+    "name": "Plaka Stairs Restaurants",
+    "location": "Athens, Greece",
+    "city": "Athens",
+    "country": "Greece",
+    "region": "eastern_europe",
+    "category": "restaurant",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 88,
+    "price_tier": "$$$",
+    "summary": "Restaurants on the Mnisikleous stairs rely on aggressive touts and the picturesque setting. The food (moussaka, souvlaki) is often pre-cooked and microwaved, while prices are double those found just a few blocks away.",
+    "red_flags": [
+      {
+        "type": "scams_and_touts",
+        "description": "Aggressive dragging",
+        "evidence": "\"Waiters will practically drag you to a table. It's harassment.\" (Matt Barrett's Greece Guide)",
+        "severity": "high"
+      },
+      {
+        "type": "quality_decline",
+        "description": "Microwaved food",
+        "evidence": "\"Moussaka was cold in the middle. Clearly frozen.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Picturesque setting",
+        "evidence": "\"Sitting on the steps with music playing is a vibe, even if the food sucks.\" (Reddit)",
+        "strength": "moderate"
+      },
+      {
+        "type": "location_perk",
+        "description": "Near Acropolis",
+        "evidence": "\"Convenient stop after the Acropolis.\" (Google Maps)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Classic trap. Expensive, bad food, rude service. Walk 10 minutes to Psyri.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["classic trap", "walk to Psyri"]
+      },
+      {
+        "text": "We paid for the location. The live music was nice.",
+        "rating": 3,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["paid for location", "live music"]
+      }
+    ],
+    "embedding_text": "Plaka Stairs Restaurants in Athens, Greece. restaurant. tourist_trap. Restaurants rely on aggressive touts and setting. Food is often pre-cooked/microwaved; prices are doubled. Red flags: Aggressive dragging, Microwaved food. Positives: Picturesque setting, Near Acropolis."
+  },
+  {
+    "id": "restaurant-ocean-drive-miami",
+    "name": "Ocean Drive Restaurants",
+    "location": "Miami, USA",
+    "city": "Miami",
+    "country": "USA",
+    "region": "north_america",
+    "category": "restaurant",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 98,
+    "price_tier": "$$$$",
+    "summary": "Infamous for giant 'bulldog' margaritas and hidden fees. Menus often don't list prices for specials, leading to $50 drink bills. The food is mediocre cafeteria quality masked by neon lights and loud music.",
+    "red_flags": [
+      {
+        "type": "scams_and_touts",
+        "description": "Hidden prices/fees",
+        "evidence": "\"They charged me $60 for two drinks. Prices weren't on the menu.\" (Miami Herald)",
+        "severity": "high"
+      },
+      {
+        "type": "quality_decline",
+        "description": "Mediocre food",
+        "evidence": "\"Paella was yellow rice and frozen shrimp. Inedible.\" (Yelp)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "People watching",
+        "evidence": "\"Best spot to watch the supercars and crazy outfits.\" (Travel Blog)",
+        "strength": "high"
+      },
+      {
+        "type": "location_perk",
+        "description": "Art Deco views",
+        "evidence": "\"The backdrop of the Art Deco hotels is iconic.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "SCAM. Automatic 20% service charge plus a 'resort fee' on a salad. Never again.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["SCAM", "automatic service charge"]
+      },
+      {
+        "text": "Fun for a drink if you know you're getting ripped off. Don't eat.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Reddit",
+        "highlights": ["getting ripped off", "don't eat"]
+      }
+    ],
+    "embedding_text": "Ocean Drive Restaurants in Miami, USA. restaurant. tourist_trap. Infamous for giant margaritas and hidden fees ($50 drinks). Mediocre food masked by neon lights. Red flags: Hidden prices/fees, Mediocre food. Positives: People watching, Art Deco views."
+  },
+  {
+    "id": "restaurant-joes-stone-crab-miami",
+    "name": "Joe's Stone Crab",
+    "location": "Miami, USA",
+    "city": "Miami",
+    "country": "USA",
+    "region": "north_america",
+    "category": "restaurant",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 30,
+    "price_tier": "$$$$",
+    "summary": "An institution since 1913. Yes, it is expensive and difficult to get a table, but the stone crabs are sustainably harvested and world-class. Locals respect it as the one 'famous' place that delivers on quality.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Long wait times",
+        "evidence": "\"No reservations means waiting 2 hours at the bar.\" (Eater Miami)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Expensive",
+        "evidence": "\"Market price for claws can be shocking ($100+).\" (TripAdvisor)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Best stone crabs",
+        "evidence": "\"Sweet, cold, and perfect with the mustard sauce. Unbeatable.\" (The Infatuation)",
+        "strength": "high"
+      },
+      {
+        "type": "service_quality",
+        "description": "Old school service",
+        "evidence": "\"Tuxedoed waiters who know the menu inside out.\" (Miami New Times)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Go for lunch to avoid the wait. The fried chicken is the secret cheap winner.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["go for lunch", "fried chicken"]
+      },
+      {
+        "text": "It lives up to the hype. The key lime pie is legendary.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["lives up to hype", "key lime pie"]
+      }
+    ],
+    "embedding_text": "Joe's Stone Crab in Miami, USA. restaurant. local_gem. Institution since 1913. Expensive with long waits, but sustainably harvested stone crabs are world-class. Locals respect the quality. Red flags: Long wait times, Expensive. Positives: Best stone crabs, Old school service."
+  },
+  {
+    "id": "restaurant-cn-tower-360-toronto",
+    "name": "360 The Restaurant (CN Tower)",
+    "location": "Toronto, Canada",
+    "city": "Toronto",
+    "country": "Canada",
+    "region": "north_america",
+    "category": "restaurant",
+    "verdict": "mixed",
+    "confidence": "medium",
+    "tourist_trap_score": 55,
+    "price_tier": "$$$$",
+    "summary": "Rotating restaurants are usually traps, but 360 offers a hack: the prix-fixe meal includes the tower elevation ticket. The food is decent (Canadian ingredients) and it lets you skip the elevator line, making it a decent value proposition.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Paying for the view",
+        "evidence": "\"Food is fine, but you are paying $80 for the rotation.\" (Toronto Life)",
+        "severity": "medium"
+      },
+      {
+        "type": "quality_decline",
+        "description": "Safe, boring menu",
+        "evidence": "\"Standard banquet hall food. Nothing adventurous.\" (Yelp)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "value_acknowledgment",
+        "description": "Includes tower entry",
+        "evidence": "\"Spending $75 on dinner is better than $45 just for the elevator.\" (Reddit)",
+        "strength": "high"
+      },
+      {
+        "type": "location_perk",
+        "description": "Unbeatable view",
+        "evidence": "\"Watching the sunset over Lake Ontario is magical.\" (TripAdvisor)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Smartest way to see the CN Tower. Skip the lines, get a decent meal.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["smartest way", "skip lines"]
+      },
+      {
+        "text": "Steak was overcooked. Service was slow. View was 10/10.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["steak overcooked", "view 10/10"]
+      }
+    ],
+    "embedding_text": "360 The Restaurant (CN Tower) in Toronto, Canada. restaurant. mixed. Rotating restaurant that acts as a 'hack': meal includes tower elevation ticket, skipping lines. Food is decent but safe; you pay for the view. Red flags: Paying for the view, Safe boring menu. Positives: Includes tower entry, Unbeatable view."
+  },
+  {
+    "id": "attraction-livraria-lello-porto",
+    "name": "Livraria Lello",
+    "location": "Porto, Portugal",
+    "city": "Porto",
+    "country": "Portugal",
+    "region": "western_europe",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 80,
+    "price_tier": "$$",
+    "summary": "Rumored to be the inspiration for Harry Potter (debunked by JK Rowling), this bookstore now charges an entrance fee. It is so crowded you cannot browse books, functioning purely as a selfie factory.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Unbearable crowds",
+        "evidence": "\"It's a mosh pit. You are shoved along a path.\" (Rick Steves)",
+        "severity": "high"
+      },
+      {
+        "type": "authenticity_issues",
+        "description": "False marketing",
+        "evidence": "\"JK Rowling confirmed she never visited it. The connection is a myth.\" (Publico)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Stunning interior",
+        "evidence": "\"The red staircase and stained glass are undeniably gorgeous.\" (Architectural Digest)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Voucher system",
+        "evidence": "\"The €5 entry is deductible if you buy a book.\" (Travel Blog)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "A bookshop you pay to enter and can't read in? Absurd. Trap.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["pay to enter", "absurd"]
+      },
+      {
+        "text": "Go right at opening. It is beautiful, but the HP fans are annoying.",
+        "rating": 3,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["go at opening", "HP fans annoying"]
+      }
+    ],
+    "embedding_text": "Livraria Lello in Porto, Portugal. attraction. tourist_trap. Bookstore charging entrance fee due to debunked Harry Potter connection. Stunning interior but unbearable crowds make browsing impossible. Red flags: Unbearable crowds, False marketing. Positives: Stunning interior, Voucher system."
+  },
+  {
+    "id": "attraction-blue-lagoon-iceland",
+    "name": "Blue Lagoon",
+    "location": "Grindavik, Iceland",
+    "city": "Grindavik",
+    "country": "Iceland",
+    "region": "western_europe",
+    "category": "attraction",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 65,
+    "price_tier": "$$$$",
+    "summary": "Iceland's most famous site is actually man-made wastewater from a geothermal plant. It is expensive ($100+) and crowded, but the infrastructure is luxurious and the milky blue water is unique. Locals prefer Sky Lagoon or public pools.",
+    "red_flags": [
+      {
+        "type": "authenticity_issues",
+        "description": "Industrial runoff",
+        "evidence": "\"It's not a natural spring. It's runoff from the power plant next door.\" (Guide to Iceland)",
+        "severity": "medium"
+      },
+      {
+        "type": "price_quality_mismatch",
+        "description": "Very expensive",
+        "evidence": "\"Prices have skyrocketed. Drinks are $15.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Iconic visuals",
+        "evidence": "\"The contrast of blue water and black lava is stunning.\" (NatGeo)",
+        "strength": "high"
+      },
+      {
+        "type": "service_quality",
+        "description": "Well organized",
+        "evidence": "\"Facilities are clean, modern, and efficient.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Go to Sky Lagoon instead. Closer to Reykjavik and feels more natural.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["go to Sky Lagoon", "feels natural"]
+      },
+      {
+        "text": "It was pricey but relaxing before our flight. The silica mask was fun.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["relaxing", "silica mask"]
+      }
+    ],
+    "embedding_text": "Blue Lagoon in Grindavik, Iceland. attraction. mixed. Expensive ($100+) man-made geothermal pool. Luxurious infrastructure and unique visuals, but locals view it as an industrial tourist trap, preferring Sky Lagoon. Red flags: Industrial runoff, Very expensive. Positives: Iconic visuals, Well organized."
+  },
+  {
+    "id": "market-st-lawrence-market-toronto",
+    "name": "St. Lawrence Market",
+    "location": "Toronto, Canada",
+    "city": "Toronto",
+    "country": "Canada",
+    "region": "north_america",
+    "category": "market",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 15,
+    "price_tier": "$",
+    "summary": "Named the best food market in the world by NatGeo. While tourists visit, it remains a functioning market for locals. The Peameal Bacon sandwich at Carousel Bakery is a genuine city icon.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Crowded weekends",
+        "evidence": "\"Saturdays are a zoo. Hard to move.\" (BlogTO)",
+        "severity": "low"
+      },
+      {
+        "type": "service_problems",
+        "description": "Limited hours",
+        "evidence": "\"Closed Sundays and Mondays. Catches tourists off guard.\" (Google Maps)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Authentic Peameal Bacon",
+        "evidence": "\"The sandwich at Carousel is the real deal. Anthony Bourdain loved it.\" (Eater)",
+        "strength": "high"
+      },
+      {
+        "type": "local_endorsement",
+        "description": "Locals shop here",
+        "evidence": "\"I buy my cheese and meat here weekly.\" (Reddit)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Carousel Bakery bacon sandwich is a must. Simple, salty, perfect.",
+        "rating": 5,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["bacon sandwich", "perfect"]
+      },
+      {
+        "text": "Great vibe, lots of free samples. The mustard store is cool.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["great vibe", "free samples"]
+      }
+    ],
+    "embedding_text": "St. Lawrence Market in Toronto, Canada. market. local_gem. Functioning market for locals and tourists. Peameal Bacon sandwich is a genuine icon. Red flags: Crowded weekends, Limited hours. Positives: Authentic Peameal Bacon, Locals shop here."
+  },
+  {
+    "id": "restaurant-waikiki-dukes-honolulu",
+    "name": "Duke's Waikiki",
+    "location": "Honolulu, USA",
+    "city": "Honolulu",
+    "country": "USA",
+    "region": "north_america",
+    "category": "restaurant",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 40,
+    "price_tier": "$$",
+    "summary": "The ultimate beachfront tourist spot. It is packed, loud, and commercial, but the Hula Pie is legendary and the Sunday live music on the sand is a genuinely fun, quintessential Hawaiian experience.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Wait times",
+        "evidence": "\"Wait can be 2 hours for a table. It's a factory.\" (Yelp)",
+        "severity": "medium"
+      },
+      {
+        "type": "quality_decline",
+        "description": "Average mains",
+        "evidence": "\"Fish tacos were dry. You pay for the location.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Hula Pie",
+        "evidence": "\"The Hula Pie is massive and delicious. Worth the stop alone.\" (Hawaii Magazine)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Beach party vibe",
+        "evidence": "\"Barefoot bar on the sand with live music. Hard to beat.\" (Travel Blog)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Touristy? Yes. Did I love it? Yes. Get the pie and a Mai Tai.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Reddit",
+        "highlights": ["touristy", "loved it"]
+      },
+      {
+        "text": "Food is mediocre Applebee's quality. Just go for drinks.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["mediocre", "go for drinks"]
+      }
+    ],
+    "embedding_text": "Duke's Waikiki in Honolulu, USA. restaurant. mixed. Ultimate beachfront tourist spot. Packed and commercial with average mains, but Hula Pie and Sunday live music create a fun, quintessential experience. Red flags: Wait times, Average mains. Positives: Hula Pie, Beach party vibe."
+  },
+  {
+    "id": "restaurant-place-du-tertre-paris",
+    "name": "Place du Tertre Restaurants",
+    "location": "Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "region": "western_europe",
+    "category": "restaurant",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 95,
+    "price_tier": "$$$",
+    "summary": "The artist square in Montmartre. Restaurants here serve some of the worst food in Paris (frozen onion soup, rubbery duck) at exorbitant prices, relying on the 'Amélie' fantasy.",
+    "red_flags": [
+      {
+        "type": "quality_decline",
+        "description": "Frozen industrial food",
+        "evidence": "\"Not a single fresh ingredient. It's heated up bags.\" (Le Figaro)",
+        "severity": "high"
+      },
+      {
+        "type": "scams_and_touts",
+        "description": "Sketchy artists",
+        "evidence": "\"Pushy portrait artists will start drawing you without asking then demand money.\" (Rick Steves)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Bohemian aesthetic",
+        "evidence": "\"It looks like the painting of Paris you have in your head.\" (Lonely Planet)",
+        "strength": "moderate"
+      },
+      {
+        "type": "location_perk",
+        "description": "Heart of Montmartre",
+        "evidence": "\"Right next to Sacré-Cœur.\" (Google Maps)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Worst meal in Paris. €12 for a coke. Rude waiter.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["worst meal", "rude waiter"]
+      },
+      {
+        "text": "Very romantic setting if you ignore the food quality.",
+        "rating": 3,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["romantic setting", "ignore food"]
+      }
+    ],
+    "embedding_text": "Place du Tertre Restaurants in Paris, France. restaurant. tourist_trap. Artist square in Montmartre. Serves worst food in Paris (frozen/industrial) at exorbitant prices. Pushy portrait artists. Red flags: Frozen industrial food, Sketchy artists. Positives: Bohemian aesthetic, Heart of Montmartre."
+  },
+  {
+    "id": "restaurant-da-michele-naples",
+    "name": "L'Antica Pizzeria da Michele",
+    "location": "Naples, Italy",
+    "city": "Naples",
+    "country": "Italy",
+    "region": "western_europe",
+    "category": "restaurant",
+    "verdict": "local_gem",
+    "confidence": "high",
+    "tourist_trap_score": 15,
+    "price_tier": "$",
+    "summary": "Made famous by 'Eat Pray Love'. Despite the hour-long lines and tourist hype, it remains staunchly authentic: only two pizza choices (Marinara/Margherita), low prices (€5), and world-class dough.",
+    "red_flags": [
+      {
+        "type": "service_problems",
+        "description": "Ticket system chaos",
+        "evidence": "\"You have to fight through a crowd just to get a ticket number.\" (Eater)",
+        "severity": "medium"
+      },
+      {
+        "type": "environment_issues",
+        "description": "Rushed dining",
+        "evidence": "\"You eat fast and get out. Not a place to linger.\" (TripAdvisor)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "specific_quality",
+        "description": "Benchmark Neapolitan Pizza",
+        "evidence": "\"The crust is soft, chewy, and charred perfectly. It defines the genre.\" (Serious Eats)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Incredibly cheap",
+        "evidence": "\"€5 for a Michelin-recognized pizza is a miracle.\" (Travel Blog)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "The wait is hell but the pizza is heaven. Don't expect fancy service.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["wait is hell", "pizza is heaven"]
+      },
+      {
+        "text": "There are better pizzerias in Naples without the line (Starita, Sorbillo), but this is history.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["better pizzerias exist", "history"]
+      }
+    ],
+    "embedding_text": "L'Antica Pizzeria da Michele in Naples, Italy. restaurant. local_gem. Famous 'Eat Pray Love' spot. Chaos and lines, but authentically cheap (€5) and serves benchmark Neapolitan pizza. Red flags: Ticket system chaos, Rushed dining. Positives: Benchmark Neapolitan Pizza, Incredibly cheap."
+  },
+  {
+    "id": "attraction-trevi-fountain-rome",
+    "name": "Trevi Fountain",
+    "location": "Rome, Italy",
+    "city": "Rome",
+    "country": "Italy",
+    "region": "western_europe",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 75,
+    "price_tier": "Free",
+    "summary": "A masterpiece of Baroque art that is almost impossible to enjoy. The crowd density is dangerous, pickpockets are rampant, and guards blow whistles constantly to keep people off the rim.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Crushing crowds",
+        "evidence": "\"You can't even see the water over the wall of influencers.\" (Reddit)",
+        "severity": "high"
+      },
+      {
+        "type": "scams_and_touts",
+        "description": "Pickpocket central",
+        "evidence": "\"Keep your bag on your chest. They work in teams here.\" (Rome Toolkit)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Magical at dawn",
+        "evidence": "\"Go at 6am. It is empty and breathtaking.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "historic_significance",
+        "description": "Artistic masterpiece",
+        "evidence": "\"The scale and detail of the sculpture are unmatched.\" (Art History Blog)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Beautiful but stressful. Whistles blowing, people shoving. Go at night.",
+        "rating": 3,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["stressful", "whistles blowing"]
+      },
+      {
+        "text": "Rome local here: I avoid this square at all costs unless it's 4am.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["avoid at all costs", "4am"]
+      }
+    ],
+    "embedding_text": "Trevi Fountain in Rome, Italy. attraction. tourist_trap. Baroque masterpiece ruined by dangerous crowd density and pickpockets. Impossible to enjoy during day. Red flags: Crushing crowds, Pickpocket central. Positives: Magical at dawn, Artistic masterpiece."
+  },
+  {
+    "id": "attraction-fishermans-bastion-budapest",
+    "name": "Fisherman's Bastion",
+    "location": "Budapest, Hungary",
+    "city": "Budapest",
+    "country": "Hungary",
+    "region": "eastern_europe",
+    "category": "attraction",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 45,
+    "price_tier": "$",
+    "summary": "A neo-Gothic terrace offering the best views of Parliament. The lower decks are free, but they charge for the upper balconies which offer the *exact same view*. It is crowded but essential for the panorama.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Paid balconies are a scam",
+        "evidence": "\"Don't pay for the upper level. The view is identical from the free section.\" (Rick Steves)",
+        "severity": "medium"
+      },
+      {
+        "type": "environment_issues",
+        "description": "Crowded with photoshoots",
+        "evidence": "\"Filled with people in ballgowns doing photoshoots at 7am.\" (Instagram vs Reality)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Best view in Budapest",
+        "evidence": "\"The view of the Parliament across the Danube is iconic.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Fairytale architecture",
+        "evidence": "\"It looks like a Disney castle but better.\" (Travel Blog)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "The bar at the top is a trap, but the structure itself is stunning.",
+        "rating": 4,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["bar is trap", "stunning"]
+      },
+      {
+        "text": "Save your money, stay on the lower level. Same view, free.",
+        "rating": 5,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["save money", "same view"]
+      }
+    ],
+    "embedding_text": "Fisherman's Bastion in Budapest, Hungary. attraction. mixed. Neo-Gothic terrace with best views of Parliament. Lower decks are free; upper paid decks are a 'scam' (same view). Red flags: Paid balconies are a scam, Crowded with photoshoots. Positives: Best view in Budapest, Fairytale architecture."
+  },
+  {
+    "id": "cafe-new-york-cafe-budapest",
+    "name": "New York Café",
+    "location": "Budapest, Hungary",
+    "city": "Budapest",
+    "country": "Hungary",
+    "region": "eastern_europe",
+    "category": "cafe",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 75,
+    "price_tier": "$$$$",
+    "summary": "Self-proclaimed 'Most Beautiful Café in the World'. The interior is a gold-leaf palace, but you wait an hour in line to pay €10 for a mediocre cappuccino. It is a visual museum where you are forced to buy overpriced refreshments.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Exorbitant prices",
+        "evidence": "\"€25 for a cake and coffee in a city where that usually costs €5.\" (Offbeat Budapest)",
+        "severity": "high"
+      },
+      {
+        "type": "quality_decline",
+        "description": "Average food",
+        "evidence": "\"The schnitzel was dry and the coffee lukewarm.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Stunning interior",
+        "evidence": "\"It is undeniably breathtaking. Baroque opulence everywhere.\" (Architectural Digest)",
+        "strength": "high"
+      },
+      {
+        "type": "service_quality",
+        "description": "Live classical music",
+        "evidence": "\"The live gypsy band adds to the atmosphere.\" (Travel Blog)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Beautiful to look at, painful to pay for. One time experience.",
+        "rating": 3,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["painful to pay", "beautiful"]
+      },
+      {
+        "text": "Tourist factory. Go to Café Gerbeaud instead.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["tourist factory", "go to Gerbeaud"]
+      }
+    ],
+    "embedding_text": "New York Café in Budapest, Hungary. cafe. tourist_trap. Gold-leaf palace interior. Visual museum with hour-long lines and exorbitant prices for mediocre food (€10 coffee). Red flags: Exorbitant prices, Average food. Positives: Stunning interior, Live classical music."
+  },
+  {
+    "id": "attraction-dubrovnik-city-walls-dubrovnik",
+    "name": "Dubrovnik City Walls",
+    "location": "Dubrovnik, Croatia",
+    "city": "Dubrovnik",
+    "country": "Croatia",
+    "region": "eastern_europe",
+    "category": "attraction",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 40,
+    "price_tier": "$$$",
+    "summary": "Walking the walls is the highlight of Dubrovnik, but prices have tripled in recent years (now ~€35). It is expensive and crowded with Game of Thrones fans, but the views of the terracotta roofs and sea are irreplaceable.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Aggressive price hikes",
+        "evidence": "\"Prices have gone from €15 to €35 in a few years. It feels exploitative.\" (Croatia Week)",
+        "severity": "medium"
+      },
+      {
+        "type": "environment_issues",
+        "description": "No shade/Heat",
+        "evidence": "\"In summer it is a death march. No shade and packed.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "World-class views",
+        "evidence": "\"The perspective of the Old Town is unmatched. Essential.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "historic_significance",
+        "description": "Preserved fortification",
+        "evidence": "\"One of the best preserved medieval walls in Europe.\" (UNESCO)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Go at 8am or 6pm. Midday is suicide. Expensive but you have to do it.",
+        "rating": 4,
+        "is_local": false,
+        "source": "Reddit",
+        "highlights": ["midday is suicide", "have to do it"]
+      },
+      {
+        "text": "Rip off. Just go to the Buza Bar for a view.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Google Maps",
+        "highlights": ["rip off", "Buza Bar"]
+      }
+    ],
+    "embedding_text": "Dubrovnik City Walls in Dubrovnik, Croatia. attraction. mixed. Essential experience for views, but prices have tripled (~€35) and summer crowds are brutal. Exploitative pricing but irreplaceable views. Red flags: Aggressive price hikes, No shade/Heat. Positives: World-class views, Preserved fortification."
+  },
+  {
+    "id": "tour-game-of-thrones-tour-dubrovnik",
+    "name": "Game of Thrones Tours",
+    "location": "Dubrovnik, Croatia",
+    "city": "Dubrovnik",
+    "country": "Croatia",
+    "region": "eastern_europe",
+    "category": "tour",
+    "verdict": "tourist_trap",
+    "confidence": "medium",
+    "tourist_trap_score": 75,
+    "price_tier": "$$",
+    "summary": "Hundreds of unauthorized guides leading groups to the 'Walk of Shame' stairs. They block the streets, shout incorrect history, and sell cheap merch. Locals hate how it has overshadowed the city's real history.",
+    "red_flags": [
+      {
+        "type": "authenticity_issues",
+        "description": "Fictional history",
+        "evidence": "\"Guides talk about dragons instead of the 1991 siege or Ragusa history.\" (Dubrovnik Times)",
+        "severity": "medium"
+      },
+      {
+        "type": "local_avoidance",
+        "description": "Nuisance to residents",
+        "evidence": "\"Locals are blocked from entering their homes by tour groups.\" (Reddit)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "novelty",
+        "description": "Fun for superfans",
+        "evidence": "\"Seeing King's Landing in real life was a dream.\" (TripAdvisor)",
+        "strength": "moderate"
+      },
+      {
+        "type": "location_perk",
+        "description": "Takes you to nice spots",
+        "evidence": "\"Even if the stories are fake, the fortresses are real and beautiful.\" (Travel Blog)",
+        "strength": "low"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Guide had a printed photo album and just pointed at steps. Could have done it myself.",
+        "rating": 2,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["pointed at steps", "done it myself"]
+      },
+      {
+        "text": "Please learn the real history of Dubrovnik. It is more interesting than the show.",
+        "rating": 1,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["learn real history", "more interesting"]
+      }
+    ],
+    "embedding_text": "Game of Thrones Tours in Dubrovnik, Croatia. tour. tourist_trap. Unauthorized guides block streets and shout fictional history, overshadowing the city's real heritage. Locals hate the nuisance. Red flags: Fictional history, Nuisance to residents. Positives: Fun for superfans, Takes you to nice spots."
+  },
+  {
+    "id": "attraction-360-chicago-chicago",
+    "name": "360 CHICAGO (John Hancock)",
+    "location": "Chicago, USA",
+    "city": "Chicago",
+    "country": "USA",
+    "region": "north_america",
+    "category": "attraction",
+    "verdict": "local_gem",
+    "confidence": "medium",
+    "tourist_trap_score": 30,
+    "price_tier": "$$",
+    "summary": "While the Willis (Sears) Tower is the famous trap, locals prefer the Hancock Center. It offers better views (you can see the skyline including the Willis Tower), has a bar (Tilt), and shorter lines.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Tilt attraction is short",
+        "evidence": "\"The 'Tilt' feature is over in 30 seconds. Not worth the extra cost.\" (Chicago Tribune)",
+        "severity": "low"
+      },
+      {
+        "type": "service_problems",
+        "description": "Elevator lines",
+        "evidence": "\"Still a tourist spot, so expect lines on weekends.\" (Google Maps)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Better views than Willis",
+        "evidence": "\"You get to see the actual skyline because you aren't in the tallest building.\" (Reddit)",
+        "strength": "high"
+      },
+      {
+        "type": "atmosphere",
+        "description": "Bar atmosphere",
+        "evidence": "\"Grab a drink at the CloudBar. Much more relaxed than the Skydeck.\" (TimeOut Chicago)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Skip the Skydeck. Go to Hancock, get a drink, enjoy the view.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["skip skydeck", "get a drink"]
+      },
+      {
+        "text": "Tilt was a gimmick, but the view of the lake and city is unbeatable.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["Tilt was gimmick", "unbeatable view"]
+      }
+    ],
+    "embedding_text": "360 CHICAGO (John Hancock) in Chicago, USA. attraction. local_gem. Locals prefer this over Willis Tower. Better views (includes skyline), shorter lines, and has a bar. Red flags: Tilt attraction is short, Elevator lines. Positives: Better views than Willis, Bar atmosphere."
+  },
+  {
+    "id": "cafe-cafe-majestic-porto",
+    "name": "Café Majestic",
+    "location": "Porto, Portugal",
+    "city": "Porto",
+    "country": "Portugal",
+    "region": "western_europe",
+    "category": "cafe",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 60,
+    "price_tier": "$$$",
+    "summary": "One of the most beautiful Belle Époque cafes in the world. However, prices are 4x the local average (€6 for coffee) and you are paying strictly for the mirrors and chandeliers. The 'French Toast' (Rabanadas) is famous but pricey.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Tourist markup",
+        "evidence": "\"Most expensive coffee in Porto. You pay for the architecture.\" (Timeout Porto)",
+        "severity": "high"
+      },
+      {
+        "type": "service_problems",
+        "description": "Queue",
+        "evidence": "\"Line down the street just for a coffee.\" (TripAdvisor)",
+        "severity": "medium"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "atmosphere",
+        "description": "Architectural gem",
+        "evidence": "\"The interior is a masterpiece of Art Nouveau. Stunning.\" (Lonely Planet)",
+        "strength": "high"
+      },
+      {
+        "type": "specific_quality",
+        "description": "Rabanadas",
+        "evidence": "\"Their version of french toast wrapped in egg custard is delicious.\" (Serious Eats)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Go once for the photo, order one coffee, then leave. Food is average.",
+        "rating": 3,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["go once", "food is average"]
+      },
+      {
+        "text": "The French Toast was the best I've ever had, even if it cost €8.",
+        "rating": 5,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["best french toast", "cost €8"]
+      }
+    ],
+    "embedding_text": "Café Majestic in Porto, Portugal. cafe. mixed. Belle Époque masterpiece. Prices are 4x local average (€6 coffee). Paying for mirrors and chandeliers. 'Rabanadas' (French Toast) is famous. Red flags: Tourist markup, Queue. Positives: Architectural gem, Rabanadas."
+  },
+  {
+    "id": "attraction-hallstatt-village-hallstatt",
+    "name": "Hallstatt Village",
+    "location": "Hallstatt, Austria",
+    "city": "Hallstatt",
+    "country": "Austria",
+    "region": "western_europe",
+    "category": "attraction",
+    "verdict": "tourist_trap",
+    "confidence": "high",
+    "tourist_trap_score": 85,
+    "price_tier": "Free",
+    "summary": "The poster child for over-tourism. A village of 700 people receiving 1 million visitors. It is impossible to walk, drones buzz everywhere, and locals have erected fences to block views to stop selfies. It is beautiful but broken.",
+    "red_flags": [
+      {
+        "type": "environment_issues",
+        "description": "Extreme overtourism",
+        "evidence": "\"It feels like a theme park, not a village. You are shoulder to shoulder.\" (BBC Travel)",
+        "severity": "high"
+      },
+      {
+        "type": "local_avoidance",
+        "description": "Hostile locals",
+        "evidence": "\"Residents are putting up barriers to stop photographers. They hate us.\" (Reddit)",
+        "severity": "high"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "location_perk",
+        "description": "Postcard perfect",
+        "evidence": "\"The view of the church spire against the lake is iconic.\" (NatGeo)",
+        "strength": "high"
+      },
+      {
+        "type": "historic_significance",
+        "description": "Salt mines",
+        "evidence": "\"The salt mine tour up the hill is actually educational and less crowded.\" (Lonely Planet)",
+        "strength": "moderate"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Ruined by its own fame. Buses everywhere. Go to nearby Gosau instead.",
+        "rating": 2,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["ruined by fame", "go to Gosau"]
+      },
+      {
+        "text": "Beautiful if you arrive at 6am. By 9am it is hell.",
+        "rating": 4,
+        "is_local": false,
+        "source": "TripAdvisor",
+        "highlights": ["arrive at 6am", "hell by 9am"]
+      }
+    ],
+    "embedding_text": "Hallstatt Village in Hallstatt, Austria. attraction. tourist_trap. Poster child for over-tourism. Impossible crowds, drones, and hostile locals erecting barriers. Beautiful but broken. Red flags: Extreme overtourism, Hostile locals. Positives: Postcard perfect, Salt mines."
+  },
+  {
+    "id": "cafe-antico-caffe-greco-rome",
+    "name": "Antico Caffè Greco",
+    "location": "Rome, Italy",
+    "city": "Rome",
+    "country": "Italy",
+    "region": "western_europe",
+    "category": "cafe",
+    "verdict": "mixed",
+    "confidence": "high",
+    "tourist_trap_score": 55,
+    "price_tier": "$$$",
+    "summary": "Rome's oldest cafe (1760) near the Spanish Steps. Like many historic Italian cafes, there is a massive price difference between standing at the bar (€2) and sitting at a table (€12). It is a museum of literary history.",
+    "red_flags": [
+      {
+        "type": "price_quality_mismatch",
+        "description": "Table service surcharge",
+        "evidence": "\"Charged €12 for a cappuccino because we sat down. Rookie mistake.\" (Fodor's)",
+        "severity": "medium"
+      },
+      {
+        "type": "service_problems",
+        "description": "Stiff service",
+        "evidence": "\"Waiters in tuxedos can be snooty if you aren't dressed up.\" (TripAdvisor)",
+        "severity": "low"
+      }
+    ],
+    "positive_signals": [
+      {
+        "type": "historic_significance",
+        "description": "Literary haunt",
+        "evidence": "\"Keats and Byron drank here. The history on the walls is real.\" (Rome Toolkit)",
+        "strength": "high"
+      },
+      {
+        "type": "value_acknowledgment",
+        "description": "Bar price is standard",
+        "evidence": "\"Stand at the bar and you pay normal Rome prices for excellent coffee.\" (Reddit)",
+        "strength": "high"
+      }
+    ],
+    "sample_reviews": [
+      {
+        "text": "Stand at the bar! Do not sit! Coffee is great, atmosphere is moody.",
+        "rating": 5,
+        "is_local": true,
+        "source": "Reddit",
+        "highlights": ["stand at bar", "do not sit"]
+      },
+      {
+        "text": "Tourist trap prices. €30 for two coffees and a pastry.",
+        "rating": 2,
+        "is_local": false,
+        "source": "Google Maps",
+        "highlights": ["tourist trap prices", "€30"]
+      }
+    ],
+    "embedding_text": "Antico Caffè Greco in Rome, Italy. cafe. mixed. Rome's oldest cafe (1760). Massive price gap between standing (€2) and sitting (€12). Literary history (Keats, Byron). Red flags: Table service surcharge, Stiff service. Positives: Literary haunt, Bar price is standard."
+  }
+]

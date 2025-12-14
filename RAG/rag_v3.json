@@ -1,0 +1,2664 @@
+{
+  "database_metadata": {
+    "version": "1.0",
+    "status": "production_ready",
+    "created_date": "2025-12-09",
+    "total_entries": 40,
+    "schema_version": "tourist_trap_rag_v1",
+    "description": "Curated dataset of global venues classified as Tourist Traps, Local Gems, or Mixed, with embeddings for RAG retrieval."
+  },
+  "entries": [
+    {
+      "id": "cafe-caffe-florian-venice",
+      "name": "Caffè Florian",
+      "location": "Venice, Italy",
+      "city": "Venice",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "cafe",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 82,
+      "price_tier": "$$$$",
+      "summary": "The oldest coffee house in the world offering undeniable history and stunning interiors, but marred by astronomical prices (music surcharge + €12 coffees) and generally dismissed by modern travelers as a 'one-time' bucket list tax rather than a quality culinary experience.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Exorbitant surcharges for music and basic items",
+          "evidence": "\"They'll make you pay €5 more just for some live music... real thieves.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "location_dependency",
+          "description": "Relying entirely on St. Mark's Square location",
+          "evidence": "\"Universally acknowledged as paying for location not quality.\" (Travel Forums)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "authenticity_praise",
+          "description": "Historical significance is genuine",
+          "evidence": "\"You can breathe the long and lively history... comfortable seated in magnificent halls.\" (Website/Blog)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Skip Cafe Florian (they are some real thieves, they'll make you pay 5€ more just for some live music).",
+          "rating": 2,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["real thieves", "pay 5€ more"]
+        },
+        {
+          "text": "It's one of those 'bucket list' spots, but just go in knowing what to expect... overpriced but you get an experience.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["bucket list", "overpriced"]
+        }
+      ],
+      "embedding_text": "Caffè Florian in Venice, Italy. cafe. tourist_trap. The oldest coffee house in the world offering undeniable history, but marred by astronomical prices and music surcharges. Red flags: Exorbitant surcharges, Relying entirely on St. Mark's Square location. Positives: Historical significance is genuine."
+    },
+    {
+      "id": "bar-harrys-bar-venice",
+      "name": "Harry's Bar",
+      "location": "Venice, Italy",
+      "city": "Venice",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "bar",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 65,
+      "price_tier": "$$$$",
+      "summary": "Inventors of the Bellini, but the reality is often cramped seating, indifferent service, and astronomically priced drinks (€20-30). It survives on its Hemingway connection, dividing visitors between those who feel ripped off and those who value the legacy.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Extremely expensive cocktails for the quality",
+          "evidence": "\"Threw away my money on the really bad 12 Euro drink... costs way more than its worth.\" (Fodor's)",
+          "severity": "high"
+        },
+        {
+          "type": "service_problems",
+          "description": "Staff described as snobbish or indifferent",
+          "evidence": "\"Snotty waiters... poor service... snapping fingers.\" (Fodor's)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "authenticity_praise",
+          "description": "The original Bellini source",
+          "evidence": "\"Since they invented them, you won't find a better one anywhere else.\" (Travel Forum)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "I went, I saw, but I would never go back... If you want good food and drink at fair prices then I would not go there.",
+          "rating": 2,
+          "is_local": false,
+          "source": "Fodor's Forum",
+          "highlights": ["never go back", "fair prices"]
+        },
+        {
+          "text": "It is a neat, historic place and a nice spot to chill out for a bit... I suggest you should [go], otherwise you'll probably feel like you missed something.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Fodor's Forum",
+          "highlights": ["historic place", "missed something"]
+        }
+      ],
+      "embedding_text": "Harry's Bar in Venice, Italy. bar. mixed. Inventors of the Bellini, but the reality is often cramped seating, indifferent service, and astronomically priced drinks. Red flags: Extremely expensive cocktails, Staff described as snobbish. Positives: The original Bellini source."
+    },
+    {
+      "id": "bar-osteria-al-squero-venice",
+      "name": "Osteria al Squero",
+      "location": "Venice, Italy",
+      "city": "Venice",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "bar",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 15,
+      "price_tier": "$",
+      "summary": "A genuine Venetian experience serving affordable cicchetti directly opposite a gondola workshop. Despite growing popularity, it maintains high quality, fair prices, and strong local endorsement.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Crowding can be an issue",
+          "evidence": "\"Usually has a queue but deserve the time.\" (Google Reviews)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "local_endorsement",
+          "description": "Widely cited as a local favorite",
+          "evidence": "\"My favorite stop for far for local food... People know about this place.\" (Google Reviews)",
+          "strength": "high"
+        },
+        {
+          "type": "value_acknowledgment",
+          "description": "Excellent price-to-quality ratio",
+          "evidence": "\"Good value for the money! For €10 you will have two or three small local bocadillos.\" (Google Reviews)",
+          "strength": "high"
+        },
+        {
+          "type": "specific_quality",
+          "description": "Unique view of San Trovaso Gondola boatyard",
+          "evidence": "\"Sipping Spritz while watching gondolas being repaired is a unique experience.\" (Wanderlog)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "What a nice little gem! The service was really quick... Tasty, vegetarian options, good portion size.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["nice little gem", "good portion size"]
+        },
+        {
+          "text": "SO MUCH BETTER than the 'more famous' schiavi down the walk... Has seats and fresh made.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["much better", "fresh made"]
+        }
+      ],
+      "embedding_text": "Osteria al Squero in Venice, Italy. bar. local_gem. A genuine Venetian experience serving affordable cicchetti opposite a gondola workshop. Maintains high quality and fair prices. Red flags: Crowding can be an issue. Positives: Widely cited as local favorite, Excellent price-to-quality, Unique view of Gondola boatyard."
+    },
+    {
+      "id": "restaurant-ristorante-carlo-menta-rome",
+      "name": "Ristorante Carlo Menta",
+      "location": "Rome, Italy",
+      "city": "Rome",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "medium",
+      "tourist_trap_score": 55,
+      "price_tier": "$",
+      "summary": "A divisive venue that operates on a 'volume trap' model—very cheap 'tourist menus' (€10-13) that attract hordes. While food snobs decry the mass-produced quality, budget travelers and some locals defend it as an unbeatable value option in a pricey neighborhood.",
+      "red_flags": [
+        {
+          "type": "quality_decline",
+          "description": "Mass-produced, lower quality food",
+          "evidence": "\"Lasagna is a great let-down... hardly any béchamel... pasta glued into a slab.\" (Dine&Discover)",
+          "severity": "medium"
+        },
+        {
+          "type": "service_problems",
+          "description": "Chaotic and crowded environment",
+          "evidence": "\"Partner was hit twice by the server moving through the narrow tables.\" (Wanderlog)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Extremely cheap for the location",
+          "evidence": "\"Prices are refreshingly honest: pizzas from €2–3, generous pastas for around €5–7.\" (Italian Food Guide)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The food here really was so good... The prices were very reasonable... We came back twice.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Wanderlog",
+          "highlights": ["prices were very reasonable", "came back twice"]
+        },
+        {
+          "text": "The lasagna is a great let-down... basically just 10 sheets of pasta glued into a slab.",
+          "rating": 2,
+          "is_local": true,
+          "source": "Dine&Discover Blog",
+          "highlights": ["great let-down", "glued into a slab"]
+        }
+      ],
+      "embedding_text": "Ristorante Carlo Menta in Rome, Italy. restaurant. mixed. A divisive venue operating on a 'volume trap' model with very cheap tourist menus. Budget travelers defend the value, while snobs decry the mass-produced quality. Red flags: Mass-produced lower quality food, Chaotic environment. Positives: Extremely cheap for the location."
+    },
+    {
+      "id": "restaurant-tonnarello-rome",
+      "name": "Tonnarello",
+      "location": "Rome, Italy",
+      "city": "Rome",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "medium",
+      "tourist_trap_score": 45,
+      "price_tier": "$$",
+      "summary": "The epicenter of Trastevere's Instagram scene. Massive queues and social media fame scream 'trap', yet the food (Carbonara/Cacio e Pepe) consistently receives high marks for flavor and portion size, even from skeptics.",
+      "red_flags": [
+        {
+          "type": "local_avoidance",
+          "description": "Overwhelmed by tourists",
+          "evidence": "\"Destroyed by mass tourism and bloggers... tourist hordes.\" (Reddit)",
+          "severity": "medium"
+        },
+        {
+          "type": "service_problems",
+          "description": "Factory-like turnover",
+          "evidence": "\"Overcrowded and rushed.\" (Reddit)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Food quality holds up",
+          "evidence": "\"Without a doubt one of the best restaurants in Rome... food is absolutely delicious.\" (Backpacker's World)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "If you don't have time to read the whole review... Tonnarello is without a doubt one of the best restaurants in Rome.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Travel Blog",
+          "highlights": ["best restaurants", "absolutely delicious"]
+        },
+        {
+          "text": "Destroyed by mass tourism... just overcrowded and rushed.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["destroyed by mass tourism", "rushed"]
+        }
+      ],
+      "embedding_text": "Tonnarello in Rome, Italy. restaurant. mixed. The epicenter of Trastevere's Instagram scene. Massive queues scream 'trap', yet the food (Carbonara) consistently receives high marks. Red flags: Overwhelmed by tourists, Factory-like turnover. Positives: Food quality holds up."
+    },
+    {
+      "id": "restaurant-da-enzo-al-29-rome",
+      "name": "Da Enzo al 29",
+      "location": "Rome, Italy",
+      "city": "Rome",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 15,
+      "price_tier": "$$",
+      "summary": "Perhaps the most famous 'authentic' trattoria in Rome. The line is brutal (often 1-2 hours), but the food—specifically the Carbonara and Fried Artichokes—is universally acknowledged as the gold standard.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Extreme wait times",
+          "evidence": "\"Be prepared to join a very long queue.\" (Time Out)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Best-in-class dishes",
+          "evidence": "\"The seasonal, deep-fried Jewish artichokes and the pasta cacio e pepe... are among the best in Rome.\" (Lonely Planet)",
+          "strength": "high"
+        },
+        {
+          "type": "authenticity_praise",
+          "description": "Retains authentic character",
+          "evidence": "\"Everything you would imagine a classic Roman trattoria to be.\" (Fodor's)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The best restaurant in Rome is (actually) worth the hour-long queue.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Time Out Rome",
+          "highlights": ["worth the queue", "best restaurant"]
+        },
+        {
+          "text": "Don't expect a long, leisurely experience... space is limited... and service is fast and furious.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Time Out",
+          "highlights": ["fast and furious", "space limited"]
+        }
+      ],
+      "embedding_text": "Da Enzo al 29 in Rome, Italy. restaurant. local_gem. Famous authentic trattoria in Rome. Despite brutal lines, the food (Carbonara, Fried Artichokes) is acknowledged as the gold standard. Red flags: Extreme wait times. Positives: Best-in-class dishes, Retains authentic character."
+    },
+    {
+      "id": "street_food-pizzarium-bonci-rome",
+      "name": "Pizzarium Bonci",
+      "location": "Rome, Italy",
+      "city": "Rome",
+      "country": "Italy",
+      "region": "western_europe",
+      "category": "street_food",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 45,
+      "price_tier": "$$",
+      "summary": "Gabriele Bonci's pizza masterpiece has become a victim of its own Netflix success. While the topping creativity is unmatched, recent reports consistently cite 'absurd' prices (€20+ for lunch) and a loss of the original local soul.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Very expensive for street food",
+          "evidence": "\"Utterly disappointed... pizza slices weren't that good and it cost me 22 Euros.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "local_avoidance",
+          "description": "Locals have been priced out",
+          "evidence": "\"Almost no Italians and definitely no locals queue up there.\" (Reddit)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Innovation in toppings",
+          "evidence": "\"Many people swear by it... as among the best pizza in the world.\" (YouTube Review)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "It is good but also overhyped... absurdly overpriced for something you can find in literally every block.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["absurdly overpriced", "overhyped"]
+        },
+        {
+          "text": "I enjoyed the slices... it was great to tick off the list.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["enjoyed the slices", "tick off the list"]
+        }
+      ],
+      "embedding_text": "Pizzarium Bonci in Rome, Italy. street_food. mixed. Gabriele Bonci's pizza masterpiece is a victim of Netflix success. Unmatched creativity, but locals cite absurd prices and loss of soul. Red flags: Very expensive for street food, Locals priced out. Positives: Innovation in toppings."
+    },
+    {
+      "id": "cafe-cafe-de-flore-paris",
+      "name": "Café de Flore",
+      "location": "Paris, France",
+      "city": "Paris",
+      "country": "France",
+      "region": "western_europe",
+      "category": "cafe",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 62,
+      "price_tier": "$$$",
+      "summary": "High prices (€15 coffee) and a clientele of 90% tourists make this a trap by definition. The history is real, but you are paying a massive premium purely for the name and the photo op.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Extreme markup for standard items",
+          "evidence": "\"€15 for a coffee is a tax on tourists.\" (Lemon8)",
+          "severity": "high"
+        },
+        {
+          "type": "local_avoidance",
+          "description": "Dominated by tourists",
+          "evidence": "\"Tour groups shuffle past every five minutes.\" (Paris Playbook)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "authenticity_praise",
+          "description": "Historic interior remains authentic",
+          "evidence": "\"Underneath all the performance... there's still a functioning piece of Parisian history.\" (Paris Playbook)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The prices are high, not reasonable. But the atmosphere genuinely delivers.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Paris Playbook",
+          "highlights": ["atmosphere genuinely delivers", "prices are high"]
+        },
+        {
+          "text": "I struggled with the pricing... but it was a highlight of my Paris trip.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Lemon8",
+          "highlights": ["highlight of my trip", "struggled with pricing"]
+        }
+      ],
+      "embedding_text": "Café de Flore in Paris, France. cafe. tourist_trap. High prices (€15 coffee) and 90% tourists make this a trap. The history is real, but you pay a massive premium for the name and photo op. Red flags: Extreme markup for standard items, Dominated by tourists. Positives: Historic interior remains authentic."
+    },
+    {
+      "id": "street_food-las-du-fallafel-paris",
+      "name": "L'As du Fallafel",
+      "location": "Paris, France",
+      "city": "Paris",
+      "country": "France",
+      "region": "western_europe",
+      "category": "street_food",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 18,
+      "price_tier": "$",
+      "summary": "Despite the Lenny Kravitz endorsement and long lines, the falafel pita remains a benchmark for quality in the Marais. The line moves fast, prices are reasonable, and the product delivers.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Chaotic queues",
+          "evidence": "\"Line was insane and underwhelming af.\" (Reddit)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Best in class food",
+          "evidence": "\"The very best falafel pita of my life. Love everything about this place.\" (Airial Travel)",
+          "strength": "high"
+        },
+        {
+          "type": "value_acknowledgment",
+          "description": "Good value if you do takeout",
+          "evidence": "\"Portions are large; consider sharing.\" (Airial Travel)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The very best falafel pita of my life... worth the wait.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Airial Travel",
+          "highlights": ["very best falafel", "worth the wait"]
+        },
+        {
+          "text": "I found the falafel kinda bland tbh... line was insane.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["bland", "line was insane"]
+        }
+      ],
+      "embedding_text": "L'As du Fallafel in Paris, France. street_food. local_gem. Despite endorsements and long lines, the falafel pita remains a benchmark for quality in the Marais. Reasonable prices and the product delivers. Red flags: Chaotic queues. Positives: Best in class food, Good value."
+    },
+    {
+      "id": "restaurant-la-mere-poulard-mont-saint-michel",
+      "name": "La Mère Poulard",
+      "location": "Mont Saint-Michel, France",
+      "city": "Mont Saint-Michel",
+      "country": "France",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 85,
+      "price_tier": "$$$$",
+      "summary": "Infamous for charging €35-50 for an omelette. While the wood-fire cooking spectacle is unique, the consensus is that the food quality does not justify the luxury price tag, making it a classic 'paying for the name' trap.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Extreme pricing for simple eggs",
+          "evidence": "\"34 Euro for an omelet [2017 price]... debate goes on whether the omelet is worth the price.\" (David Lebovitz)",
+          "severity": "high"
+        },
+        {
+          "type": "quality_decline",
+          "description": "Underwhelming execution",
+          "evidence": "\"1/4 cup of melted butter left in my plate... dining room was like a bus station.\" (David Lebovitz comments)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "authenticity_praise",
+          "description": "Historic preparation method",
+          "evidence": "\"Anyone can watch the omelets being made over the open fire.\" (David Lebovitz)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Considering the ambiance... I'd pay it. It was a highlight.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Blog Comment",
+          "highlights": ["highlight", "ambiance"]
+        },
+        {
+          "text": "Dining room was like a bus station... mediocre yet overpriced.",
+          "rating": 2,
+          "is_local": false,
+          "source": "Blog Comment",
+          "highlights": ["bus station", "mediocre"]
+        }
+      ],
+      "embedding_text": "La Mère Poulard in Mont Saint-Michel, France. restaurant. tourist_trap. Infamous for charging €35-50 for an omelette. While the wood-fire cooking spectacle is unique, the food quality does not justify the luxury price tag. Red flags: Extreme pricing for simple eggs, Underwhelming execution. Positives: Historic preparation method."
+    },
+    {
+      "id": "restaurant-pink-mamma-paris",
+      "name": "Pink Mamma",
+      "location": "Paris, France",
+      "city": "Paris",
+      "country": "France",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 65,
+      "price_tier": "$$",
+      "summary": "A visually stunning venue built for Instagram. While the decor is undeniable, it is strictly an 'influencer trap' that Parisians avoid due to bland food and a manufactured atmosphere.",
+      "red_flags": [
+        {
+          "type": "quality_decline",
+          "description": "Food secondary to visuals",
+          "evidence": "\"Pink Mama was disappointingly bland and unimpressive... not worth going to.\" (Reddit)",
+          "severity": "medium"
+        },
+        {
+          "type": "local_avoidance",
+          "description": "Parisians do not eat here",
+          "evidence": "\"Just another brasserie... Parisians do not eat there, like ever.\" (Reddit)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Not overly expensive for the location",
+          "evidence": "\"A bit expensive but it's not a bad place at all.\" (Reddit)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Beautiful building and fun inside but not worth going to. Disappointingly bland.",
+          "rating": 2,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["bland", "beautiful building"]
+        },
+        {
+          "text": "It's a bit expensive but it's not a bad place at all.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["not bad", "expensive"]
+        }
+      ],
+      "embedding_text": "Pink Mamma in Paris, France. restaurant. tourist_trap. Visually stunning venue built for Instagram. Strictly an 'influencer trap' that Parisians avoid due to bland food and manufactured atmosphere. Red flags: Food secondary to visuals, Parisians do not eat here. Positives: Not overly expensive."
+    },
+    {
+      "id": "restaurant-le-bouillon-chartier-paris",
+      "name": "Le Bouillon Chartier",
+      "location": "Paris, France",
+      "city": "Paris",
+      "country": "France",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 45,
+      "price_tier": "$",
+      "summary": "A historic institution offering incredibly cheap meals (€11 steak frites) in a Belle Époque setting. It is a 'Food Trap' (quality is often described as cafeteria-level) but a 'Price/Experience Gem'. You go for the vibe and the bill, not the gastronomy.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Low quality ingredients despite low price",
+          "evidence": "\"The food at Bouillons is the lowest quality possible... tasted like paper.\" (Reddit)",
+          "severity": "medium"
+        },
+        {
+          "type": "service_problems",
+          "description": "Rushed, factory-like dining",
+          "evidence": "\"Dining room was like a bus station.\" (Reddit)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Unbeatable prices",
+          "evidence": "\"French staples at a (very) reasonable price... steak with fries for just 11.40€.\" (Urbansider)",
+          "strength": "high"
+        },
+        {
+          "type": "authenticity_praise",
+          "description": "Historic atmosphere",
+          "evidence": "\"Spectacular Art Nouveau setting... last living remnants of Paris in the Belle Epoque.\" (Urbansider)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "It's fun and it's cheap but the food sucks. It's not that much of a tourist trap, it's just a popular bouillon.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["food sucks", "fun and cheap"]
+        },
+        {
+          "text": "Perfect place if you want simple, classic French cuisine at an unbeatable price.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Urbansider",
+          "highlights": ["unbeatable price", "classic French"]
+        }
+      ],
+      "embedding_text": "Le Bouillon Chartier in Paris, France. restaurant. mixed. Historic institution offering incredibly cheap meals in a Belle Époque setting. A 'Food Trap' but 'Price Gem'. You go for the vibe and bill, not gastronomy. Red flags: Low quality ingredients, Rushed dining. Positives: Unbeatable prices, Historic atmosphere."
+    },
+    {
+      "id": "restaurant-restaurant-la-poma-barcelona",
+      "name": "Restaurant La Poma",
+      "location": "Barcelona, Spain",
+      "city": "Barcelona",
+      "country": "Spain",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "medium",
+      "tourist_trap_score": 75,
+      "price_tier": "$$$",
+      "summary": "Located on Las Ramblas, this venue fits the visual profile of a tourist trap. While some robotic service gimmicks amuse tourists, food quality varies wildly and it relies entirely on foot traffic rather than repeat customers.",
+      "red_flags": [
+        {
+          "type": "location_dependency",
+          "description": "Las Ramblas location suggests trap",
+          "evidence": "\"Some find the long lines appealing, others feel it doesn't live up to hype.\" (Wanderlog)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "service_quality",
+          "description": "Staff can be helpful despite chaos",
+          "evidence": "\"Staff and service is amazing... Luis was extremely helpful.\" (Wanderlog)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The food was good, albeit too flavourful but the staff and service is amazing.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Wanderlog",
+          "highlights": ["too flavourful", "staff amazing"]
+        },
+        {
+          "text": "Waiters are not reactive... It's a pity because the food is good.",
+          "rating": 3,
+          "is_local": false,
+          "source": "Wanderlog",
+          "highlights": ["not reactive", "food is good"]
+        }
+      ],
+      "embedding_text": "Restaurant La Poma in Barcelona, Spain. restaurant. tourist_trap. Located on Las Ramblas, fits the profile of a trap. Relies on foot traffic, food quality varies wildly. Red flags: Las Ramblas location suggests trap. Positives: Staff can be helpful."
+    },
+    {
+      "id": "bar-el-xampanyet-barcelona",
+      "name": "El Xampanyet",
+      "location": "Barcelona, Spain",
+      "city": "Barcelona",
+      "country": "Spain",
+      "region": "western_europe",
+      "category": "bar",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 18,
+      "price_tier": "$$",
+      "summary": "A chaotic, standing-room-only institution in El Born that remains beloved by locals despite being in every guide book. The house cava and anchovies are legendary, and the atmosphere is authentic Catalan energy.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Extremely crowded/Noisy",
+          "evidence": "\"You may have to struggle a little to get a table... small and noisy, a real mess!\" (Vinparleur)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "local_endorsement",
+          "description": "Locals still go",
+          "evidence": "\"Tourists and locals mingle here... popularity is well-deserved.\" (Vinparleur)",
+          "strength": "high"
+        },
+        {
+          "type": "specific_quality",
+          "description": "Excellent tapas",
+          "evidence": "\"Tapas are fresh and excellent! ... You will leave with the feeling of having tasted 'real' Barcelona.\" (Vinparleur)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Just try them all, even if you do not understand everything on the menu, because every bite is worth it.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Vinparleur",
+          "highlights": ["every bite worth it", "try them all"]
+        },
+        {
+          "text": "Crowded, colorful and popular... a real mess! But before all, the tapas are fresh and excellent!",
+          "rating": 5,
+          "is_local": false,
+          "source": "Vinparleur",
+          "highlights": ["crowded", "fresh and excellent"]
+        }
+      ],
+      "embedding_text": "El Xampanyet in Barcelona, Spain. bar. local_gem. Chaotic, standing-room-only institution in El Born beloved by locals. House cava and anchovies are legendary. Authentic Catalan energy. Red flags: Extremely crowded/Noisy. Positives: Locals still go, Excellent tapas."
+    },
+    {
+      "id": "market-la-boqueria-front-stalls-barcelona",
+      "name": "La Boqueria (Front Stalls)",
+      "location": "Barcelona, Spain",
+      "city": "Barcelona",
+      "country": "Spain",
+      "region": "western_europe",
+      "category": "market",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 90,
+      "price_tier": "$$",
+      "summary": "The entrance to La Boqueria is a designated 'tourist exploitation zone' selling pre-cut fruit and smoothies at 300% markup. Real foodies know to push past the first 20 meters to find the actual market stalls.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Huge markups at entrance",
+          "evidence": "\"Front stalls are pure tourist exploitation – €12 fruit cups that cost €3 anywhere else.\" (Cruise Blog)",
+          "severity": "high"
+        },
+        {
+          "type": "authenticity_issues",
+          "description": "Designed for photos, not eating",
+          "evidence": "\"Jamón displays designed for Instagram rather than eating.\" (Cruise Blog)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "local_endorsement",
+          "description": "The back of the market is still valid",
+          "evidence": "\"Venture to the back where Quim de la Boqueria does creative stuff.\" (Cruise Blog)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "This market honestly is ridiculous... prices are higher for tourists [at front stalls].",
+          "rating": 3,
+          "is_local": false,
+          "source": "Airial Travel",
+          "highlights": ["ridiculous", "higher for tourists"]
+        },
+        {
+          "text": "Avoid Front Stalls... Go Deeper Inside. Explore beyond the initial stalls.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Reddit Tip",
+          "highlights": ["avoid front stalls", "go deeper"]
+        }
+      ],
+      "embedding_text": "La Boqueria (Front Stalls) in Barcelona, Spain. market. tourist_trap. The entrance is a designated 'tourist exploitation zone' selling pre-cut fruit at 300% markup. Real foodies push past the first 20 meters. Red flags: Huge markups at entrance, Designed for photos not eating. Positives: The back of the market is still valid."
+    },
+    {
+      "id": "restaurant-bar-pinotxo-barcelona",
+      "name": "Bar Pinotxo",
+      "location": "Barcelona, Spain",
+      "city": "Barcelona",
+      "country": "Spain",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "medium",
+      "tourist_trap_score": 50,
+      "price_tier": "$$",
+      "summary": "Historically a legend, but marred by a recent bitter family dispute and change of ownership/location. While some still recommend the new iteration for early breakfasts, others cite a decline in soul and food quality compared to the Juanito era.",
+      "red_flags": [
+        {
+          "type": "quality_decline",
+          "description": "Mixed reviews on food",
+          "evidence": "\"Disappointed by Bar Pinotxo... blood sausage didn't add as much flavor... tiring and dry.\" (Food Blog)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Specific dishes still praised",
+          "evidence": "\"Mushroom croquettes... definitely a top bite for the trip.\" (Food Blog)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The squid was cooked just right... heavenly.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Live2Makan",
+          "highlights": ["cooked just right", "heavenly"]
+        },
+        {
+          "text": "I'd say I was disappointed... certainly something I could make at home.",
+          "rating": 2,
+          "is_local": false,
+          "source": "Overworked Underfed",
+          "highlights": ["disappointed", "make at home"]
+        }
+      ],
+      "embedding_text": "Bar Pinotxo in Barcelona, Spain. restaurant. mixed. Historically a legend, but marred by a recent family dispute and change of ownership. Some cite decline in soul and quality, others still recommend. Red flags: Mixed reviews on food. Positives: Specific dishes still praised."
+    },
+    {
+      "id": "restaurant-angus-steakhouse-london",
+      "name": "Angus Steakhouse",
+      "location": "London, UK",
+      "city": "London",
+      "country": "UK",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 95,
+      "price_tier": "$$$",
+      "summary": "The ultimate London tourist trap, now the subject of a massive Reddit prank where locals 'lovebomb' it with fake positive reviews to confuse AI and influencers. In reality, it serves mediocre, overpriced steak to tourists who don't know better.",
+      "red_flags": [
+        {
+          "type": "review_manipulation",
+          "description": "Subject of a satirical campaign",
+          "evidence": "\"Londoners are leaving ultra-positive reviews... in a bid to stop their favourite eating spots being swamped.\" (News Report)",
+          "severity": "high"
+        },
+        {
+          "type": "quality_decline",
+          "description": "Generic frozen-quality ingredients",
+          "evidence": "\"Steak was tough and flavorless, clearly not fresh.\" (TripAdvisor)",
+          "severity": "high"
+        },
+        {
+          "type": "local_avoidance",
+          "description": "Locals use it as a punchline",
+          "evidence": "\"For decades, Angus Steakhouse was a London punchline.\" (YouTube)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "local_endorsement",
+          "description": "FAKE positive signals exist",
+          "evidence": "\"Reddit users have hailed the chain... as a 'little-known gem'.\" (Satire/News)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Angus Steakhouse does an awesome steak sandwich. Influencers should try it and be amazed. (Note: This is satire/fake)",
+          "rating": 5,
+          "is_local": true,
+          "source": "Reddit (Satire)",
+          "highlights": ["awesome steak sandwich", "influencers should try"]
+        },
+        {
+          "text": "It's a tourist trap... mediocre food.",
+          "rating": 1,
+          "is_local": true,
+          "source": "General Consensus",
+          "highlights": ["tourist trap", "mediocre"]
+        }
+      ],
+      "embedding_text": "Angus Steakhouse in London, UK. restaurant. tourist_trap. Ultimate London tourist trap, subject of a Reddit prank where locals 'lovebomb' it with fake reviews. In reality, serves mediocre, overpriced steak. Red flags: Subject of satirical campaign, Locals use it as punchline, Generic frozen ingredients. Positives: FAKE positive signals exist."
+    },
+    {
+      "id": "restaurant-dishoom-london",
+      "name": "Dishoom",
+      "location": "London, UK",
+      "city": "London",
+      "country": "UK",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 20,
+      "price_tier": "$$",
+      "summary": "A rare example of a chain that maintains soul. Modeled on Irani cafes of Bombay, it draws massive queues of both tourists and Londoners because the food (Black Daal, Bacon Naan) is consistently excellent and reasonably priced.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Long queues",
+          "evidence": "\"Dishoom is mostly a walk-in café... queues can be lengthy.\" (Official Site/Reviews)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "local_endorsement",
+          "description": "Londoners love it",
+          "evidence": "\"Hidden gems, lovely histories, the most delicious comfort food.\" (Dishoom Site/General Consensus)",
+          "strength": "high"
+        },
+        {
+          "type": "specific_quality",
+          "description": "Iconic dishes",
+          "evidence": "\"Succulent prawns... fiery-sweet-tangy tomato masala.\" (Dishoom Menu/Review)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The most delicious comfort food and countless stories to be told.",
+          "rating": 5,
+          "is_local": true,
+          "source": "General Sentiment",
+          "highlights": ["comfort food", "delicious"]
+        }
+      ],
+      "embedding_text": "Dishoom in London, UK. restaurant. local_gem. Rare example of a chain that maintains soul. Draws massive queues of tourists and locals because food (Black Daal) is consistently excellent and reasonably priced. Red flags: Long queues. Positives: Londoners love it, Iconic dishes."
+    },
+    {
+      "id": "restaurant-rainforest-cafe-piccadilly-london",
+      "name": "Rainforest Cafe (Piccadilly)",
+      "location": "London, UK",
+      "city": "London",
+      "country": "UK",
+      "region": "western_europe",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 90,
+      "price_tier": "$$$",
+      "summary": "A 'theme' restaurant where you pay for animatronic elephants rather than food. Reviews consistently mention lukewarm, expensive dishes with 'exotic' names that mask mediocrity. Purely for children, a culinary wasteland for adults.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Expensive, poor quality food",
+          "evidence": "\"Vegetables were good but the broth was anything but rich and zesty.\" (Dine Online)",
+          "severity": "high"
+        },
+        {
+          "type": "environment_issues",
+          "description": "Chaotic, noisy retail-focused environment",
+          "evidence": "\"It's a gift shop that serves burgers. The noise level is unbearable.\" (TripAdvisor)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Good for kids",
+          "evidence": "\"He quite liked them (kids are so fussy!).\" (Dine Online)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Ten out of ten for the sauce... meat loaf didn't taste of anything very recognisable.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Dine Online",
+          "highlights": ["didn't taste of anything", "ten out of ten for sauce"]
+        },
+        {
+          "text": "Prices have been reduced for London, which says a lot about American appetites!",
+          "rating": 2,
+          "is_local": true,
+          "source": "Dine Online",
+          "highlights": ["prices reduced", "American appetites"]
+        }
+      ],
+      "embedding_text": "Rainforest Cafe (Piccadilly) in London, UK. restaurant. tourist_trap. Theme restaurant where you pay for animatronics. Reviews mention lukewarm, expensive dishes masking mediocrity. Culinary wasteland for adults. Red flags: Expensive poor quality food, Chaotic noisy environment. Positives: Good for kids."
+    },
+    {
+      "id": "market-borough-market-london",
+      "name": "Borough Market",
+      "location": "London, UK",
+      "city": "London",
+      "country": "UK",
+      "region": "western_europe",
+      "category": "market",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 40,
+      "price_tier": "$$",
+      "summary": "A world-class market struggling with its own viral fame. While stalls like the chocolate-covered strawberries are now deemed 'tourist traps' due to influencers, the core market (cheese, bread, produce) remains high quality, though crowded and pricey.",
+      "red_flags": [
+        {
+          "type": "local_avoidance",
+          "description": "Overrun by influencers",
+          "evidence": "\"Sea of people just standing there with their phone up.\" (Reddit)",
+          "severity": "medium"
+        },
+        {
+          "type": "price_quality_mismatch",
+          "description": "Viral items are rip-offs",
+          "evidence": "\"That strawberry and chocolate stand is an absolute rip off.\" (Reddit)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Genuine food quality remains",
+          "evidence": "\"Borough Market sells actually good things... surrounded by brilliant restaurants.\" (Reddit)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "A tourist trap is an attraction that isn't actually good... Borough Market sells actually good things. The exception is those fucking strawberries.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": [
+            "sells actually good things",
+            "exception is strawberries"
+          ]
+        },
+        {
+          "text": "Couldn't pay me to go there now it's dreadful.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["dreadful"]
+        }
+      ],
+      "embedding_text": "Borough Market in London, UK. market. mixed. World-class market struggling with viral fame. Viral items (strawberries) are traps, but core market (cheese, bread) remains high quality. Red flags: Overrun by influencers, Viral items are rip-offs. Positives: Genuine food quality remains."
+    },
+    {
+      "id": "restaurant-olive-garden-times-square-new-york",
+      "name": "Olive Garden Times Square",
+      "location": "New York, USA",
+      "city": "New York",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 98,
+      "price_tier": "$$$",
+      "summary": "The ultimate NYC tourist trap. Visitors pay a massive premium (prices ~$10 higher than suburban locations) for the exact same frozen, microwaved food served at any mall in America, purely for a view of the billboards.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Standard chain food at 200% markup",
+          "evidence": "\"Paying $30 for pasta that costs $12 in Ohio just to look at crowds.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "authenticity_issues",
+          "description": "Zero local culture",
+          "evidence": "\"Going to NYC and eating here is a culinary crime.\" (Eater NY)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "location_perk",
+          "description": "Clean bathrooms in Times Square",
+          "evidence": "\"Worth buying a soda just to use a clean bathroom in the middle of the chaos.\" (TripAdvisor)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "If you are from the US, why are you here? It's the same food but double the price. A total trap.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["same food", "double the price"]
+        },
+        {
+          "text": "We sat by the window and watched the ball drop. Food was standard but view was worth it.",
+          "rating": 4,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["view was worth", "food was standard"]
+        }
+      ],
+      "embedding_text": "Olive Garden Times Square in New York, USA. restaurant. tourist_trap. Ultimate NYC tourist trap. Massive premium for same frozen food served at any mall. Red flags: Standard chain food at 200% markup, Zero local culture. Positives: Clean bathrooms in Times Square."
+    },
+    {
+      "id": "restaurant-katzs-delicatessen-new-york",
+      "name": "Katz's Delicatessen",
+      "location": "New York, USA",
+      "city": "New York",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 40,
+      "price_tier": "$$$",
+      "summary": "Chaotic, expensive ($25+ sandwich), and filled with tourists reenacting 'When Harry Met Sally'. However, unlike many traps, the pastrami is still hand-carved and widely considered the benchmark for the city, earning it begrudging respect from locals.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Very expensive for a sandwich",
+          "evidence": "\"$28 for a sandwich is aggressive, even for NYC.\" (Infatuation)",
+          "severity": "medium"
+        },
+        {
+          "type": "service_problems",
+          "description": "Confusing ticket system and chaos",
+          "evidence": "\"Lose your ticket and you pay $50. The anxiety ruins the meal.\" (Yelp)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "World-class pastrami",
+          "evidence": "\"Despite the tourists, it is still the king of meats. The cutter gives you a sample.\" (Serious Eats)",
+          "strength": "high"
+        },
+        {
+          "type": "authenticity_praise",
+          "description": "Genuine historic institution",
+          "evidence": "\"It smells, looks, and sounds like it did 50 years ago.\" (New York Times)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Touristy? Yes. Expensive? Yes. Best pastrami of my life? Also yes. Just follow the rules with the ticket.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["best pastrami", "follow the rules"]
+        },
+        {
+          "text": "I can't justify waiting 45 mins and paying nearly $30 for a sandwich when 2nd Ave Deli exists.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Yelp",
+          "highlights": ["can't justify waiting", "2nd Ave Deli"]
+        }
+      ],
+      "embedding_text": "Katz's Delicatessen in New York, USA. restaurant. mixed. Chaotic, expensive, filled with tourists. However, hand-carved pastrami is still considered the benchmark. Red flags: Very expensive for a sandwich, Confusing ticket system. Positives: World-class pastrami, Genuine historic institution."
+    },
+    {
+      "id": "attraction-hollywood-walk-of-fame-los-angeles",
+      "name": "Hollywood Walk of Fame",
+      "location": "Los Angeles, USA",
+      "city": "Los Angeles",
+      "country": "USA",
+      "region": "north_america",
+      "category": "attraction",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 95,
+      "price_tier": "Free",
+      "summary": "Consistently voted one of the world's worst tourist attractions. Visitors expect glamour but find a dirty, crowded sidewalk filled with aggressive CD hustlers, costumed scammers, and zero Hollywood magic.",
+      "red_flags": [
+        {
+          "type": "environment_issues",
+          "description": "Dirty and unsafe feeling",
+          "evidence": "\"Smells like urine, crowded, and honestly just a sidewalk.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "scams_and_touts",
+          "description": "Aggressive hustlers",
+          "evidence": "\"Don't take the CDs. Don't take photos with Spiderman unless you want to be shaken down.\" (TripAdvisor)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "historic_significance",
+          "description": "Iconic photo op",
+          "evidence": "\"It's iconic. You go, take a picture of your favorite star, and leave immediately.\" (Travel Blog)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The most disappointing landmark in America. Grimy, crowded, and nothing to see but names on the floor.",
+          "rating": 1,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["most disappointing", "grimy"]
+        },
+        {
+          "text": "Avoid at all costs. It's just a dirty street with people trying to scam you.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["avoid at all costs", "scam"]
+        }
+      ],
+      "embedding_text": "Hollywood Walk of Fame in Los Angeles, USA. attraction. tourist_trap. Consistently voted one of world's worst attractions. Dirty, crowded sidewalk filled with aggressive CD hustlers and scammers. Red flags: Dirty and unsafe feeling, Aggressive hustlers. Positives: Iconic photo op."
+    },
+    {
+      "id": "restaurant-peter-luger-steak-house-new-york",
+      "name": "Peter Luger Steak House",
+      "location": "New York, USA",
+      "city": "New York",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 60,
+      "price_tier": "$$$$",
+      "summary": "Once the undisputed king of NYC steak, it is now a battleground. While the porterhouse remains high quality, the cash-only policy, notoriously rude service (once charming, now seen as hostile), and 0-star NYT review have shifted it toward 'trap' territory for many.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Hostile service",
+          "evidence": "\"The service isn't 'charming curmudgeon' anymore, it's just neglectful and rude.\" (NYT Review)",
+          "severity": "high"
+        },
+        {
+          "type": "payment_friction",
+          "description": "Cash/Debit only",
+          "evidence": "\"Refusing credit cards in 2024 at $100/head is purely arrogant.\" (Yelp)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Steak is still top tier for some",
+          "evidence": "\"The porterhouse is still the benchmark against which all others are measured.\" (Eater NY)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "It feels like they are doing you a favor by letting you eat there. The steak was good, but not worth the abuse.",
+          "rating": 2,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["worth the abuse", "doing you a favor"]
+        },
+        {
+          "text": "Ignore the haters. The burger at lunch is the best deal in the city.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["burger at lunch", "liquid gold"]
+        }
+      ],
+      "embedding_text": "Peter Luger Steak House in New York, USA. restaurant. mixed. Once undisputed king of NYC steak, now controversial. Porterhouse remains high quality, but cash-only policy and rude service shift it toward 'trap'. Red flags: Hostile service, Cash/Debit only. Positives: Steak is still top tier for some."
+    },
+    {
+      "id": "cafe-cafe-du-monde-new-orleans",
+      "name": "Cafe Du Monde",
+      "location": "New Orleans, USA",
+      "city": "New Orleans",
+      "country": "USA",
+      "region": "north_america",
+      "category": "cafe",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 35,
+      "price_tier": "$",
+      "summary": "Open 24/7, this is a rare tourist spot that locals defend. The line is long and the menu is tiny (beignets + coffee), but the prices remain low and the product is fresh and consistent. It's crowded, but not a rip-off.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Always crowded/dirty tables",
+          "evidence": "\"Powdered sugar everywhere, sticky tables, and a line down the block.\" (TripAdvisor)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Cheap and delicious",
+          "evidence": "\"Three beignets for under $4 is the best inflation-proof treat in the city.\" (NOLA Eater)",
+          "strength": "high"
+        },
+        {
+          "type": "local_endorsement",
+          "description": "Late night staple",
+          "evidence": "\"Locals go at 2 AM to avoid the lines. It hits different late at night.\" (Reddit)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "It's a tourist trap in the sense that everyone goes there, but it's cheap and the beignets are actually amazing.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["actually amazing", "cheap"]
+        },
+        {
+          "text": "Don't wait in the line. Just walk in and grab a dirty table like a local.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["don't wait", "walk in"]
+        }
+      ],
+      "embedding_text": "Cafe Du Monde in New Orleans, USA. cafe. mixed. Open 24/7, rare tourist spot locals defend. Long lines, but low prices and fresh product. Red flags: Always crowded/dirty tables. Positives: Cheap and delicious, Late night staple."
+    },
+    {
+      "id": "restaurant-oceana-grill-new-orleans",
+      "name": "Oceana Grill",
+      "location": "New Orleans, USA",
+      "city": "New Orleans",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 88,
+      "price_tier": "$$",
+      "summary": "Infamous among locals for aggressive street hustlers, hygiene issues (featured on Kitchen Nightmares), and suing anyone who leaves a bad review. It relies on Bourbon Street foot traffic and tourists who don't know better.",
+      "red_flags": [
+        {
+          "type": "hygiene_concerns",
+          "description": "History of health violations",
+          "evidence": "\"Locals call it the stomach ache waiting to happen. Pest control issues are public record.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "review_manipulation",
+          "description": "Aggressive legal threats",
+          "evidence": "\"They sue reviewers. That tells you everything you need to know.\" (Eater NOLA)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "accessibility",
+          "description": "Open late/Large groups",
+          "evidence": "\"Good if you have a huge bachelor party and everyone else is booked.\" (TripAdvisor)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Do not eat here. The food was cold, and the place smelled like sewage. Locals avoid this place like the plague.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Yelp",
+          "highlights": ["smelled like sewage", "locals avoid"]
+        },
+        {
+          "text": "The crab cakes were decent, but the service felt like they were trying to turn the table in 30 minutes.",
+          "rating": 3,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["turn the table", "decent"]
+        }
+      ],
+      "embedding_text": "Oceana Grill in New Orleans, USA. restaurant. tourist_trap. Infamous for aggressive street hustlers, hygiene issues, and suing reviewers. Relies on Bourbon Street foot traffic. Red flags: History of health violations, Aggressive legal threats. Positives: Open late/Large groups."
+    },
+    {
+      "id": "restaurant-bubba-gump-shrimp-co-san-francisco",
+      "name": "Bubba Gump Shrimp Co.",
+      "location": "San Francisco, USA",
+      "city": "San Francisco",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 92,
+      "price_tier": "$$",
+      "summary": "The archetype of a chain tourist trap. Located on Fisherman's Wharf, it serves mostly deep-fried frozen seafood at premium prices. You pay for the Forrest Gump trivia and the view, not the food.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Frozen food at fresh prices",
+          "evidence": "\"Rubber shrimp. You are in San Francisco, surrounded by fresh seafood, eating frozen Sysco bags.\" (SF Gate)",
+          "severity": "high"
+        },
+        {
+          "type": "authenticity_issues",
+          "description": "Corporate theme park dining",
+          "evidence": "\"The trivia quiz by the waiter is agonizing.\" (TripAdvisor)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "location_perk",
+          "description": "Bay views",
+          "evidence": "\"If you get a window seat, the view of the bridge is actually nice.\" (Google Maps)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Why go here? You are in SF! Go to Swan Oyster Depot. This is like eating at a mall food court with a view.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["mall food court", "why go here"]
+        },
+        {
+          "text": "Kids loved the movie references. Food was okay, nothing special, but good family fun.",
+          "rating": 4,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["kids loved", "good family fun"]
+        }
+      ],
+      "embedding_text": "Bubba Gump Shrimp Co. in San Francisco, USA. restaurant. tourist_trap. Archetype of chain trap on Fisherman's Wharf. Deep-fried frozen seafood at premium prices. You pay for the trivia and view. Red flags: Frozen food at fresh prices, Corporate theme park dining. Positives: Bay views."
+    },
+    {
+      "id": "restaurant-la-taqueria-san-francisco",
+      "name": "La Taqueria",
+      "location": "San Francisco, USA",
+      "city": "San Francisco",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 20,
+      "price_tier": "$",
+      "summary": "Home of the rice-free Mission Burrito and a James Beard award winner. Despite lines of tourists, locals remain fiercely loyal to the 'El Dorado' style burritos. It manages the volume without sacrificing quality.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Long lines",
+          "evidence": "\"Line moves fast but it wraps around the building on weekends.\" (Eater SF)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Rice-free burrito innovation",
+          "evidence": "\"No rice filler, just meat, beans, and salsa. The golden standard.\" (FiveThirtyEight)",
+          "strength": "high"
+        },
+        {
+          "type": "local_endorsement",
+          "description": "Neighborhood staple",
+          "evidence": "\"I've been coming here for 20 years. The carne asada is still the best.\" (Yelp)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Best burrito in the world. Get it dorado style (crispy). Worth every minute of the wait.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["dorado style", "best burrito"]
+        },
+        {
+          "text": "It's expensive for a burrito ($15+) but it's huge and all meat. No rice filler makes a difference.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["expensive", "all meat"]
+        }
+      ],
+      "embedding_text": "La Taqueria in San Francisco, USA. restaurant. local_gem. Home of the rice-free Mission Burrito and James Beard winner. Locals remain fiercely loyal to 'El Dorado' style burritos. Red flags: Long lines. Positives: Rice-free burrito innovation, Neighborhood staple."
+    },
+    {
+      "id": "restaurant-bacchanal-buffet-las-vegas",
+      "name": "Bacchanal Buffet",
+      "location": "Las Vegas, USA",
+      "city": "Las Vegas",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "medium",
+      "tourist_trap_score": 45,
+      "price_tier": "$$$$",
+      "summary": "The most famous buffet in Vegas comes with a staggering price tag ($80+) and strict time limits. However, the sheer variety and quality of ingredients (wagyu sliders, crab legs) separate it from standard casino troughs. It's an 'Experience Trap'—expensive, but delivers on the promise.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Extremely high price point",
+          "evidence": "\"By the time you pay tax and tip, it's $100 per person for a buffet.\" (Vegas Eater)",
+          "severity": "medium"
+        },
+        {
+          "type": "service_problems",
+          "description": "Time limits (90 mins)",
+          "evidence": "\"They rush you out after 90 minutes. Not a relaxing meal.\" (TripAdvisor)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "High-end ingredients",
+          "evidence": "\"This isn't old shrimp... it's fresh crab, wagyu, and countless cuisines cooked well.\" (Travel Blog)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Is it worth $80? Probably not. Is it the best buffet I've ever been to? Yes. Go hungry.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["best buffet", "go hungry"]
+        },
+        {
+          "text": "We felt herded like cattle. Food was good but the line to get in took an hour even with a reservation.",
+          "rating": 3,
+          "is_local": false,
+          "source": "Yelp",
+          "highlights": ["herded like cattle", "line took an hour"]
+        }
+      ],
+      "embedding_text": "Bacchanal Buffet in Las Vegas, USA. restaurant. mixed. Most famous buffet in Vegas. Staggering price ($80+) and strict time limits, but variety and quality (wagyu, crab) separate it from standard troughs. Red flags: Extremely high price point, Time limits. Positives: High-end ingredients."
+    },
+    {
+      "id": "restaurant-heart-attack-grill-las-vegas",
+      "name": "Heart Attack Grill",
+      "location": "Las Vegas, USA",
+      "city": "Las Vegas",
+      "country": "USA",
+      "region": "north_america",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 90,
+      "price_tier": "$$",
+      "summary": "A restaurant built entirely on shock value. Diners wear hospital gowns and are spanked by waitresses if they don't finish their 'Bypass Burgers'. The food is greasy and mediocre; you are paying to be part of a spectacle.",
+      "red_flags": [
+        {
+          "type": "authenticity_issues",
+          "description": "Gimmick over quality",
+          "evidence": "\"The burger was dry and tasteless. You go for the weird spanking fetish, not the food.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "environment_issues",
+          "description": "Uncomfortable atmosphere",
+          "evidence": "\"It's just gross. Watching people over 350lbs eat for free is depressing.\" (TripAdvisor)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "novelty",
+          "description": "Unique (if morbid) experience",
+          "evidence": "\"It's a one-time thing for the story.\" (Travel Blog)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Disgusting food, disgusting concept. I felt sick just being there.",
+          "rating": 1,
+          "is_local": false,
+          "source": "Yelp",
+          "highlights": ["disgusting concept", "felt sick"]
+        },
+        {
+          "text": "It's hilarious if you have a dark sense of humor. Don't expect gourmet, expect a show.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["hilarious", "expect a show"]
+        }
+      ],
+      "embedding_text": "Heart Attack Grill in Las Vegas, USA. restaurant. tourist_trap. Built on shock value. Diners wear hospital gowns. Food is greasy and mediocre; you pay for the spectacle. Red flags: Gimmick over quality, Uncomfortable atmosphere. Positives: Unique (if morbid) experience."
+    },
+    {
+      "id": "bar-sky-bar-at-lebua-bangkok",
+      "name": "Sky Bar at Lebua",
+      "location": "Bangkok, Thailand",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "region": "asia",
+      "category": "bar",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 92,
+      "price_tier": "$$$$",
+      "summary": "Made famous by 'The Hangover II', this rooftop bar is now a chaotic photo-op factory. Staff aggressively push overpriced champagne, there is nowhere to sit, and security herds guests like cattle to keep walkways clear.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Astronomical drink prices",
+          "evidence": "\"$35 for a watered-down mocktail in a plastic cup? Criminal.\" (TripAdvisor)",
+          "severity": "high"
+        },
+        {
+          "type": "service_problems",
+          "description": "Aggressive crowd control",
+          "evidence": "\"You are yelled at if you stop moving. It's not a bar, it's a conveyor belt.\" (Reddit)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "location_perk",
+          "description": "Incredible skyline view",
+          "evidence": "\"The view is undeniably one of the best in the world, if you can see it over the selfie sticks.\" (Travel Blog)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Worst experience in Bangkok. Rude staff, insane prices, and you can't even enjoy the view because you're being pushed.",
+          "rating": 1,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["rude staff", "insane prices"]
+        },
+        {
+          "text": "Go once for the Hangover photo, buy one drink, and leave. It's a bucket list item, not a hangout.",
+          "rating": 3,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["bucket list", "go once"]
+        }
+      ],
+      "embedding_text": "Sky Bar at Lebua in Bangkok, Thailand. bar. tourist_trap. Made famous by 'The Hangover II', this rooftop bar is now a chaotic photo-op factory. Staff aggressively push overpriced champagne and herd guests like cattle. Red flags: Astronomical drink prices, Aggressive crowd control. Positives: Incredible skyline view."
+    },
+    {
+      "id": "street_food-jay-fai-bangkok",
+      "name": "Jay Fai",
+      "location": "Bangkok, Thailand",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "region": "asia",
+      "category": "street_food",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 20,
+      "price_tier": "$$$",
+      "summary": "The only street food vendor with a Michelin star, famous for her crab omelet. Yes, it is expensive for street food ($30+) and the wait is hours long, but the ingredients are premium quality and the cooking technique is legendary.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Extreme wait times",
+          "evidence": "\"We waited 4 hours. You have to commit your whole day to this.\" (Food Blog)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Michelin-star execution",
+          "evidence": "\"The crab omelet is a massive roll of pure, sweet crab meat held together by egg. Unmatched.\" (Michelin Guide)",
+          "strength": "high"
+        },
+        {
+          "type": "authenticity_praise",
+          "description": "One-woman show",
+          "evidence": "\"Watching Jay Fai herself cook every single dish in goggles is part of the magic.\" (Eater)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Expensive for Bangkok but cheap for a Michelin meal. The crab is generous and fresh. Worth the hype.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Wongnai",
+          "highlights": ["worth the hype", "generous crab"]
+        },
+        {
+          "text": "It's good, but is it wait-4-hours good? I'm not sure. The price is shocking for a roadside stall.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["wait 4 hours", "price is shocking"]
+        }
+      ],
+      "embedding_text": "Jay Fai in Bangkok, Thailand. street_food. local_gem. The only street food vendor with a Michelin star, famous for her crab omelet. Expensive for street food ($30+) with long waits, but the premium ingredients and legendary technique justify it. Red flags: Extreme wait times. Positives: Michelin-star execution, One-woman show."
+    },
+    {
+      "id": "restaurant-ichiran-shibuya-tokyo",
+      "name": "Ichiran Shibuya",
+      "location": "Tokyo, Japan",
+      "city": "Tokyo",
+      "country": "Japan",
+      "region": "asia",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 58,
+      "price_tier": "$$",
+      "summary": "The 'McDonald's of Ramen'. While accessible for anxious tourists, the broth is factory-made and locals refuse to wait 45 minutes for a bowl they can get better/cheaper elsewhere.",
+      "red_flags": [
+        {
+          "type": "local_avoidance",
+          "description": "Locals won't wait",
+          "evidence": "\"No Tokyo local waits 45 mins for Ichiran when there are 5 better shops on the same block.\" (Reddit)",
+          "severity": "medium"
+        },
+        {
+          "type": "quality_decline",
+          "description": "Mass-produced flavor",
+          "evidence": "\"It's the McDonald's of ramen. Consistent, but lacks soul.\" (Ramen Adventures)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "accessibility",
+          "description": "Tourist-friendly ordering",
+          "evidence": "\"English menus, no speaking required, fully customizable. Great for anxiety-free dining.\" (Japan Guide)",
+          "strength": "high"
+        },
+        {
+          "type": "specific_quality",
+          "description": "Consistently decent taste",
+          "evidence": "\"The spicy red sauce is addictive. It hits the spot every time.\" (TripAdvisor)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Overrated. Broth is flat. You are queuing for the experience of sitting in a cubicle.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Tablelog",
+          "highlights": ["overrated", "broth is flat"]
+        },
+        {
+          "text": "Best meal I had in Japan! The solo booth was so cool and I loved choosing my noodle firmness.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["best meal", "solo booth"]
+        }
+      ],
+      "embedding_text": "Ichiran Shibuya in Tokyo, Japan. restaurant. tourist_trap. The 'McDonald's of Ramen'. Factory-made broth and locals refuse to wait 45 minutes for a bowl they can get better/cheaper elsewhere. Red flags: Locals won't wait, Mass-produced flavor. Positives: Tourist-friendly ordering, Consistently decent taste."
+    },
+    {
+      "id": "street_food-wangfujing-snack-street-beijing",
+      "name": "Wangfujing Snack Street",
+      "location": "Beijing, China",
+      "city": "Beijing",
+      "country": "China",
+      "region": "asia",
+      "category": "street_food",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 95,
+      "price_tier": "$$",
+      "summary": "A street famous for selling scorpions and starfish on sticks. This is purely theater for shock-value photos; locals never eat here. The food is often cold, stale, and exorbitantly priced compared to authentic Beijing hutong snacks.",
+      "red_flags": [
+        {
+          "type": "authenticity_issues",
+          "description": "Fake 'exotic' food",
+          "evidence": "\"Chinese people don't eat starfish. This is a show for foreigners.\" (The Beijinger)",
+          "severity": "high"
+        },
+        {
+          "type": "price_quality_mismatch",
+          "description": "Stale food at high prices",
+          "evidence": "\"The dumplings were cold and hard. Just a rip-off.\" (TripAdvisor)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "novelty",
+          "description": "Visual spectacle",
+          "evidence": "\"Fun to walk through and see the scorpions moving, but don't buy anything.\" (Lonely Planet)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Total trap. They yell at you to buy. The food looks plastic. Just take a photo and run.",
+          "rating": 1,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["total trap", "food looks plastic"]
+        },
+        {
+          "text": "I ate the scorpion on a dare. It tasted like burnt oil. 0/10 culinary experience, 10/10 story.",
+          "rating": 2,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["tasted like burnt oil", "ate on a dare"]
+        }
+      ],
+      "embedding_text": "Wangfujing Snack Street in Beijing, China. street_food. tourist_trap. Famous for selling scorpions and starfish on sticks. Purely theater for shock-value photos; locals never eat here. Food is cold, stale, and exorbitantly priced. Red flags: Fake 'exotic' food, Stale food at high prices. Positives: Visual spectacle."
+    },
+    {
+      "id": "bar-opera-bar-sydney",
+      "name": "Opera Bar",
+      "location": "Sydney, Australia",
+      "city": "Sydney",
+      "country": "Australia",
+      "region": "asia",
+      "category": "bar",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 48,
+      "price_tier": "$$$",
+      "summary": "The location is unbeatable, sitting directly between the Opera House and Harbour Bridge. While the drinks are pricey and it gets crowded, even locals admit the view is worth the 'tax'. The food has improved recently, moving it away from pure trap territory.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Paying for the view",
+          "evidence": "\"$14 for a schooner is steep, but you're paying rent on the harbour.\" (Broadsheet)",
+          "severity": "medium"
+        },
+        {
+          "type": "service_problems",
+          "description": "Seagull attacks",
+          "evidence": "\"Watch your chips. The seagulls are aggressive and will steal food from your hand.\" (Local Warning)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "location_perk",
+          "description": "World-class views",
+          "evidence": "\"Literally the best beer garden view on earth. Sunset here is non-negotiable.\" (Timeout Sydney)",
+          "strength": "high"
+        },
+        {
+          "type": "local_endorsement",
+          "description": "Locals bring visitors here",
+          "evidence": "\"It's the first place I take anyone visiting Sydney. It's cliche but magic.\" (Reddit)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Food is average pub grub and expensive. Service is slow. But that view... I keep coming back.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["average pub grub", "view"]
+        },
+        {
+          "text": "Beware the seagulls! They swooped my burger. Drinks are nice though.",
+          "rating": 4,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["beware seagulls", "drinks are nice"]
+        }
+      ],
+      "embedding_text": "Opera Bar in Sydney, Australia. bar. mixed. Unbeatable location between Opera House and Harbour Bridge. Pricey drinks, but locals admit view is worth the 'tax'. Food has improved. Red flags: Paying for the view, Seagull attacks. Positives: World-class views, Locals bring visitors here."
+    },
+    {
+      "id": "restaurant-nusr-et-steakhouse-dubai",
+      "name": "Nusr-Et Steakhouse",
+      "location": "Dubai, UAE",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "other_hotspots",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 98,
+      "price_tier": "$$$$",
+      "summary": "Salt Bae's flagship is the definition of a viral tourist trap. Diners pay thousands for gold-covered steaks that critics describe as bland and chewy. It is theater for Instagram, with zero culinary merit to back up the mortgage-level bill.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Obscene prices for average meat",
+          "evidence": "\"$1000 for a tomahawk just because it's wrapped in cheap gold foil. The meat was overcooked.\" (Food Critic)",
+          "severity": "high"
+        },
+        {
+          "type": "authenticity_issues",
+          "description": "Performative dining",
+          "evidence": "\"You are paying for a guy in sunglasses to sprinkle salt. That's it.\" (Reddit)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "novelty",
+          "description": "Celebrity sighting potential",
+          "evidence": "\"If he is there, it's a show. Everyone gets their phone out.\" (TimeOut Dubai)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The biggest scam in Dubai. Service was arrogant, steak was cold, and the bill was insulting.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Zomato",
+          "highlights": ["biggest scam", "arrogant"]
+        },
+        {
+          "text": "Fun experience but the food is average. You pay for the brand.",
+          "rating": 3,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["pay for the brand", "average food"]
+        }
+      ],
+      "embedding_text": "Nusr-Et Steakhouse in Dubai, UAE. restaurant. tourist_trap. Salt Bae's flagship is the definition of a viral tourist trap. Diners pay thousands for bland, gold-covered steaks. Theater for Instagram with zero culinary merit. Red flags: Obscene prices for average meat, Performative dining. Positives: Celebrity sighting potential."
+    },
+    {
+      "id": "restaurant-pujol-mexico-city",
+      "name": "Pujol",
+      "location": "Mexico City, Mexico",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "region": "emerging",
+      "category": "restaurant",
+      "verdict": "mixed",
+      "confidence": "medium",
+      "tourist_trap_score": 40,
+      "price_tier": "$$$$",
+      "summary": "Consistently ranked in the World's Top 50, Pujol is famous for its 1000-day Mole Madre. While undeniably significant to Mexican gastronomy, some locals feel it has become sterile and catered entirely to foreign palates, lacking the punch of real Mexican food.",
+      "red_flags": [
+        {
+          "type": "authenticity_issues",
+          "description": "Caters to Western palates",
+          "evidence": "\"Flavors are muted... it feels like Mexican food explained to Europeans.\" (Local Food Blogger)",
+          "severity": "medium"
+        },
+        {
+          "type": "price_quality_mismatch",
+          "description": "Very expensive for CDMX",
+          "evidence": "\"You can eat better mole in Oaxaca for $5.\" (Reddit)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Culinary innovation",
+          "evidence": "\"The Mole Madre is a profound history lesson on a plate. It deserves the accolades.\" (Chef's Table)",
+          "strength": "high"
+        },
+        {
+          "type": "service_quality",
+          "description": "Impeccable service",
+          "evidence": "\"Service is a ballet. Flawless execution.\" (Eater)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "It was an intellectual experience, not a soulful one. I respect it, but I didn't love it.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["intellectual experience", "didn't love it"]
+        },
+        {
+          "text": "Best meal of my life. The mole is unlike anything I've ever tasted.",
+          "rating": 5,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["best meal", "mole"]
+        }
+      ],
+      "embedding_text": "Pujol in Mexico City, Mexico. restaurant. mixed. Consistently ranked in World's Top 50, famous for 1000-day Mole Madre. Undeniably significant, but some locals feel it's sterile and catered to foreign palates. Red flags: Caters to Western palates, Very expensive for CDMX. Positives: Culinary innovation, Impeccable service."
+    },
+    {
+      "id": "cafe-el-moro-mexico-city",
+      "name": "El Moro",
+      "location": "Mexico City, Mexico",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "region": "emerging",
+      "category": "cafe",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 10,
+      "price_tier": "$",
+      "summary": "An institution since 1935 serving churros and hot chocolate 24/7. Despite having multiple locations now, the quality remains consistent and it is a beloved late-night ritual for Chilangos and tourists alike.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Lines at peak hours",
+          "evidence": "\"Expect a line at the Centro Historico location, but it moves fast.\" (Lonely Planet)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "local_endorsement",
+          "description": "Deeply ingrained in local culture",
+          "evidence": "\"My grandfather brought me here, I bring my kids. It's CDMX heritage.\" (Local Review)",
+          "strength": "high"
+        },
+        {
+          "type": "value_acknowledgment",
+          "description": "Very affordable",
+          "evidence": "\"4 churros for cheap. The best snack in the city.\" (Google Maps)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The Consuelo (ice cream sandwich) is life changing. A must visit.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Instagram",
+          "highlights": ["life changing", "must visit"]
+        },
+        {
+          "text": "Nothing beats dipping a fresh churro in Spanish chocolate at 2am. A classic.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["2am", "classic"]
+        }
+      ],
+      "embedding_text": "El Moro in Mexico City, Mexico. cafe. local_gem. Institution since 1935 serving churros and hot chocolate 24/7. Despite expansion, quality is consistent. Beloved late-night ritual for locals. Red flags: Lines at peak hours. Positives: Deeply ingrained in local culture, Very affordable."
+    },
+    {
+      "id": "restaurant-mama-africa-cape-town",
+      "name": "Mama Africa",
+      "location": "Cape Town, South Africa",
+      "city": "Cape Town",
+      "country": "South Africa",
+      "region": "emerging",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 85,
+      "price_tier": "$$$",
+      "summary": "A restaurant designed to give tourists a 'safari' dinner experience on Long Street. It serves game meat platters (crocodile, ostrich) accompanied by loud marimba bands. Locals rarely eat here; it's a caricature of African cuisine.",
+      "red_flags": [
+        {
+          "type": "authenticity_issues",
+          "description": "Stereotypical 'African' experience",
+          "evidence": "\"It's the Epcot version of Africa. Locals don't eat crocodile platters.\" (Cape Town Magazine)",
+          "severity": "high"
+        },
+        {
+          "type": "price_quality_mismatch",
+          "description": "Overpriced game meat",
+          "evidence": "\"Meat was dry and tough. You pay for the band, not the food.\" (TripAdvisor)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "novelty",
+          "description": "Live music atmosphere",
+          "evidence": "\"The band is energetic and fun if you want a party vibe.\" (TimeOut)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Great music, terrible food. The crocodile tasted like chicken rubber. Tourist central.",
+          "rating": 2,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["terrible food", "tourist central"]
+        },
+        {
+          "text": "Fun night out! We tried Kudu and Ostrich. A bit pricey but the band made it worth it.",
+          "rating": 4,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["fun night", "band made it worth"]
+        }
+      ],
+      "embedding_text": "Mama Africa in Cape Town, South Africa. restaurant. tourist_trap. Designed to give tourists a 'safari' dinner experience. Serves game meat platters with loud marimba bands. Locals rarely eat here. Red flags: Stereotypical 'African' experience, Overpriced game meat. Positives: Live music atmosphere."
+    },
+    {
+      "id": "restaurant-la-vieja-rotiseria-buenos-aires",
+      "name": "La Vieja Rotiseria",
+      "location": "Buenos Aires, Argentina",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "region": "emerging",
+      "category": "restaurant",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 90,
+      "price_tier": "$$$",
+      "summary": "Located in the Caminito (La Boca), this spot lures tourists with tango dancers on the sidewalk. The steak is notoriously bad (shoe-leather quality) and priced 3x higher than standard parrillas. It exploits the safety concerns of the area to keep tourists captive.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Terrible steak at premium prices",
+          "evidence": "\"Worst parrillada in BA. Meat was grey and chewy.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "scams_and_touts",
+          "description": "Aggressive street dancers",
+          "evidence": "\"Dancers pull you in for a photo then demand money. Aggressive.\" (TripAdvisor)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "location_perk",
+          "description": "Right in the colorful Caminito",
+          "evidence": "\"Good for people watching in the heart of La Boca.\" (Travel Blog)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "A total trap. They charge a 'cubierto' (sitting fee) and the meat is inedible. Go to Don Julio instead.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["total trap", "meat inedible"]
+        },
+        {
+          "text": "We stopped for a beer and to watch the Tango. Don't eat here, just drink.",
+          "rating": 3,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["don't eat here", "watch tango"]
+        }
+      ],
+      "embedding_text": "La Vieja Rotiseria in Buenos Aires, Argentina. restaurant. tourist_trap. Located in Caminito, lures tourists with tango dancers. Steak is notoriously bad and priced 3x higher than standard parrillas. Exploits safety concerns to trap tourists. Red flags: Terrible steak at premium prices, Aggressive street dancers. Positives: Right in the colorful Caminito."
+    },
+    {
+      "id": "restaurant-xian-famous-foods-new-york",
+      "name": "Xi'an Famous Foods",
+      "location": "New York, USA",
+      "category": "restaurant",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 10,
+      "price_tier": "$",
+      "summary": "A local chain that started in a basement and conquered NYC. Known for hand-ripped cumin lamb noodles that are spicy, authentic, and incredibly cheap ($10-15). A staple for New Yorkers.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "No frills/counter service only",
+          "evidence": "\"Don't expect service, just eat and go.\" (Infatuation)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Best cheap eat in NYC",
+          "evidence": "\"Impossible to beat the value for this flavor profile.\" (Serious Eats)",
+          "strength": "high"
+        },
+        {
+          "type": "local_endorsement",
+          "description": "Cult following",
+          "evidence": "\"I eat here once a week. It's the taste of Queens.\" (Reddit)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Spicy, oily, chewy noodles. Perfection. Not a fancy place but the food is 10/10.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["perfection", "spicy"]
+        },
+        {
+          "text": "Staff yelled out my number and the music was loud. Loved every second.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Yelp",
+          "highlights": ["loud", "loved every second"]
+        }
+      ],
+      "embedding_text": "Xi'an Famous Foods in New York, USA. restaurant. local_gem. Hand-ripped cumin lamb noodles that are spicy, authentic, and cheap. A staple for New Yorkers. Red flags: No frills/counter service only. Positives: Best cheap eat in NYC, Cult following."
+    },
+    {
+      "id": "restaurant-joes-pizza-new-york",
+      "name": "Joe's Pizza (Greenwich Village)",
+      "location": "New York, USA",
+      "category": "street_food",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 15,
+      "price_tier": "$",
+      "summary": "The quintessential NY slice shop. Despite the celebrity photos on the wall and the line out the door, the plain cheese slice remains the gold standard: thin, crispy, and consistent. Locals and tourists unite here.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Always a line",
+          "evidence": "\"Line moves fast but it's always there.\" (Eater)",
+          "severity": "low"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "The benchmark slice",
+          "evidence": "\"The definition of a NY slice. No gimmicks.\" (Barstool Sports)",
+          "strength": "high"
+        },
+        {
+          "type": "authenticity_praise",
+          "description": "Unchanged for decades",
+          "evidence": "\"Still tastes like it did in the 90s.\" (Reddit)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Spiderman worked here for a reason. Best slice in the city.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Google Maps",
+          "highlights": ["best slice"]
+        },
+        {
+          "text": "Touristy? Yes. Worth it? Absolutely. It's just good pizza.",
+          "rating": 4,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["worth it", "good pizza"]
+        }
+      ],
+      "embedding_text": "Joe's Pizza (Greenwich Village) in New York, USA. street_food. local_gem. The quintessential NY slice shop. Despite celebrity fame, the plain cheese slice remains the gold standard. Red flags: Always a line. Positives: The benchmark slice, Unchanged for decades."
+    },
+    {
+      "id": "restaurant-fuunji-tokyo",
+      "name": "Fuunji",
+      "location": "Tokyo, Japan",
+      "category": "restaurant",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 20,
+      "price_tier": "$",
+      "summary": "Legendary Tsukemen (dipping ramen) shop in Shinjuku. There is always a line of locals and savvy tourists, but the efficiency is incredible and the rich, fishy broth is world-class.",
+      "red_flags": [
+        {
+          "type": "environment_issues",
+          "description": "Cramped standing/waiting",
+          "evidence": "\"You stand behind the people eating while you wait. High pressure.\" (Ramen Beast)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Top-tier Tsukemen",
+          "evidence": "\"The umami bomb of the soup is unforgettable.\" (Tablelog)",
+          "strength": "high"
+        },
+        {
+          "type": "local_endorsement",
+          "description": "Salaryman favorite",
+          "evidence": "\"Full of locals on their lunch break.\" (Reddit)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Worth the wait. The chef moves like a machine. Delicious.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["chef moves like machine", "worth the wait"]
+        },
+        {
+          "text": "Intense atmosphere. You eat fast and leave. But the noodles are perfect.",
+          "rating": 4,
+          "is_local": true,
+          "source": "Tablelog",
+          "highlights": ["intense atmosphere", "noodles perfect"]
+        }
+      ],
+      "embedding_text": "Fuunji in Tokyo, Japan. restaurant. local_gem. Legendary Tsukemen (dipping ramen) shop in Shinjuku. Always a line of locals. Incredible efficiency and rich broth. Red flags: Cramped standing/waiting. Positives: Top-tier Tsukemen, Salaryman favorite."
+    },
+    {
+      "id": "restaurant-sushi-dai-tokyo",
+      "name": "Sushi Dai",
+      "location": "Tokyo, Japan",
+      "category": "restaurant",
+      "verdict": "local_gem",
+      "confidence": "medium",
+      "tourist_trap_score": 35,
+      "price_tier": "$$$",
+      "summary": "Located in Toyosu Market. Famous for 3+ hour waits. While some call the wait a trap, the Omakase is universally rated as high-end quality for a mid-range price. A 'Time Trap' but a 'Food Gem'.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Insane wait times",
+          "evidence": "\"We waited 4.5 hours. It breaks your soul.\" (TripAdvisor)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "value_acknowledgment",
+          "description": "Incredible value for Omakase",
+          "evidence": "\"For the price, the fish quality is unbeatable.\" (The Tokyo Chapter)",
+          "strength": "high"
+        },
+        {
+          "type": "service_quality",
+          "description": "Friendly chefs",
+          "evidence": "\"Chefs are chatty and welcoming, unlike many serious sushi spots.\" (Reddit)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "The sushi melted in my mouth. But honestly, no food is worth a 5 hour wait.",
+          "rating": 3,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["melted in mouth", "5 hour wait"]
+        },
+        {
+          "text": "Best sushi breakfast of my life. Go at 4am.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Tablelog",
+          "highlights": ["best sushi", "go at 4am"]
+        }
+      ],
+      "embedding_text": "Sushi Dai in Tokyo, Japan. restaurant. local_gem. Located in Toyosu Market. Famous for 3+ hour waits. While the wait is brutal, the Omakase is high-end quality for a mid-range price. Red flags: Insane wait times. Positives: Incredible value for Omakase, Friendly chefs."
+    },
+    {
+      "id": "restaurant-wattana-panich-bangkok",
+      "name": "Wattana Panich",
+      "location": "Bangkok, Thailand",
+      "category": "street_food",
+      "verdict": "local_gem",
+      "confidence": "high",
+      "tourist_trap_score": 15,
+      "price_tier": "$",
+      "summary": "Famous for the 'perpetual stew' that has been boiling for 40+ years. The massive cauldron of beef broth sits curbside. It attracts tourists, but the depth of flavor keeps it firmly in the 'Gem' category for locals.",
+      "red_flags": [
+        {
+          "type": "hygiene_concerns",
+          "description": "Visuals of old soup scare some",
+          "evidence": "\"The ring of fat on the pot is decades old. Not for the squeamish.\" (Food Blog)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "specific_quality",
+          "description": "Unique flavor depth",
+          "evidence": "\"You cannot fake 40 years of reduction. The broth is medicinal.\" (Mark Wiens)",
+          "strength": "high"
+        },
+        {
+          "type": "novelty",
+          "description": "The giant cauldron",
+          "evidence": "\"Seeing the massive pot is an attraction in itself.\" (TripAdvisor)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Rich, herbal, beefy. The goat stew is also amazing.",
+          "rating": 5,
+          "is_local": true,
+          "source": "Wongnai",
+          "highlights": ["rich", "herbal"]
+        },
+        {
+          "text": "Looked scary but tasted heavenly. Cheap and fast.",
+          "rating": 5,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["looked scary", "tasted heavenly"]
+        }
+      ],
+      "embedding_text": "Wattana Panich in Bangkok, Thailand. street_food. local_gem. Famous for the 'perpetual stew' boiling for 40+ years. Massive cauldron sits curbside. Depth of flavor keeps it a local favorite. Red flags: Visuals of old soup scare some. Positives: Unique flavor depth, The giant cauldron."
+    },
+    {
+      "id": "attraction-moulin-rouge-paris",
+      "name": "Moulin Rouge",
+      "location": "Paris, France",
+      "category": "attraction",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 88,
+      "price_tier": "$$$$",
+      "summary": "The world's most famous cabaret is a cramped, mass-produced assembly line. You are packed onto tables with strangers, served cheap champagne, and the show—while technically impressive—feels dated and soulless.",
+      "red_flags": [
+        {
+          "type": "environment_issues",
+          "description": "Packed like sardines",
+          "evidence": "\"You are touching elbows with strangers. No personal space.\" (TripAdvisor)",
+          "severity": "high"
+        },
+        {
+          "type": "price_quality_mismatch",
+          "description": "Overpriced ticket/drinks",
+          "evidence": "\"€150 for a show and cheap sparkling wine.\" (Reddit)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "historic_significance",
+          "description": "Bucket list item",
+          "evidence": "\"It is THE Moulin Rouge. You go for the name.\" (Travel Blog)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Strictly for tourists. Parisians wouldn't be caught dead here. The dancers look bored.",
+          "rating": 2,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["strictly for tourists", "dancers look bored"]
+        },
+        {
+          "text": "I loved the costumes! Yes it's crowded, but it's a classic.",
+          "rating": 4,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["loved costumes", "classic"]
+        }
+      ],
+      "embedding_text": "Moulin Rouge in Paris, France. attraction. tourist_trap. World's most famous cabaret is a cramped, mass-produced assembly line. Packed tables, cheap champagne, and a dated show. Red flags: Packed like sardines, Overpriced ticket/drinks. Positives: Bucket list item."
+    },
+    {
+      "id": "attraction-empire-state-building-new-york",
+      "name": "Empire State Building",
+      "location": "New York, USA",
+      "category": "attraction",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 80,
+      "price_tier": "$$$$",
+      "summary": "Iconic, but the experience is a nightmare of lines, airport-style security, and fences blocking the view. Savvy visitors know to go to 'Top of the Rock' or 'Summit' instead—where you can actually *see* the Empire State Building.",
+      "red_flags": [
+        {
+          "type": "service_problems",
+          "description": "Lines and security",
+          "evidence": "\"You wait in line for the elevator, then line for security, then line for the view.\" (Google Maps)",
+          "severity": "high"
+        },
+        {
+          "type": "location_dependency",
+          "description": "Better views exist elsewhere",
+          "evidence": "\"Go to Top of the Rock. You can't see the ESB if you are standing on it.\" (Reddit)",
+          "severity": "high"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "historic_significance",
+          "description": "Most famous building in NYC",
+          "evidence": "\"King Kong climbed it. It's history.\" (TripAdvisor)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Skip it. Go to Summit One Vanderbilt. Better view, less cage.",
+          "rating": 2,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["skip it", "better view"]
+        },
+        {
+          "text": "It's a classic. I cried when I saw the view.",
+          "rating": 5,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["classic", "cried"]
+        }
+      ],
+      "embedding_text": "Empire State Building in New York, USA. attraction. tourist_trap. Iconic, but a nightmare of lines and security fences. Savvy visitors go to Top of the Rock to actually see the ESB. Red flags: Lines and security, Better views exist elsewhere. Positives: Most famous building in NYC."
+    },
+    {
+      "id": "attraction-tokyo-skytree-tokyo",
+      "name": "Tokyo Skytree",
+      "location": "Tokyo, Japan",
+      "category": "attraction",
+      "verdict": "mixed",
+      "confidence": "medium",
+      "tourist_trap_score": 60,
+      "price_tier": "$$$",
+      "summary": "The tallest tower in Japan offers good views, but it is expensive and crowded. Locals prefer the Tokyo Metropolitan Government Building (which is free) or Shibuya Sky (which is open-air).",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Expensive vs Free alternatives",
+          "evidence": "\"Why pay ¥3000 when the Metro Gov building is free?\" (Japan Guide)",
+          "severity": "high"
+        },
+        {
+          "type": "service_problems",
+          "description": "Crowds and elevator waits",
+          "evidence": "\"Spent more time in line than looking at the view.\" (TripAdvisor)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "location_perk",
+          "description": "Highest point in Tokyo",
+          "evidence": "\"You can see Mt Fuji on a clear day. Unmatched height.\" (Tablelog)",
+          "strength": "high"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Go to Shibuya Sky instead. This is just a glass box high up.",
+          "rating": 3,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["glass box", "go to shibuya sky"]
+        },
+        {
+          "text": "The mall at the bottom is fun (Pokemon Center!), view was nice.",
+          "rating": 4,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["mall is fun", "view was nice"]
+        }
+      ],
+      "embedding_text": "Tokyo Skytree in Tokyo, Japan. attraction. mixed. Tallest tower in Japan. Good views but expensive and crowded. Locals prefer free alternatives or open-air decks. Red flags: Expensive vs Free alternatives, Crowds and elevator waits. Positives: Highest point in Tokyo."
+    },
+    {
+      "id": "attraction-gondola-rides-venice",
+      "name": "Gondola Rides",
+      "location": "Venice, Italy",
+      "category": "attraction",
+      "verdict": "mixed",
+      "confidence": "high",
+      "tourist_trap_score": 55,
+      "price_tier": "$$$$",
+      "summary": "The ultimate Venice cliché. It costs €80-100 for 30 minutes. It is undeniably expensive and touristy, but the city fixes the price (so no scams if you know the rate) and seeing Venice from the water is arguably essential.",
+      "red_flags": [
+        {
+          "type": "price_quality_mismatch",
+          "description": "Very short for the price",
+          "evidence": "\"It felt like 15 minutes. Very rushed.\" (TripAdvisor)",
+          "severity": "medium"
+        },
+        {
+          "type": "environment_issues",
+          "description": "Canal traffic jams",
+          "evidence": "\"You are bumper to bumper with other tourists. Not romantic.\" (Reddit)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "novelty",
+          "description": "Unique to Venice",
+          "evidence": "\"You can't do this anywhere else. It's magic despite the price.\" (Travel Blog)",
+          "strength": "high"
+        },
+        {
+          "type": "historic_significance",
+          "description": "Traditional transport",
+          "evidence": "\"Part of the history of the city.\" (Lonely Planet)",
+          "strength": "moderate"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Rip off. Just take the Vaporetto (water bus).",
+          "rating": 2,
+          "is_local": false,
+          "source": "Reddit",
+          "highlights": ["rip off", "take vaporetto"]
+        },
+        {
+          "text": "Yes it's expensive, but my wife loved it. The gondolier was singing. Classic.",
+          "rating": 5,
+          "is_local": false,
+          "source": "TripAdvisor",
+          "highlights": ["expensive but loved it", "singing"]
+        }
+      ],
+      "embedding_text": "Gondola Rides in Venice, Italy. attraction. mixed. The ultimate Venice cliché. €80+ for 30 minutes. Undeniably expensive and touristy, but seeing Venice from the water is unique. Red flags: Very short for the price, Canal traffic jams. Positives: Unique to Venice, Traditional transport."
+    },
+    {
+      "id": "attraction-little-mermaid-statue-copenhagen",
+      "name": "The Little Mermaid Statue",
+      "location": "Copenhagen, Denmark",
+      "category": "attraction",
+      "verdict": "tourist_trap",
+      "confidence": "high",
+      "tourist_trap_score": 90,
+      "price_tier": "Free",
+      "summary": "Infamously underwhelming. A tiny statue in an industrial harbor, surrounded by busloads of tourists fighting for a photo. Danes joke that it is the most disappointing landmark in Europe.",
+      "red_flags": [
+        {
+          "type": "environment_issues",
+          "description": "Underwhelming size/location",
+          "evidence": "\"It's tiny and sitting in front of a factory.\" (Reddit)",
+          "severity": "high"
+        },
+        {
+          "type": "service_problems",
+          "description": "Crowd crushing",
+          "evidence": "\"You risk falling in the water just to see it.\" (TripAdvisor)",
+          "severity": "medium"
+        }
+      ],
+      "positive_signals": [
+        {
+          "type": "historic_significance",
+          "description": "City symbol",
+          "evidence": "\"It is the symbol of Copenhagen.\" (Guidebook)",
+          "strength": "low"
+        }
+      ],
+      "sample_reviews": [
+        {
+          "text": "Walked 30 mins for a rock with a small lady on it. Disappointing.",
+          "rating": 1,
+          "is_local": false,
+          "source": "Google Maps",
+          "highlights": ["disappointing", "small lady"]
+        },
+        {
+          "text": "As a Dane, I never go here. We send tourists here so they leave us alone in the good spots.",
+          "rating": 1,
+          "is_local": true,
+          "source": "Reddit",
+          "highlights": ["never go here", "leave us alone"]
+        }
+      ],
+      "embedding_text": "The Little Mermaid Statue in Copenhagen, Denmark. attraction. tourist_trap. Infamously underwhelming. A tiny statue in an industrial harbor surrounded by tourists. Danes joke it is the most disappointing landmark. Red flags: Underwhelming size/location, Crowd crushing. Positives: City symbol."
+    }
+  ]
+}

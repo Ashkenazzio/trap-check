@@ -94,13 +94,20 @@ RESPONSE_SCHEMA = {
 }
 
 
-def analyze_venue(query: str, location: str | None = None) -> dict:
+def analyze_venue(
+    query: str,
+    location: str | None = None,
+    temperature: float | None = None,
+    use_rag: bool = False,
+) -> dict:
     """
-    Analyze a venue for tourist trap indicators using metrics + Claude.
+    Analyze a venue for tourist trap indicators using metrics + Gemini.
 
     Args:
         query: Business name or Google Maps URL
         location: City/region (optional if URL provided)
+        temperature: Gemini temperature setting (0.0-2.0, None for default)
+        use_rag: Whether to use RAG calibration examples in prompt
 
     Returns:
         Analysis result dict
@@ -117,6 +124,22 @@ def analyze_venue(query: str, location: str | None = None) -> dict:
     # Step 1.5: Detect venue type
     venue_type = infer_venue_type(place)
     print(f"Detected venue type: {venue_type}")
+
+    # Step 1.6: Retrieve RAG calibration examples if enabled
+    rag_examples = None
+    if use_rag:
+        try:
+            from src.rag.retriever import retrieve_calibration_examples
+            print("Retrieving RAG calibration examples...")
+            rag_examples = retrieve_calibration_examples(
+                query=f"{place['name']} {venue_type} {location or ''}",
+                venue_type=venue_type,
+                n_per_verdict=2
+            )
+            print(f"Retrieved {rag_examples['total']} RAG examples ({len(rag_examples['traps'])} traps, {len(rag_examples['gems'])} gems, {len(rag_examples['mixed'])} mixed)")
+        except Exception as e:
+            print(f"RAG retrieval failed: {e}")
+            rag_examples = None
 
     # Step 2: Fetch stratified reviews
     if not place.get("data_id"):
@@ -271,7 +294,22 @@ Higher specificity scores indicate more detailed, specific reviews.
 
     prompt += "\n\nBased on these metrics and reviews, provide your analysis."
 
-    full_prompt = f"{SYSTEM_PROMPT}\n\n{prompt}"
+    # Build full prompt with optional RAG calibration examples
+    if rag_examples and rag_examples["total"] > 0:
+        from src.rag.retriever import format_examples_for_prompt
+        rag_section = format_examples_for_prompt(rag_examples)
+        full_prompt = f"{SYSTEM_PROMPT}\n\n{rag_section}\n\n{prompt}"
+    else:
+        full_prompt = f"{SYSTEM_PROMPT}\n\n{prompt}"
+
+    # Build generation config with optional temperature
+    generation_config = {
+        "maxOutputTokens": 4096,
+        "responseMimeType": "application/json",
+        "responseSchema": RESPONSE_SCHEMA
+    }
+    if temperature is not None:
+        generation_config["temperature"] = temperature
 
     # Call Gemini REST API with structured JSON output
     response = httpx.post(
@@ -279,11 +317,7 @@ Higher specificity scores indicate more detailed, specific reviews.
         params={"key": GOOGLE_API_KEY},
         json={
             "contents": [{"parts": [{"text": full_prompt}]}],
-            "generationConfig": {
-                "maxOutputTokens": 4096,
-                "responseMimeType": "application/json",
-                "responseSchema": RESPONSE_SCHEMA
-            }
+            "generationConfig": generation_config
         },
         timeout=60.0
     )
@@ -309,6 +343,10 @@ Higher specificity scores indicate more detailed, specific reviews.
         "google_maps_url": place["google_maps_url"],
         "reviews_analyzed": len(reviews_low) + len(reviews_high),
         "venue_type": venue_type,
+        # Experiment configuration tracking
+        "temperature": temperature,
+        "rag_enabled": use_rag,
+        "rag_examples_count": rag_examples["total"] if rag_examples else 0,
     }
     analysis["computed_metrics"] = metrics["summary"]
     analysis["signals"] = metrics["signals"]

@@ -106,7 +106,7 @@ Four pre-configured venues in `src/tools/mock_data.py` for testing without SerpA
 ## RAG System
 
 RAG integration provides similar venue examples for calibration using vector embeddings:
-- **Database:** `RAG/rag_master.json` (149 examples)
+- **Database:** `src/rag/data/rag_master.json` (149 examples)
 - **Module:** `src/rag/retriever.py`
 - **Dependencies:** `chromadb`, `sentence-transformers`
 - **Embedding Model:** `all-MiniLM-L6-v2` (sentence-transformers)

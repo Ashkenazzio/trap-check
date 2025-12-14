@@ -28,7 +28,7 @@ def _load_rag_database():
     if _entries_cache is not None:
         return _entries_cache
 
-    rag_path = Path(__file__).parent.parent.parent / "RAG" / "rag_master.json"
+    rag_path = Path(__file__).parent / "data" / "rag_master.json"
     if not rag_path.exists():
         raise FileNotFoundError(f"RAG database not found: {rag_path}")
 

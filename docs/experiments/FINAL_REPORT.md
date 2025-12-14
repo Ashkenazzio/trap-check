@@ -28,14 +28,20 @@ This report presents comprehensive evaluation results for TrapCheck, an NLP syst
 
 ## Experimental Setup
 
-### Test Venues (Ground Truth)
+### Evaluation Dataset (Mock Data with Manual Ground Truth)
 
-| Venue | Location | Category | Expected Range | Ground Truth |
-|-------|----------|----------|----------------|--------------|
-| Pizzeria Da Michele | Naples | Authentic | 5-35 | 25 |
-| Olive Garden Times Square | NYC | Trap | 65-95 | 85 |
-| Carlo Menta | Rome | Mixed | 35-65 | 50 |
-| Katz's Delicatessen | NYC | Mixed | 25-55 | 35 |
+To enable reproducible experiments without API costs, we created **mock review data** for 4 venues. Each venue's mock data includes realistic review distributions (positive/negative split, credibility scores, keyword patterns).
+
+**Ground truth scores** were manually assigned based on expert knowledge and public reputation:
+
+| Venue | Location | Category | Expected Range | Ground Truth | Rationale |
+|-------|----------|----------|----------------|--------------|-----------|
+| Pizzeria Da Michele | Naples | Authentic | 5-35 | 25 | Historic pizzeria, local institution |
+| Olive Garden Times Square | NYC | Trap | 65-95 | 85 | Chain in tourist hotspot |
+| Carlo Menta | Rome | Mixed | 35-65 | 50 | Near Vatican, mixed signals |
+| Katz's Delicatessen | NYC | Mixed | 25-55 | 35 | Famous but genuine quality |
+
+**Why mock data?** Enables controlled comparison across configurations (same input → measure output variance). Real API calls would introduce external variability from changing reviews over time.
 
 ### Configurations Tested
 
@@ -271,19 +277,6 @@ RAG integration provides **calibration improvements** through two approaches: ke
 | **Production (simple)** | RAG keyword | Best accuracy, minimal overhead, no dependencies |
 | **Production (scalable)** | RAG vector | Better semantic matching for large databases |
 | **Maximum accuracy** | RAG keyword + T=0.0 | Lowest MAE with deterministic output |
-
----
-
-## Future Work
-
-- [x] ~~Test with vector embeddings (ChromaDB) for better semantic matching~~ ✓ Complete
-- [x] ~~Implement lightweight keyword-based RAG as alternative~~ ✓ Complete
-- [x] ~~Compare keyword vs vector RAG performance~~ ✓ Complete
-- [ ] Expand RAG database beyond 149 examples (test breakpoint where vector > keyword)
-- [ ] Expand test set beyond 4 venues
-- [ ] Test with live API data (not mock)
-- [ ] Add confidence intervals to scores
-- [ ] Optimize first-query latency (model pre-loading)
 
 ---
 

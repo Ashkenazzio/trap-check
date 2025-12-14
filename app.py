@@ -279,7 +279,8 @@ def analyze(query: str, location: str):
 
     try:
         location_clean = location.strip() if location else None
-        result = analyze_venue(query.strip(), location_clean)
+        # Use keyword-based RAG by default for best accuracy with minimal latency
+        result = analyze_venue(query.strip(), location_clean, use_rag=True, rag_mode="keyword")
     except Exception as e:
         error_html = f"""
         <div style='text-align: center; padding: 40px; background: #7f1d1d; border-radius: 12px;'>

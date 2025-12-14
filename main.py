@@ -32,9 +32,9 @@ def main():
         print("Error: Please provide a restaurant name")
         sys.exit(1)
 
-    # Run analysis
+    # Run analysis with keyword-based RAG (best accuracy with minimal latency)
     print()
-    analysis = analyze_venue(query, location)
+    analysis = analyze_venue(query, location, use_rag=True, rag_mode="keyword")
 
     # Display results
     print()

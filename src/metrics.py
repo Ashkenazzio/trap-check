@@ -38,7 +38,10 @@ def infer_venue_type(place: dict) -> str:
     types_lower = [t.lower() for t in types]
 
     name_lower = (place.get("name") or "").lower()
-    place_type = (place.get("type") or "").lower()
+    place_type = place.get("type") or ""
+    if isinstance(place_type, list):
+        place_type = " ".join(place_type)
+    place_type = place_type.lower()
 
     # Restaurant/food venues
     food_types = {"restaurant", "cafe", "bar", "bakery", "food", "meal_takeaway",
@@ -71,11 +74,18 @@ def infer_venue_type(place: dict) -> str:
     return VENUE_TYPE_GENERAL
 
 
-# Keywords that indicate awareness of tourist trap behavior (in negative reviews)
+# Keywords that EXPLICITLY indicate tourist trap awareness (strong signal)
+# These are phrases where reviewers directly call out tourist trap behavior
 TRAP_AWARENESS_KEYWORDS = [
-    "tourist trap", "trap", "fake review", "bought review", "scam",
-    "avoid", "don't go", "do not go", "stay away", "waste of money",
-    "rip off", "ripoff", "overpriced", "not worth",
+    "tourist trap", "trap for tourist", "avoid this place", "total scam",
+    "ripoff", "rip-off", "rip off", "complete waste", "don't waste your",
+    "stay away", "do not go", "don't go here",
+]
+
+# General negative keywords (weaker signal - common in any negative review)
+GENERAL_NEGATIVE_KEYWORDS = [
+    "overpriced", "not worth", "waste of money", "disappointing",
+    "avoid", "skip this", "wouldn't recommend",
 ]
 
 # Keywords suggesting review manipulation

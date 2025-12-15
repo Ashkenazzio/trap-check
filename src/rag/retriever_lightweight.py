@@ -265,7 +265,13 @@ def format_examples_for_prompt(examples: dict) -> str:
         lines.append("")
 
     lines.append("---")
-    lines.append("Use these examples to calibrate your scoring. A venue similar to the tourist traps above should score 60+, while one similar to local gems should score below 30.")
+    lines.append("Use these examples to calibrate your scoring:")
+    lines.append("- Tourist traps: 75-100 (clear exploitation, scams, fake reviews)")
+    lines.append("- Likely traps: 55-74 (multiple red flags)")
+    lines.append("- Mixed: 40-54 (some concerns but genuine qualities)")
+    lines.append("- Likely authentic: 25-39 (good venue, minor typical issues)")
+    lines.append("- Local gems: 0-24 (excellent, fair value)")
+    lines.append("**Default to ~30 unless clear red flags exist.** Tourist area or popularity alone is NOT a red flag.")
     lines.append("")
 
     return "\n".join(lines)

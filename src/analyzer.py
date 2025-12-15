@@ -30,19 +30,43 @@ GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini
 
 SYSTEM_PROMPT = """You are an expert tourist trap analyst. Based on pre-computed metrics and review samples, provide a CONCISE assessment.
 
-## Scoring Guidelines
-- credibility_inversion = strong trap signal
-- explicit_trap_warnings = very strong signal
-- manipulation_accusations = critical signal
-- review_clustering = manipulation indicator
-- local_guide_warnings = trust their assessment
-- language_credibility_split = strong trap signal
-- generic_positive_reviews = suspicious pattern
+## Default Assumption
+**Start with the assumption that a venue is legitimate (score ~30) unless clear evidence suggests otherwise.**
+Most venues - even in tourist areas - are honest businesses. Only elevate the score when you see CONCRETE red flags.
+
+## Score Ranges
+- 75-100: DEFINITE TRAP - Clear exploitation (fake reviews, scams, terrible quality at high prices)
+- 55-74: LIKELY TRAP - Multiple concerning signals, tourists should be cautious
+- 40-54: MIXED - Some concerns balanced by genuine qualities
+- 25-39: LIKELY AUTHENTIC - Good venue with minor typical issues (waits, crowds, prices)
+- 0-24: VERIFIED GEM - Excellent quality, fair value, loved by locals
+
+## When to INCREASE score (red flags)
+Only increase score when you see CLEAR evidence:
+- explicit_trap_warnings: Multiple reviewers explicitly say "tourist trap", "scam", "ripoff"
+- manipulation_accusations: Claims of fake/bought reviews
+- credibility_inversion: Negative reviewers significantly more credible than positive
+- quality_complaints: Actual complaints about food/service quality (not just price/crowds)
+
+## When to KEEP score LOW (green flags)
+These signals indicate authenticity - keep score low:
+- High specificity in positive reviews (detailed descriptions, specific dishes mentioned)
+- Local Guides giving positive reviews
+- Negative reviews only complain about crowds/waits/prices, NOT quality
+- Credibility gap is negative (positive reviewers are MORE credible)
+- No explicit "tourist trap" warnings in reviews
+
+## Critical Rules
+1. **Tourist area ≠ tourist trap.** Location alone is NOT a red flag.
+2. **Popular ≠ trap.** Long waits and crowds indicate popularity, not exploitation.
+3. **Expensive ≠ trap.** High prices with high quality = fair value, not a trap.
+4. **Mixed reviews are normal.** Every restaurant has some complaints. Focus on patterns.
+5. **When in doubt, score lower.** False positives (calling good places traps) hurt users more than false negatives.
 
 ## Response Guidelines
 - verdict: ONE clear sentence (max 20 words)
 - recommendation: 2-3 actionable sentences for travelers
-- reasoning: 1 focused paragraph (max 150 words) - hit the key points, skip obvious details
+- reasoning: 1 focused paragraph (max 150 words)
 - key_concerns: max 3 items, brief evidence quotes
 - mitigating_factors: max 3 items, brief phrases"""
 
@@ -232,7 +256,7 @@ Type: {place['type']}
 - High-rating reviews analyzed: {metrics['summary']['total_high_rating_reviews']}
 - Average credibility of negative reviewers: {metrics['summary']['avg_credibility_low_rating']}/100
 - Average credibility of positive reviewers: {metrics['summary']['avg_credibility_high_rating']}/100
-- Credibility gap: {metrics['summary']['credibility_gap']:+.1f} (positive = negative reviewers more credible)
+- Credibility gap: {metrics['summary']['credibility_gap']:+.1f} (positive gap = trap signal, negative gap = authenticity signal)
 - Local Guides in negative reviews: {metrics['summary']['local_guides_in_negative']}
 - Local Guides in positive reviews: {metrics['summary']['local_guides_in_positive']}
 - Reviews explicitly warning "tourist trap": {metrics['summary']['trap_warning_count']}

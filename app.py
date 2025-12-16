@@ -134,11 +134,136 @@ button.tab-nav.selected {
     border: 1px solid #374151 !important;
     border-radius: 8px !important;
 }
+
+/* Fixed height containers to prevent layout shift */
+.fixed-header {
+    min-height: 100px;
+    box-sizing: border-box;
+}
+
+.fixed-score {
+    min-height: 180px;
+    box-sizing: border-box;
+}
+
+.fixed-verdict {
+    min-height: 60px;
+    box-sizing: border-box;
+}
+
+.fixed-metrics {
+    min-height: 130px;
+    box-sizing: border-box;
+}
+
+/* Target only the results row to prevent layout flicker */
+.results-row {
+    flex-wrap: nowrap !important;
+}
+
+/* Fixed width left column (sidebar) */
+.results-row > .column:first-child {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+}
+
+/* Flexible right column takes remaining space */
+.results-row > .column:last-child {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    overflow: hidden;
+}
+
+/* Ensure tab content doesn't cause width changes */
+.results-row .tabs {
+    width: 100%;
+}
+
+.results-row .tabitem {
+    width: 100%;
+}
+
+/* Prevent content from expanding container */
+.fixed-tab-content {
+    min-height: 180px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
 """
 
-# Loading HTML shown during analysis
-LOADING_HTML = """
-<div style='text-align: center; padding: 24px;'>
+# Empty state placeholders - match final layout exactly with neutral/empty values
+EMPTY_HEADER = """
+<div class="fixed-header" style='text-align: center; padding: 16px; background: #1f2937; border-radius: 10px; border: 1px solid #374151;'>
+    <h2 style='margin: 0; color: #6b7280; font-size: 1.3em;'>Venue Name</h2>
+    <p style='color: #4b5563; margin: 6px 0 0 0; font-size: 0.85em;'>Enter a venue to analyze</p>
+    <div style='margin-top: 8px; display: flex; justify-content: center; align-items: center; gap: 8px;'>
+        <span style='color: #4b5563;'>★ —</span>
+        <span style='color: #374151;'>•</span>
+        <span style='color: #4b5563; font-size: 0.9em;'>— reviews</span>
+    </div>
+</div>
+"""
+
+EMPTY_SCORE = """
+<div class="fixed-score" style='text-align: center; padding: 20px; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); border-radius: 10px; border: 1px solid #374151;'>
+    <div style='font-size: 3em; font-weight: 700; color: #374151;'>
+        — —
+    </div>
+    <div style='font-size: 0.85em; color: #4b5563; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em;'>
+        Tourist Trap Score
+    </div>
+    <div style='margin-top: 12px;'>
+        <span style='padding: 6px 16px; background: #1f2937; color: #4b5563; border-radius: 16px; font-weight: 600; font-size: 0.8em; border: 1px solid #374151;'>
+            AWAITING ANALYSIS
+        </span>
+    </div>
+    <div style='color: #374151; margin-top: 8px; font-size: 0.8em;'>
+        Confidence: <span style='color: #4b5563;'>—</span>
+    </div>
+</div>
+"""
+
+EMPTY_VERDICT = """
+<div class="fixed-verdict" style='padding: 14px; background: #1f2937; border-radius: 10px; border-left: 4px solid #374151;'>
+    <p style='font-size: 1em; margin: 0; font-style: italic; color: #4b5563; line-height: 1.5;'>
+        "Analysis verdict will appear here..."
+    </p>
+</div>
+"""
+
+EMPTY_METRICS = """
+<div class="fixed-metrics" style='display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;'>
+    <div style='padding: 10px; background: #1f2937; border-radius: 8px; text-align: center; border: 1px solid #374151;'>
+        <div style='font-size: 1.5em; font-weight: 700; color: #4b5563;'>—</div>
+        <div style='font-size: 0.7em; color: #4b5563; margin-top: 2px;'>Trap Warnings</div>
+    </div>
+    <div style='padding: 10px; background: #1f2937; border-radius: 8px; text-align: center; border: 1px solid #374151;'>
+        <div style='font-size: 1.5em; font-weight: 700; color: #4b5563;'>—</div>
+        <div style='font-size: 0.7em; color: #4b5563; margin-top: 2px;'>Fake Review Claims</div>
+    </div>
+    <div style='padding: 10px; background: #1f2937; border-radius: 8px; text-align: center; border: 1px solid #374151;'>
+        <div style='font-size: 1.5em; font-weight: 700; color: #4b5563;'>—</div>
+        <div style='font-size: 0.7em; color: #4b5563; margin-top: 2px;'>Local Guides Warning</div>
+    </div>
+    <div style='padding: 10px; background: #1f2937; border-radius: 8px; text-align: center; border: 1px solid #374151;'>
+        <div style='font-size: 1.5em; font-weight: 700; color: #4b5563;'>—</div>
+        <div style='font-size: 0.7em; color: #4b5563; margin-top: 2px;'>Credibility Gap</div>
+    </div>
+</div>
+"""
+
+EMPTY_TAB_CONTENT = """
+<div class="fixed-tab-content" style='padding: 16px;'>
+    <p style='color: #4b5563; text-align: center;'>Run an analysis to see results</p>
+</div>
+"""
+
+# Loading state - shows spinner in header while keeping other areas with empty state
+LOADING_HEADER = """
+<div class="fixed-header" style='text-align: center; padding: 16px; background: #1f2937; border-radius: 10px; border: 1px solid #374151;'>
     <div class="loading-spinner"></div>
     <div style='color: #f97316; font-size: 1.1em; font-weight: 500;'>Analyzing...</div>
     <div style='color: #9ca3af; margin-top: 4px; font-size: 0.9em;'>Fetching reviews and computing metrics</div>
@@ -205,9 +330,9 @@ SIGNAL_NAMES = {
 def format_signals_html(signals: list) -> str:
     """Format detected signals as HTML."""
     if not signals:
-        return "<p style='color: #9ca3af; padding: 16px;'>No significant signals detected</p>"
+        return "<div class='fixed-tab-content'><p style='color: #9ca3af; padding: 16px;'>No significant signals detected</p></div>"
 
-    html = ""
+    html = "<div class='fixed-tab-content'>"
     for signal in signals:
         severity = signal.get("severity", "medium")
         colors = {
@@ -227,15 +352,16 @@ def format_signals_html(signals: list) -> str:
             <div style='color: #9ca3af; font-size: 0.9em; margin-top: 4px;'>{signal.get('detail', '')}</div>
         </div>
         """
+    html += "</div>"
     return html
 
 
 def format_concerns_html(concerns: list) -> str:
     """Format key concerns as HTML."""
     if not concerns:
-        return "<p style='color: #9ca3af; padding: 16px;'>No specific concerns identified</p>"
+        return "<div class='fixed-tab-content'><p style='color: #9ca3af; padding: 16px;'>No specific concerns identified</p></div>"
 
-    html = ""
+    html = "<div class='fixed-tab-content'>"
     for concern in concerns:
         html += f"""
         <div style='margin-bottom: 12px; padding: 14px; background: #7f1d1d; border-radius: 8px; border: 1px solid #991b1b;'>
@@ -245,15 +371,16 @@ def format_concerns_html(concerns: list) -> str:
             </div>
         </div>
         """
+    html += "</div>"
     return html
 
 
 def format_positives_html(positives: list) -> str:
     """Format mitigating factors as HTML."""
     if not positives:
-        return "<p style='color: #9ca3af; padding: 16px;'>No mitigating factors identified</p>"
+        return "<div class='fixed-tab-content'><p style='color: #9ca3af; padding: 16px;'>No mitigating factors identified</p></div>"
 
-    html = "<div style='padding: 8px;'>"
+    html = "<div class='fixed-tab-content' style='padding: 8px;'>"
     for positive in positives:
         html += f"""
         <div style='display: flex; align-items: flex-start; margin-bottom: 10px;'>
@@ -268,14 +395,30 @@ def format_positives_html(positives: list) -> str:
 def analyze(query: str, location: str):
     """Run analysis and yield loading state then results."""
     if not query.strip():
+        # Return empty state placeholders
         yield (
-            "<p style='color: #9ca3af; text-align: center; padding: 40px;'>Enter a restaurant name to analyze</p>",
-            "", "", "", "", "", "", ""
+            EMPTY_HEADER,
+            EMPTY_SCORE,
+            EMPTY_VERDICT,
+            EMPTY_METRICS,
+            EMPTY_TAB_CONTENT,
+            EMPTY_TAB_CONTENT,
+            EMPTY_TAB_CONTENT,
+            EMPTY_TAB_CONTENT,
         )
         return
 
-    # Show loading state first (only in header area)
-    yield (LOADING_HTML, "", "", "", "", "", "", "")
+    # Show loading state with spinner in header, empty placeholders elsewhere
+    yield (
+        LOADING_HEADER,
+        EMPTY_SCORE,
+        EMPTY_VERDICT,
+        EMPTY_METRICS,
+        EMPTY_TAB_CONTENT,
+        EMPTY_TAB_CONTENT,
+        EMPTY_TAB_CONTENT,
+        EMPTY_TAB_CONTENT,
+    )
 
     try:
         location_clean = location.strip() if location else None
@@ -283,22 +426,22 @@ def analyze(query: str, location: str):
         result = analyze_venue(query.strip(), location_clean, use_rag=True, rag_mode="keyword")
     except Exception as e:
         error_html = f"""
-        <div style='text-align: center; padding: 40px; background: #7f1d1d; border-radius: 12px;'>
-            <div style='color: #fca5a5; font-size: 1.2em;'>Error</div>
+        <div class="fixed-header" style='text-align: center; padding: 30px; background: #7f1d1d; border-radius: 12px; border: 1px solid #991b1b;'>
+            <div style='color: #fca5a5; font-size: 1.2em; font-weight: 600;'>⚠️ Error</div>
             <div style='color: #d1d5db; margin-top: 8px;'>{str(e)}</div>
         </div>
         """
-        yield (error_html, "", "", "", "", "", "", "")
+        yield (error_html, EMPTY_SCORE, EMPTY_VERDICT, EMPTY_METRICS, EMPTY_TAB_CONTENT, EMPTY_TAB_CONTENT, EMPTY_TAB_CONTENT, EMPTY_TAB_CONTENT)
         return
 
     if "error" in result:
         error_html = f"""
-        <div style='text-align: center; padding: 40px; background: #7f1d1d; border-radius: 12px;'>
-            <div style='color: #fca5a5; font-size: 1.2em;'>Error</div>
+        <div class="fixed-header" style='text-align: center; padding: 30px; background: #7f1d1d; border-radius: 12px; border: 1px solid #991b1b;'>
+            <div style='color: #fca5a5; font-size: 1.2em; font-weight: 600;'>⚠️ Error</div>
             <div style='color: #d1d5db; margin-top: 8px;'>{result['error']}</div>
         </div>
         """
-        yield (error_html, "", "", "", "", "", "", "")
+        yield (error_html, EMPTY_SCORE, EMPTY_VERDICT, EMPTY_METRICS, EMPTY_TAB_CONTENT, EMPTY_TAB_CONTENT, EMPTY_TAB_CONTENT, EMPTY_TAB_CONTENT)
         return
 
     # Extract data
@@ -325,7 +468,7 @@ def analyze(query: str, location: str):
     review_str = f"{review_count:,}" if isinstance(review_count, int) else str(review_count)
 
     header_html = f"""
-    <div style='text-align: center; padding: 16px; background: #1f2937; border-radius: 10px; border: 1px solid #374151;'>
+    <div class="fixed-header" style='text-align: center; padding: 16px; background: #1f2937; border-radius: 10px; border: 1px solid #374151;'>
         <h2 style='margin: 0; color: #f3f4f6; font-size: 1.3em;'>{meta.get('place_name', query)}</h2>
         <p style='color: #9ca3af; margin: 6px 0 0 0; font-size: 0.85em;'>{meta.get('place_address', 'Address not available')}</p>
         <div style='margin-top: 8px; display: flex; justify-content: center; align-items: center; gap: 8px;'>
@@ -338,7 +481,7 @@ def analyze(query: str, location: str):
 
     # Format score display
     score_html = f"""
-    <div style='text-align: center; padding: 20px; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); border-radius: 10px; border: 1px solid #374151;'>
+    <div class="fixed-score" style='text-align: center; padding: 20px; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); border-radius: 10px; border: 1px solid #374151;'>
         <div style='font-size: 3em; font-weight: 700; color: {color}; text-shadow: 0 0 30px {color}40;'>
             {emoji} {score}
         </div>
@@ -358,7 +501,7 @@ def analyze(query: str, location: str):
 
     # Format verdict quote
     verdict_html = f"""
-    <div style='padding: 14px; background: {bg_color}; border-radius: 10px; border-left: 4px solid {color};'>
+    <div class="fixed-verdict" style='padding: 14px; background: {bg_color}; border-radius: 10px; border-left: 4px solid {color};'>
         <p style='font-size: 1em; margin: 0; font-style: italic; color: #f3f4f6; line-height: 1.5;'>
             "{verdict}"
         </p>
@@ -398,7 +541,7 @@ def analyze(query: str, location: str):
     cred_border = "#991b1b" if cred_gap < -5 else "#166534" if cred_gap > 5 else "#374151"
 
     metrics_html = f"""
-    <div style='display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;'>
+    <div class="fixed-metrics" style='display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;'>
         {metric_card(trap_warnings, "Trap Warnings")}
         {metric_card(fake_claims, "Fake Review Claims")}
         {metric_card(local_guides, "Local Guides Warning")}
@@ -415,7 +558,7 @@ def analyze(query: str, location: str):
 
     # Full analysis as HTML
     analysis_html = f"""
-    <div style='padding: 20px; color: #d1d5db; line-height: 1.7;'>
+    <div class="fixed-tab-content" style='padding: 20px; color: #d1d5db; line-height: 1.7;'>
         <div style='font-weight: 600; color: #f3f4f6; margin-bottom: 12px;'>Recommendation: {recommendation}</div>
         <hr style='border: none; border-top: 1px solid #374151; margin: 16px 0;'>
         <div style='font-size: 0.95em;'>{reasoning}</div>
@@ -465,24 +608,24 @@ with gr.Blocks(title="TrapCheck") as app:
         with gr.Column(scale=1, min_width=120):
             analyze_btn = gr.Button("🔍 Analyze", variant="primary", size="lg", elem_classes="primary-btn")
 
-    # Results
-    with gr.Row():
+    # Results - initialized with empty state placeholders matching final layout
+    with gr.Row(elem_classes="results-row"):
         with gr.Column(scale=1, min_width=280):
-            header_output = gr.HTML()
-            score_output = gr.HTML()
-            metrics_output = gr.HTML()
+            header_output = gr.HTML(value=EMPTY_HEADER)
+            score_output = gr.HTML(value=EMPTY_SCORE)
+            metrics_output = gr.HTML(value=EMPTY_METRICS)
 
         with gr.Column(scale=2):
-            verdict_output = gr.HTML()
+            verdict_output = gr.HTML(value=EMPTY_VERDICT)
             with gr.Tabs():
                 with gr.Tab("🚨 Signals"):
-                    signals_output = gr.HTML()
+                    signals_output = gr.HTML(value=EMPTY_TAB_CONTENT)
                 with gr.Tab("⚠️ Concerns"):
-                    concerns_output = gr.HTML()
+                    concerns_output = gr.HTML(value=EMPTY_TAB_CONTENT)
                 with gr.Tab("✅ Positives"):
-                    positives_output = gr.HTML()
+                    positives_output = gr.HTML(value=EMPTY_TAB_CONTENT)
                 with gr.Tab("📝 Analysis"):
-                    analysis_output = gr.HTML(elem_classes="analysis-content")
+                    analysis_output = gr.HTML(value=EMPTY_TAB_CONTENT, elem_classes="analysis-content")
 
     # Examples - matches mock data venues for testing without SerpAPI
     gr.Examples(

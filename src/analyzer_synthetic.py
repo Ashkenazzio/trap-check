@@ -6,6 +6,7 @@ without requiring live API calls.
 """
 
 import json
+import time
 from typing import Optional
 import httpx
 
@@ -105,13 +106,7 @@ def analyze_synthetic(
     # Compute metrics from synthetic reviews
     metrics = compute_metrics(reviews_low, reviews_high, venue_type=venue_type)
 
-    # Add proximity signal if applicable
-    if proximity_data.get("proximity_score", 0) > 70:
-        metrics["signals"].append({
-            "signal": "tourist_hotspot_location",
-            "severity": "medium",
-            "detail": f"Located in high-tourist area (score: {proximity_data['proximity_score']}/100)",
-        })
+    # NOTE: tourist_hotspot_location signal removed - being in a tourist area is NOT a trap indicator
 
     # Add external signal if negative
     neg_sentiments = sum(1 for s in [
@@ -138,7 +133,7 @@ def analyze_synthetic(
     else:
         full_prompt = f"{SYSTEM_PROMPT}\n\n{prompt}"
 
-    # Call Gemini
+    # Call Gemini with latency tracking
     generation_config = {
         "maxOutputTokens": 4096,
         "responseMimeType": "application/json",
@@ -147,6 +142,7 @@ def analyze_synthetic(
     if temperature is not None:
         generation_config["temperature"] = temperature
 
+    start_time = time.time()
     try:
         response = httpx.post(
             GEMINI_API_URL,
@@ -159,13 +155,16 @@ def analyze_synthetic(
         )
         response.raise_for_status()
         result = response.json()
+        latency_seconds = time.time() - start_time
 
         response_text = result["candidates"][0]["content"]["parts"][0]["text"]
         analysis = json.loads(response_text)
 
     except Exception as e:
+        latency_seconds = time.time() - start_time
         return {
             "error": str(e),
+            "latency_seconds": latency_seconds,
             "ground_truth": {
                 "score": entry["tourist_trap_score"],
                 "verdict": entry["verdict"],
@@ -187,6 +186,7 @@ def analyze_synthetic(
     }
     analysis["computed_metrics"] = metrics["summary"]
     analysis["signals"] = metrics["signals"]
+    analysis["latency_seconds"] = latency_seconds
 
     return analysis
 

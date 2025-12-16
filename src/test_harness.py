@@ -93,6 +93,9 @@ def rag_entry_to_mock_reviews(entry: dict) -> tuple[list[dict], list[dict]]:
 
     Uses sample_reviews from RAG entry and synthesizes additional
     reviews based on red_flags and positive_signals.
+
+    Includes noise reviews (misaligned with verdict) and ambiguous 3-star
+    reviews for realism. Padding is randomized (8-12) instead of fixed.
     """
     seed = int(hashlib.md5(entry["id"].encode()).hexdigest()[:8], 16)
     random.seed(seed)
@@ -118,12 +121,35 @@ def rag_entry_to_mock_reviews(entry: dict) -> tuple[list[dict], list[dict]]:
         review = _create_review_from_positive(signal, entry, i)
         reviews_high.append(review)
 
-    # Pad with generic reviews if needed (minimum 10 each)
-    while len(reviews_low) < 10:
+    # Randomize target padding (8-12 instead of fixed 10)
+    target_low = random.randint(8, 12)
+    target_high = random.randint(8, 12)
+
+    # Pad with generic reviews if needed
+    while len(reviews_low) < target_low:
         reviews_low.append(_create_generic_negative(entry, len(reviews_low)))
 
-    while len(reviews_high) < 10:
+    while len(reviews_high) < target_high:
         reviews_high.append(_create_generic_positive(entry, len(reviews_high)))
+
+    # Add noise reviews (1-2 reviews that don't align with verdict)
+    # This makes the data more realistic - no venue has 100% consistent reviews
+    noise_count = random.randint(1, 2)
+
+    if entry["verdict"] == "tourist_trap":
+        # Add some positive noise reviews to high list (tourists who liked it)
+        for i in range(noise_count):
+            reviews_high.append(_create_noise_review(entry, i, is_positive=True))
+    elif entry["verdict"] == "local_gem":
+        # Add some negative noise reviews to low list (unreasonable critics)
+        for i in range(noise_count):
+            reviews_low.append(_create_noise_review(entry, i, is_positive=False))
+    # Mixed venues already have both, no need for extra noise
+
+    # Add 1-2 ambiguous 3-star reviews (goes to low bucket since rating <= 3)
+    ambiguous_count = random.randint(1, 2)
+    for i in range(ambiguous_count):
+        reviews_low.append(_create_ambiguous_review(entry, i))
 
     return reviews_low, reviews_high
 
@@ -237,6 +263,92 @@ def _create_generic_negative(entry: dict, idx: int) -> dict:
             "name": f"User_{random.randint(1000, 9999)}",
             "reviews": random.randint(20, 200),
             "photos": random.randint(5, 50),
+            "local_guide": random.random() > 0.7,
+        },
+        "date": f"202{random.randint(2, 4)}-{random.randint(1,12):02d}-{random.randint(1,28):02d}",
+    }
+
+
+def _create_noise_review(entry: dict, idx: int, is_positive: bool) -> dict:
+    """
+    Create a noise review that doesn't align with the venue's verdict.
+
+    For traps: occasional credible positive review
+    For gems: occasional harsh negative review
+    This adds realism - no venue is 100% consistent in reviews.
+    """
+    seed = int(hashlib.md5(f"{entry['id']}_noise_{idx}".encode()).hexdigest()[:8], 16)
+    random.seed(seed)
+
+    if is_positive:
+        # Positive noise for traps - tourists who didn't know better
+        texts = [
+            "Had a great time! The atmosphere was fun.",
+            "Perfect location, enjoyed the experience.",
+            "We loved it - great for a quick visit.",
+            "Nice place, friendly staff.",
+            "Would recommend for first-time visitors.",
+        ]
+        return {
+            "text": random.choice(texts),
+            "rating": random.randint(4, 5),
+            "user": {
+                "name": f"Tourist_{random.randint(1000, 9999)}",
+                "reviews": random.randint(3, 15),  # Low review count
+                "photos": random.randint(0, 5),
+                "local_guide": False,
+            },
+            "date": f"202{random.randint(2, 4)}-{random.randint(1,12):02d}-{random.randint(1,28):02d}",
+        }
+    else:
+        # Negative noise for gems - unreasonable critics
+        texts = [
+            "Too crowded. Had to wait forever.",
+            "Overrated. Don't understand the hype.",
+            "Nothing special. Expected more.",
+            "Staff was rude when we asked to modify our order.",
+            "Portions too small for the price.",
+        ]
+        return {
+            "text": random.choice(texts),
+            "rating": random.randint(1, 2),
+            "user": {
+                "name": f"Critic_{random.randint(1000, 9999)}",
+                "reviews": random.randint(5, 20),  # Low review count
+                "photos": random.randint(0, 5),
+                "local_guide": False,
+            },
+            "date": f"202{random.randint(2, 4)}-{random.randint(1,12):02d}-{random.randint(1,28):02d}",
+        }
+
+
+def _create_ambiguous_review(entry: dict, idx: int) -> dict:
+    """
+    Create an ambiguous 3-star review that could go either way.
+
+    These add realism - real reviews often have mixed feelings.
+    """
+    seed = int(hashlib.md5(f"{entry['id']}_ambig_{idx}".encode()).hexdigest()[:8], 16)
+    random.seed(seed)
+
+    texts = [
+        "It was okay. Nothing special but not terrible either.",
+        "Mixed feelings. Some things were good, others not so much.",
+        "Decent experience. Probably wouldn't go out of my way to return.",
+        "Expected more based on reviews. It was fine.",
+        "Average. Not worth the hype but not a disaster.",
+        "Some dishes were great, others disappointing.",
+        "Good location, mediocre everything else.",
+        "Would give 3.5 if I could. Right in the middle.",
+    ]
+
+    return {
+        "text": random.choice(texts),
+        "rating": 3,
+        "user": {
+            "name": f"Neutral_{random.randint(1000, 9999)}",
+            "reviews": random.randint(20, 150),
+            "photos": random.randint(5, 40),
             "local_guide": random.random() > 0.7,
         },
         "date": f"202{random.randint(2, 4)}-{random.randint(1,12):02d}-{random.randint(1,28):02d}",
@@ -372,7 +484,7 @@ def verdict_to_category(verdict: str) -> str:
     """Map verdict to score category for comparison."""
     mapping = {
         "tourist_trap": "trap",
-        "local_gem": "gem",
+        "local_gem": "not_trap",
         "mixed": "mixed",
     }
     return mapping.get(verdict, "mixed")
@@ -380,10 +492,10 @@ def verdict_to_category(verdict: str) -> str:
 
 def score_to_category(score: int) -> str:
     """Map predicted score to category."""
-    if score >= 55:
+    if score >= 70:
         return "trap"
-    elif score <= 39:
-        return "gem"
+    elif score < 50:
+        return "not_trap"
     else:
         return "mixed"
 

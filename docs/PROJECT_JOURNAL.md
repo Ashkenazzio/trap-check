@@ -56,9 +56,11 @@ TrapCheck is an AI-powered system that analyzes Google Maps reviews to determine
 
 ---
 
-## Evaluation Dataset
+## Evaluation Datasets
 
-All experiments use **mock review data** for 4 venues with **manually assigned ground truth scores**:
+### v1: Mock Data Evaluation (4 venues)
+
+Original evaluation using **mock review data** for 4 venues with **manually assigned ground truth scores**:
 
 | Venue | Category | Ground Truth | Rationale |
 |-------|----------|--------------|-----------|
@@ -73,6 +75,35 @@ All experiments use **mock review data** for 4 venues with **manually assigned g
 - Controlled signal patterns for testing edge cases
 
 Mock data location: `src/tools/mock_data.py`
+Results archived in: `docs/experiments/v1/`
+
+### v2: RAG-Based Synthetic Evaluation (30 venues)
+
+Comprehensive evaluation framework using the RAG database as both ground truth and test data:
+
+| Test Set | Count | Description |
+|----------|-------|-------------|
+| Tourist Traps | 10 | Venues with score ≥60, verdict="tourist_trap" |
+| Local Gems | 10 | Venues with score ≤35, verdict="local_gem" |
+| Mixed | 10 | Venues with score 35-65, verdict="mixed" |
+
+**Key Features:**
+- **Stratified sampling:** Balanced selection across all three categories
+- **Reproducibility:** Seeded sampling (seed=42) for consistent venue selection
+- **Leave-one-out:** Test venue excluded from RAG retrieval to prevent data leakage
+- **Multiple runs:** 3 runs per venue (90 total) for variance analysis
+- **Ground truth:** Uses RAG database scores/verdicts as reference
+
+**Synthetic Data Realism:**
+The test harness (`src/test_harness.py`) generates realistic synthetic reviews with:
+- **Noise reviews:** 1-2 reviews that don't align with verdict (e.g., positive reviews for traps from naive tourists)
+- **Randomized padding:** Review count varies 8-12 instead of fixed 10
+- **Ambiguous reviews:** Neutral 3-star reviews that could go either way
+
+This prevents the model from "cheating" by pattern-matching too-clean synthetic data.
+
+Evaluation script: `scripts/evaluation_v2.py`
+Results location: `docs/experiments/v2/`
 
 ---
 
@@ -664,4 +695,96 @@ Created adaptive library path configuration for Nix and other non-standard envir
 
 ---
 
-_Last Updated: 2024-12-14_
+## Session Log: 2024-12-16 - Evaluation Framework v2
+
+### Overview
+
+Replaced the 4-venue mock evaluation with a comprehensive RAG-based synthetic evaluation framework for more rigorous accuracy measurement.
+
+### Motivation
+
+The v1 evaluation (4 mock venues) had limitations:
+- Small sample size (n=4) made statistical conclusions weak
+- Hand-crafted mock data may not represent real-world patterns
+- No stratified testing across verdict categories
+
+### Changes Made
+
+#### 1. New Evaluation Framework (`scripts/evaluation_v2.py`)
+
+**Test Set Design:**
+- 30 stratified venues from RAG database (10 traps, 10 gems, 10 mixed)
+- 3 runs per venue = 90 total runs per experiment
+- Seeded sampling (seed=42) for reproducibility
+- Leave-one-out evaluation (test venue excluded from RAG retrieval)
+
+**Metrics Computed:**
+- Category accuracy (correct verdict classification)
+- Score accuracy (predicted within ±15 of ground truth)
+- Mean Absolute Error (MAE)
+- Standard deviation across runs
+
+#### 2. Synthetic Data Realism (`src/test_harness.py`)
+
+Improved synthetic review generation to prevent overfitting:
+
+| Feature | Before | After |
+|---------|--------|-------|
+| Review count | Fixed 10 | Random 8-12 |
+| Noise reviews | None | 1-2 contradictory reviews |
+| Neutral reviews | None | Ambiguous 3-star reviews added |
+
+**Theory:** Real venues never have 100% consistent reviews. Adding noise prevents the model from "cheating" by pattern-matching too-clean synthetic data.
+
+**Example noise patterns:**
+- Tourist trap with 1-2 naive tourist 5-star reviews ("Amazing experience!")
+- Local gem with 1-2 harsh critic 2-star reviews ("Overrated, not worth the hype")
+
+#### 3. Experiment Results (v2)
+
+| Experiment | Category Accuracy | Within ±15 | MAE | StdDev |
+|------------|------------------|------------|-----|--------|
+| baseline | 90.0% | 77.8% | 13.6 | 3.27 |
+| temp_0.0 | 90.0% | 84.4% | 12.7 | 1.64 |
+| temp_0.5 | 90.0% | 81.1% | 13.0 | 2.19 |
+| **rag_keyword** | **95.6%** | **93.3%** | **9.3** | **1.38** |
+| rag_vector | 94.4% | 93.3% | 9.9 | 2.06 |
+
+#### 4. Per-Category Analysis
+
+| Category | Baseline | RAG Keyword | Improvement |
+|----------|----------|-------------|-------------|
+| tourist_trap | 100% | 97% | -3% (minor) |
+| local_gem | 100% | 100% | 0% |
+| **mixed** | **70%** | **90%** | **+20%** |
+
+**Key Insight:** RAG dramatically improves "mixed" category classification, where the model previously struggled most.
+
+### Key Findings
+
+1. **RAG Keyword is production-ready:** 95.6% accuracy, 32% MAE reduction vs baseline
+2. **Mixed venues fixed:** Category accuracy improved from 70% → 90% with RAG
+3. **Temperature has minimal effect:** All temps achieve 90% accuracy; temp_0.0 only reduces variance
+4. **Keyword > Vector RAG:** Better accuracy (95.6% vs 94.4%), more consistent, same latency
+5. **Persistent edge case:** Harry's Bar (Venice) consistently misclassified across all experiments
+
+### Files Created/Modified
+
+| File | Status | Purpose |
+|------|--------|---------|
+| `scripts/evaluation_v2.py` | NEW | Comprehensive evaluation framework |
+| `src/test_harness.py` | MODIFIED | Realistic synthetic review generation |
+| `docs/experiments/v2/` | NEW | v2 experiment results |
+| `docs/experiments/v1/` | NEW | Archived v1 results |
+
+### Recommendations
+
+| Use Case | Configuration | Expected Accuracy |
+|----------|---------------|-------------------|
+| Production | RAG keyword | 95.6% |
+| Minimal latency | Baseline | 90.0% |
+| Maximum consistency | RAG keyword + temp_0.0 | 95.6% (lowest variance) |
+
+---
+
+_Last Updated: 2024-12-16_

@@ -638,25 +638,11 @@ def compute_metrics(reviews_low: list[dict], reviews_high: list[dict], venue_typ
             "detail": f"More Local Guides in negative reviews ({local_guides_in_low}) than positive ({local_guides_in_high})",
         })
 
-    # Only add service_food_disparity signal for restaurants
-    if venue_type == VENUE_TYPE_RESTAURANT and len(disparity_reviews) >= 2:
-        signals.append({
-            "signal": "service_food_disparity",
-            "severity": "medium",
-            "detail": f"{len(disparity_reviews)} reviews rate service high but food low",
-        })
+    # NOTE: service_food_disparity removed - service issues are universal, not trap-specific
 
-    # === LANGUAGE-BASED SIGNALS ===
-
-    # Signal: Tourists dominate positive reviews, locals dominate negative
-    if (lang_positive.get("detected") and lang_negative.get("detected") and
-        lang_positive.get("tourist_language_pct", 0) > 70 and
-        lang_negative.get("tourist_language_pct", 100) < 50):
-        signals.append({
-            "signal": "language_credibility_split",
-            "severity": "high",
-            "detail": f"Positive reviews: {lang_positive['tourist_language_pct']}% tourist languages, Negative: {lang_negative['tourist_language_pct']}%",
-        })
+    # NOTE: language_credibility_split removed - in tourist destinations it's completely normal
+    # for tourists to leave positive reviews. This signal generated too many false positives.
+    # Tourists review places they visit; locals often don't review places they already know.
 
     # Signal: Low specificity in positive reviews (generic praise)
     if avg_specificity_high < 40:

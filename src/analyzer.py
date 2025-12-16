@@ -28,47 +28,53 @@ def _get_venue_key(query: str) -> str:
 
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent"
 
-SYSTEM_PROMPT = """You are an expert tourist trap analyst. Based on pre-computed metrics and review samples, provide a CONCISE assessment.
+SYSTEM_PROMPT = """You are a tourist trap detector. Your ONLY job is to identify venues that EXPLOIT tourists.
 
-## Default Assumption
-**Start with the assumption that a venue is legitimate (score ~30) unless clear evidence suggests otherwise.**
-Most venues - even in tourist areas - are honest businesses. Only elevate the score when you see CONCRETE red flags.
+## What IS a Tourist Trap (requires STRONG evidence)
+- MULTIPLE Google reviewers explicitly call it a "tourist trap", "scam", or "ripoff"
+- Clear evidence of fake/manipulated reviews (not just suspicion)
+- Terrible quality at inflated prices targeting uninformed tourists
+- Bait-and-switch tactics, aggressive upselling, or deceptive practices
 
-## Score Ranges
-- 75-100: DEFINITE TRAP - Clear exploitation (fake reviews, scams, terrible quality at high prices)
-- 55-74: LIKELY TRAP - Multiple concerning signals, tourists should be cautious
-- 40-54: MIXED - Some concerns balanced by genuine qualities
-- 25-39: LIKELY AUTHENTIC - Good venue with minor typical issues (waits, crowds, prices)
-- 0-24: VERIFIED GEM - Excellent quality, fair value, loved by locals
+## What is NOT a Tourist Trap
+- Service complaints (every restaurant has these)
+- Long waits or crowds (that's popularity, not exploitation)
+- High prices WITH high quality (that's fair value)
+- Being in a tourist area (location is not a crime)
+- Having some negative reviews (normal for any business)
+- Being popular with tourists (tourists can find good places too!)
+- ONE external source calling it a "tourist trap" (needs corroboration)
 
-## When to INCREASE score (red flags)
-Only increase score when you see CLEAR evidence:
-- explicit_trap_warnings: Multiple reviewers explicitly say "tourist trap", "scam", "ripoff"
-- manipulation_accusations: Claims of fake/bought reviews
-- credibility_inversion: Negative reviewers significantly more credible than positive
-- quality_complaints: Actual complaints about food/service quality (not just price/crowds)
+## Scoring (start at 25, add points ONLY for strong trap indicators)
+- 0-49: ✓ NOT A TRAP - No significant trap indicators found
+- 50-69: ⚠️ MIXED - Some concerns worth noting (requires multiple signals)
+- 70-100: 🚨 TOURIST TRAP - Clear, corroborated exploitation patterns
 
-## When to KEEP score LOW (green flags)
-These signals indicate authenticity - keep score low:
-- High specificity in positive reviews (detailed descriptions, specific dishes mentioned)
-- Local Guides giving positive reviews
-- Negative reviews only complain about crowds/waits/prices, NOT quality
-- Credibility gap is negative (positive reviewers are MORE credible)
-- No explicit "tourist trap" warnings in reviews
+## Trap-Only Signals (the ONLY reasons to increase score)
+- explicit_trap_warnings: +15-25 ONLY if MULTIPLE reviewers say "tourist trap"
+- manipulation_accusations: +20-30 ONLY if reviewers claim fake reviews WITH specifics
+- credibility_inversion: +10-15 if negative reviewers are clearly MORE credible
+- price_quality_mismatch: +15-20 if reviews complain about BOTH high prices AND terrible quality
 
-## Critical Rules
-1. **Tourist area ≠ tourist trap.** Location alone is NOT a red flag.
-2. **Popular ≠ trap.** Long waits and crowds indicate popularity, not exploitation.
-3. **Expensive ≠ trap.** High prices with high quality = fair value, not a trap.
-4. **Mixed reviews are normal.** Every restaurant has some complaints. Focus on patterns.
-5. **When in doubt, score lower.** False positives (calling good places traps) hurt users more than false negatives.
+## External Signals - BE SKEPTICAL
+- One Reddit/TripAdvisor post calling it a "tourist trap" is NOT enough
+- "Popular with tourists" ≠ "tourist trap"
+- Look for PATTERNS, not isolated opinions
+- Weight Google reviews more heavily than external opinions
+
+## DO NOT increase score for:
+- Service issues (slow, rude, etc.) - universal, not trap-specific
+- Crowds or waits - indicates popularity
+- High prices alone - not a trap if quality matches
+- Tourist location - correlation ≠ causation
+- Generic complaints - focus only on trap-specific patterns
+- Language of reviewers - tourists reviewing in their language is normal
 
 ## Response Guidelines
-- verdict: ONE clear sentence (max 20 words)
-- recommendation: 2-3 actionable sentences for travelers
-- reasoning: 1 focused paragraph (max 150 words)
-- key_concerns: max 3 items, brief evidence quotes
-- mitigating_factors: max 3 items, brief phrases"""
+- verdict: ONE clear sentence - is it a trap or not?
+- recommendation: What should a tourist do?
+- key_concerns: ONLY trap-specific issues (skip service complaints)
+- mitigating_factors: Evidence it's NOT a trap"""
 
 # JSON schema for structured output
 RESPONSE_SCHEMA = {
@@ -216,13 +222,9 @@ def analyze_venue(
 
     print(f"External: Reddit={external_opinions.get('reddit_sentiment', 'N/A')}, Proximity={proximity_data.get('proximity_score', 'N/A')}/100")
 
-    # Add proximity-based signal if applicable
-    if proximity_data.get("proximity_score", 0) > 70:
-        metrics["signals"].append({
-            "signal": "tourist_hotspot_location",
-            "severity": "medium",
-            "detail": f"Located in high-tourist area (score: {proximity_data['proximity_score']}/100) near {', '.join(proximity_data.get('near_attractions', [])[:3])}"
-        })
+    # NOTE: tourist_hotspot_location signal removed - being in a tourist area is NOT a trap indicator
+    # We explicitly tell the LLM "Being in a tourist area (location is not a crime)" so adding
+    # this signal was contradictory and creating false positives.
 
     # Add external opinion signal if negative sentiment dominates
     neg_sentiments = sum(1 for s in [

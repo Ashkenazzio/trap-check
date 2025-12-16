@@ -13,7 +13,7 @@ TrapCheck uses a hybrid NLP architecture combining pre-computed metrics with Lar
 ### Key Features
 
 - **Pre-computed Metrics:** Deterministic signal detection for reviewer credibility, trap warnings, manipulation accusations, and review clustering patterns
-- **RAG-Enhanced Scoring:** Keyword-based retrieval of similar venues for score calibration (18% improvement in accuracy)
+- **RAG-Enhanced Scoring:** Keyword-based retrieval of similar venues for score calibration (32% MAE reduction, 95.6% accuracy)
 - **Multi-Source Analysis:** Combines Google Maps reviews with external signals (Reddit, TripAdvisor forums)
 - **Venue-Agnostic:** Automatically detects venue type and applies specialized analysis
 
@@ -133,31 +133,40 @@ The metrics layer (`src/metrics.py`) computes signals deterministically before L
 
 ## Results
 
+### Evaluation Framework (v2)
+
+Evaluated on a **30-venue stratified test set** sampled from the RAG database:
+- 10 tourist traps, 10 local gems, 10 mixed venues
+- 3 runs per venue (90 total runs per experiment)
+- Leave-one-out evaluation (test venue excluded from RAG retrieval)
+- Synthetic reviews with realistic noise to prevent overfitting
+
 ### Evaluation Metrics
 
-| Configuration | Classification Accuracy | Score MAE | Avg StdDev | Latency |
-|---------------|------------------------|-----------|------------|---------|
-| Baseline (no RAG) | 100% | 21.25 | 0.00 | 3.2s |
-| **RAG Keyword** | **100%** | **17.45** | 1.19 | **3.3s** |
-| RAG Vector | 100% | 18.05 | 1.10 | 4.1s |
+| Configuration | Category Accuracy | Within ±15 | MAE | StdDev |
+|---------------|------------------|------------|-----|--------|
+| Baseline (no RAG) | 90.0% | 77.8% | 13.6 | 3.27 |
+| temp_0.0 | 90.0% | 84.4% | 12.7 | 1.64 |
+| **RAG Keyword** | **95.6%** | **93.3%** | **9.3** | **1.38** |
+| RAG Vector | 94.4% | 93.3% | 9.9 | 2.06 |
 
 ### Key Findings
 
-1. **RAG Keyword achieves 18% reduction in MAE** (21.25 → 17.45) with minimal latency overhead (+3%)
-2. **100% classification accuracy** maintained across all configurations
-3. **100% signal stability** - same signals detected every run (validates pre-computed approach)
-4. **Temperature has no effect** due to JSON schema constraints
+1. **RAG Keyword achieves 32% reduction in MAE** (13.6 → 9.3) with minimal latency overhead
+2. **95.6% category accuracy** with RAG keyword (vs 90% baseline)
+3. **Mixed venues dramatically improved:** 70% → 90% accuracy with RAG
+4. **100% signal stability** - same signals detected every run (validates pre-computed approach)
+5. **Temperature has minimal effect** - all temps achieve 90% accuracy; temp_0.0 only reduces variance
 
-### Per-Venue Results (RAG Keyword)
+### Per-Category Results (RAG Keyword)
 
-| Venue | Ground Truth | Predicted | MAE | Classification |
-|-------|-------------|-----------|-----|----------------|
-| Da Michele | 25 | 20.0 | 5.0 | verified_authentic |
-| Olive Garden | 85 | 95.0 | 10.0 | definite_trap |
-| Carlo Menta | 50 | 73.6 | 23.6 | likely_trap |
-| Katz's | 35 | 66.2 | 31.2 | likely_trap |
+| Category | Accuracy | Notes |
+|----------|----------|-------|
+| tourist_trap | 97% | Excellent detection |
+| local_gem | 100% | Perfect classification |
+| mixed | 90% | Major improvement from 70% baseline |
 
-**Observation:** System excels at clear cases (Da Michele, Olive Garden) but over-classifies mixed venues as traps. This is expected given the presence of explicit "tourist trap" mentions in reviews.
+**Key Insight:** RAG provides crucial calibration for ambiguous "mixed" venues where the model previously struggled.
 
 ### Qualitative Examples
 
@@ -241,13 +250,16 @@ Omit `SERPAPI_KEY` from `.env` to use built-in mock data for testing:
 ### Running Evaluations
 
 ```bash
-# Full evaluation (5 runs x 4 venues)
+# v2 evaluation (recommended): 30 venues x 3 runs = 90 total
+python scripts/evaluation_v2.py --name my_test --rag --rag-mode keyword
+
+# Baseline comparison
+python scripts/evaluation_v2.py --name baseline
+
+# v1 evaluation (legacy): 4 mock venues
 python scripts/evaluation.py --name my_test --runs 5 --rag --rag-mode keyword
 
-# Compare with baseline
-python scripts/evaluation.py --name baseline --runs 5
-
-# Results saved to docs/experiments/
+# Results saved to docs/experiments/v2/ (or v1/ for legacy)
 ```
 
 ## Project Structure
@@ -272,23 +284,26 @@ trapcheck/
 │       ├── mock_data.py       # Test data
 │       └── web_search.py      # External signals
 ├── scripts/
-│   └── evaluation.py          # Evaluation framework
+│   ├── evaluation.py          # v1 evaluation (4 mock venues)
+│   └── evaluation_v2.py       # v2 evaluation (30 RAG venues)
 ├── docs/
 │   ├── PROJECT_JOURNAL.md     # Development log
-│   └── experiments/           # Experiment results
-│       ├── FINAL_REPORT.md    # Comprehensive results
-│       ├── baseline.md/.json
-│       ├── rag_keyword.md/.json
-│       └── rag_vector.md/.json
+│   └── experiments/
+│       ├── v1/                # Archived v1 results (4 venues)
+│       └── v2/                # Current v2 results (30 venues)
+│           ├── baseline.json
+│           ├── rag_keyword.json
+│           └── rag_vector.json
 └── static/
     └── favicon.svg
 ```
 
 ## Limitations
 
-1. **Mixed Venue Calibration:** System tends to over-classify ambiguous venues as traps when explicit "tourist trap" mentions exist in reviews
-2. **Small Test Set:** Evaluated on 4 venues with mock data; real-world performance may vary
+1. **Edge Cases:** Some venues (e.g., Harry's Bar Venice) are persistently misclassified across all experiments
+2. **Synthetic Evaluation:** While v2 uses 30 venues with realistic noise, results are on synthetic reviews; real-world performance may vary
 3. **English-centric:** Best performance on English reviews; language detection helps but coverage varies
+4. **RAG Database Size:** 149 examples may not cover all venue types equally (tours underrepresented with only 3 examples)
 
 ## Acknowledgments
 

@@ -1,0 +1,193 @@
+{
+  "config": {
+    "name": "test_run",
+    "samples_per_category": 1,
+    "runs_per_venue": 1,
+    "temperature": null,
+    "use_rag": false,
+    "rag_mode": "keyword",
+    "delay_seconds": 0.0,
+    "seed": 42
+  },
+  "timestamp": "2025-12-16T15:57:52.269964",
+  "venue_results": [
+    {
+      "entry_id": "restaurant-da-enzo-al-29-rome",
+      "name": "Da Enzo al 29",
+      "location": "Rome, Italy",
+      "category": "restaurant",
+      "ground_truth_score": 15,
+      "ground_truth_verdict": "local_gem",
+      "runs": [
+        {
+          "score": 0,
+          "classification": "likely_authentic",
+          "confidence": "high",
+          "verdict": "Da Enzo al 29 appears to be an authentic Italian restaurant, not a tourist trap.",
+          "ground_truth_score": 15,
+          "ground_truth_verdict": "local_gem",
+          "score_diff": 15,
+          "category_match": true,
+          "within_15": true,
+          "within_20": true,
+          "reasoning_length": 535,
+          "key_concerns_count": 0,
+          "mitigating_factors_count": 4,
+          "latency_seconds": 3.0849084854125977,
+          "signals_detected": [],
+          "signals_count": 0,
+          "error": null
+        }
+      ],
+      "valid_runs": 1,
+      "failed_runs": 0,
+      "scores": [
+        0
+      ],
+      "mean_score": 0,
+      "stdev_score": 0,
+      "min_score": 0,
+      "max_score": 0,
+      "mean_score_diff": 15,
+      "category_accuracy": 1.0,
+      "within_15_rate": 1.0,
+      "within_20_rate": 1.0,
+      "avg_latency": 3.0849084854125977
+    },
+    {
+      "entry_id": "market-mercado-de-san-miguel-madrid",
+      "name": "Mercado de San Miguel",
+      "location": "Madrid, Spain",
+      "category": "market",
+      "ground_truth_score": 60,
+      "ground_truth_verdict": "mixed",
+      "runs": [
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Mercado de San Miguel is a likely tourist trap due to price gouging and focus on tourists.",
+          "ground_truth_score": 60,
+          "ground_truth_verdict": "mixed",
+          "score_diff": 15,
+          "category_match": false,
+          "within_15": true,
+          "within_20": true,
+          "reasoning_length": 603,
+          "key_concerns_count": 2,
+          "mitigating_factors_count": 1,
+          "latency_seconds": 3.5526633262634277,
+          "signals_detected": [
+            "credibility_inversion",
+            "local_guide_warnings",
+            "generic_positive_reviews"
+          ],
+          "signals_count": 3,
+          "error": null
+        }
+      ],
+      "valid_runs": 1,
+      "failed_runs": 0,
+      "scores": [
+        75
+      ],
+      "mean_score": 75,
+      "stdev_score": 0,
+      "min_score": 75,
+      "max_score": 75,
+      "mean_score_diff": 15,
+      "category_accuracy": 0.0,
+      "within_15_rate": 1.0,
+      "within_20_rate": 1.0,
+      "avg_latency": 3.5526633262634277
+    },
+    {
+      "entry_id": "restaurant-ichiran-shibuya-tokyo",
+      "name": "Ichiran Shibuya",
+      "location": "Tokyo, Japan",
+      "category": "restaurant",
+      "ground_truth_score": 58,
+      "ground_truth_verdict": "tourist_trap",
+      "runs": [
+        {
+          "score": 75,
+          "classification": "likely_trap",
+          "confidence": "high",
+          "verdict": "Ichiran Shibuya is likely a tourist trap.",
+          "ground_truth_score": 58,
+          "ground_truth_verdict": "tourist_trap",
+          "score_diff": 17,
+          "category_match": true,
+          "within_15": false,
+          "within_20": true,
+          "reasoning_length": 491,
+          "key_concerns_count": 3,
+          "mitigating_factors_count": 0,
+          "latency_seconds": 2.797569513320923,
+          "signals_detected": [
+            "credibility_inversion",
+            "explicit_trap_warnings",
+            "local_guide_warnings",
+            "generic_positive_reviews",
+            "external_negative_reputation"
+          ],
+          "signals_count": 5,
+          "error": null
+        }
+      ],
+      "valid_runs": 1,
+      "failed_runs": 0,
+      "scores": [
+        75
+      ],
+      "mean_score": 75,
+      "stdev_score": 0,
+      "min_score": 75,
+      "max_score": 75,
+      "mean_score_diff": 17,
+      "category_accuracy": 1.0,
+      "within_15_rate": 0.0,
+      "within_20_rate": 1.0,
+      "avg_latency": 2.797569513320923
+    }
+  ],
+  "summary": {
+    "status": "COMPLETE",
+    "total_venues": 3,
+    "successful_venues": 3,
+    "total_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "overall_category_accuracy": 0.6666666666666666,
+    "overall_within_15": 0.6666666666666666,
+    "overall_within_20": 1.0,
+    "overall_mae": 15.666666666666666,
+    "avg_stdev": 0,
+    "avg_score_range": 0,
+    "avg_latency": 3.145047108332316,
+    "total_time": 9.435141324996948,
+    "per_category": {
+      "local_gem": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "within_15": 1.0,
+        "mae": 15,
+        "avg_predicted_score": 0
+      },
+      "mixed": {
+        "count": 1,
+        "category_accuracy": 0.0,
+        "within_15": 1.0,
+        "mae": 15,
+        "avg_predicted_score": 75
+      },
+      "tourist_trap": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "within_15": 0.0,
+        "mae": 17,
+        "avg_predicted_score": 75
+      }
+    }
+  }
+}

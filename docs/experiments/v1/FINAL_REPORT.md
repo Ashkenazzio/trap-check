@@ -292,15 +292,4 @@ All experiment data saved to:
 
 ## Appendix: Native Library Setup
 
-For environments where native libraries (libz, libstdc++) aren't automatically available (e.g., Nix):
-
-```bash
-# Use the wrapper script
-./scripts/run_with_libs.sh python scripts/evaluation.py --name test --rag
-
-# Or set library paths manually
-eval $(python -m src.lib_setup --export)
-python scripts/evaluation.py --name test --rag
-```
-
-See `src/lib_setup.py` for automatic detection and configuration.
+Native libraries (libz, libstdc++) are automatically available on Windows, macOS, and standard Linux distributions. NixOS users should use `source activate.sh` to set library paths before running. See README.md for details.

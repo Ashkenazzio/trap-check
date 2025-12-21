@@ -6,9 +6,13 @@ An AI-powered system that analyzes Google Maps reviews to determine if a venue i
 
 ## Project Summary
 
-TrapCheck uses a hybrid NLP architecture combining pre-computed metrics with Large Language Model interpretation to analyze venues. Unlike pure LLM approaches that suffer from inconsistent analysis, TrapCheck computes quantitative signals (reviewer credibility, keyword detection, date clustering) *before* the LLM sees any data, ensuring consistent and reliable assessments.
+TrapCheck uses a hybrid NLP architecture combining pre-computed metrics and context engineering with Large Language Model interpretation to analyze venues. Unlike pure LLM approaches that suffer from inconsistent analysis, TrapCheck computes quantitative signals (reviewer credibility, keyword detection, date clustering) _before_ the LLM sees any data, ensuring consistent and reliable assessments.
 
 **Supported Venue Types:** Restaurants, cafes, bars, museums, attractions, tours, shops, and markets.
+
+<p align="center">
+  <img src="static/TrapCheck.png" alt="TrapCheck UI" width="700">
+</p>
 
 ### Key Features
 
@@ -57,17 +61,18 @@ User Input → Search Place → Detect Venue Type → Fetch Reviews
 
 A curated dataset of **149 global venues** classified as Tourist Traps, Local Gems, or Mixed:
 
-| Category | Count | Description |
-|----------|-------|-------------|
-| Restaurants | 55 | Fine dining to street food |
-| Attractions | 39 | Museums, landmarks, viewpoints |
-| Cafes | 15 | Coffee houses, tea rooms |
-| Street Food | 13 | Markets, food stalls |
-| Markets | 13 | Souvenirs, local goods |
-| Bars | 11 | Pubs, cocktail bars |
-| Tours | 3 | Walking tours, experiences |
+| Category    | Count | Description                    |
+| ----------- | ----- | ------------------------------ |
+| Restaurants | 55    | Fine dining to street food     |
+| Attractions | 39    | Museums, landmarks, viewpoints |
+| Cafes       | 15    | Coffee houses, tea rooms       |
+| Street Food | 13    | Markets, food stalls           |
+| Markets     | 13    | Souvenirs, local goods         |
+| Bars        | 11    | Pubs, cocktail bars            |
+| Tours       | 3     | Walking tours, experiences     |
 
 **Verdict Distribution:**
+
 - Tourist Traps: ~50 entries (score 60-95)
 - Local Gems: ~50 entries (score 5-35)
 - Mixed: ~49 entries (score 35-65)
@@ -78,12 +83,12 @@ A curated dataset of **149 global venues** classified as Tourist Traps, Local Ge
 
 For reproducible evaluation, we created **mock review data** for 4 venues representing different categories. Ground truth scores were manually assigned based on expert knowledge and public reputation:
 
-| Venue | Location | Category | Ground Truth Score | Rationale |
-|-------|----------|----------|-------------------|-----------|
-| Pizzeria Da Michele | Naples | Authentic | 25 | Historic pizzeria, local institution, UNESCO-recognized |
-| Olive Garden Times Square | NYC | Tourist Trap | 85 | Chain restaurant in tourist hotspot, known trap |
-| Carlo Menta | Rome | Mixed | 50 | Near Vatican, mixed reviews, some tourist trap signals |
-| Katz's Delicatessen | NYC | Mixed | 35 | Famous landmark, high prices but genuine quality |
+| Venue                     | Location | Category     | Ground Truth Score | Rationale                                               |
+| ------------------------- | -------- | ------------ | ------------------ | ------------------------------------------------------- |
+| Pizzeria Da Michele       | Naples   | Authentic    | 25                 | Historic pizzeria, local institution, UNESCO-recognized |
+| Olive Garden Times Square | NYC      | Tourist Trap | 85                 | Chain restaurant in tourist hotspot, known trap         |
+| Carlo Menta               | Rome     | Mixed        | 50                 | Near Vatican, mixed reviews, some tourist trap signals  |
+| Katz's Delicatessen       | NYC      | Mixed        | 35                 | Famous landmark, high prices but genuine quality        |
 
 **Note:** Mock data allows controlled experiments without API costs. Each venue's mock reviews were crafted to reflect real-world review patterns (credibility distribution, keyword presence, rating spread).
 
@@ -94,32 +99,39 @@ For reproducible evaluation, we created **mock review data** for 4 venues repres
 The metrics layer (`src/metrics.py`) computes signals deterministically before LLM analysis:
 
 **Reviewer Credibility Scoring:**
+
 - Based on review count, Local Guide status, photo contributions
 - Separate averages for positive vs negative reviewers
 - "Credibility inversion" signal when negative reviewers are more credible
 
 **Keyword Detection:**
+
 - Trap awareness keywords: "tourist trap", "scam", "rip off", "avoid"
 - Manipulation keywords: "fake review", "paid review", "forced to review"
 - Quality complaints: Venue-specific (food issues for restaurants, crowd/wait for attractions)
 
 **Date Clustering Analysis:**
+
 - Detects suspicious patterns of positive reviews on same days
 - Indicates potential review manipulation
 
 **Language Analysis:**
+
 - Detects tourist vs local language patterns
 - Flags venues where credibility differs by reviewer language
 
 ### 2. RAG Pipeline
 
+Both RAG approaches retrieve **6 similar venue examples** (2 traps, 2 gems, 2 mixed) for few-shot calibration. The difference is how similarity is computed:
+
 **Keyword-based RAG** (`src/rag/retriever_lightweight.py`) - Production default:
+
 - Jaccard-like keyword overlap scoring
-- Retrieves 6 examples per query (2 traps, 2 gems, 2 mixed)
 - No external dependencies (pure Python)
 - ~0.1s latency overhead
 
 **Vector RAG** (`src/rag/retriever.py`) - Alternative for larger datasets:
+
 - ChromaDB vector store with `all-MiniLM-L6-v2` embeddings
 - Cosine similarity search
 - Better semantic understanding at scale
@@ -136,6 +148,7 @@ The metrics layer (`src/metrics.py`) computes signals deterministically before L
 ### Evaluation Framework (v2)
 
 Evaluated on a **30-venue stratified test set** sampled from the RAG database:
+
 - 10 tourist traps, 10 local gems, 10 mixed venues
 - 3 runs per venue (90 total runs per experiment)
 - Leave-one-out evaluation (test venue excluded from RAG retrieval)
@@ -143,12 +156,12 @@ Evaluated on a **30-venue stratified test set** sampled from the RAG database:
 
 ### Evaluation Metrics
 
-| Configuration | Category Accuracy | Within ±15 | MAE | StdDev |
-|---------------|------------------|------------|-----|--------|
-| Baseline (no RAG) | 90.0% | 77.8% | 13.6 | 3.27 |
-| temp_0.0 | 90.0% | 84.4% | 12.7 | 1.64 |
-| **RAG Keyword** | **95.6%** | **93.3%** | **9.3** | **1.38** |
-| RAG Vector | 94.4% | 93.3% | 9.9 | 2.06 |
+| Configuration     | Category Accuracy | Within ±15 | MAE     | StdDev   |
+| ----------------- | ----------------- | ---------- | ------- | -------- |
+| Baseline (no RAG) | 90.0%             | 77.8%      | 13.6    | 3.27     |
+| temp_0.0          | 90.0%             | 84.4%      | 12.7    | 1.64     |
+| **RAG Keyword**   | **95.6%**         | **93.3%**  | **9.3** | **1.38** |
+| RAG Vector        | 94.4%             | 93.3%      | 9.9     | 2.06     |
 
 ### Key Findings
 
@@ -160,17 +173,18 @@ Evaluated on a **30-venue stratified test set** sampled from the RAG database:
 
 ### Per-Category Results (RAG Keyword)
 
-| Category | Accuracy | Notes |
-|----------|----------|-------|
-| tourist_trap | 97% | Excellent detection |
-| local_gem | 100% | Perfect classification |
-| mixed | 90% | Major improvement from 70% baseline |
+| Category     | Accuracy | Notes                               |
+| ------------ | -------- | ----------------------------------- |
+| tourist_trap | 97%      | Excellent detection                 |
+| local_gem    | 100%     | Perfect classification              |
+| mixed        | 90%      | Major improvement from 70% baseline |
 
 **Key Insight:** RAG provides crucial calibration for ambiguous "mixed" venues where the model previously struggled.
 
 ### Qualitative Examples
 
 **Example 1: Pizzeria Da Michele (Naples) - Verified Authentic**
+
 ```
 Score: 20/100 | Classification: VERIFIED AUTHENTIC
 Verdict: "A legendary pizzeria with genuine local following and exceptional pizza quality."
@@ -185,6 +199,7 @@ Recommendation: Worth the wait - arrive early or late to avoid queues.
 ```
 
 **Example 2: Olive Garden Times Square (NYC) - Definite Trap**
+
 ```
 Score: 95/100 | Classification: DEFINITE TRAP
 Verdict: "A textbook tourist trap capitalizing on Times Square foot traffic."
@@ -208,6 +223,8 @@ Recommendation: Avoid - countless better options within walking distance.
 
 ### Installation
 
+Works out of the box on **Windows**, **macOS**, and standard **Linux** distributions (Ubuntu, Fedora, Debian, etc.).
+
 ```bash
 # Clone repository
 git clone https://github.com/yourusername/trapcheck.git
@@ -226,15 +243,36 @@ cp .env.example .env
 # SERPAPI_KEY is optional - mock data works without it
 ```
 
+<details>
+<summary><strong>NixOS Users</strong> (click to expand)</summary>
+
+NixOS requires additional setup due to its non-FHS filesystem. Native libraries (`libstdc++`, `libz`) needed by numpy/torch are in the Nix store rather than standard paths.
+
+```bash
+# After creating venv and installing dependencies, create an activate script:
+cat > activate.sh << 'EOF'
+#!/usr/bin/env bash
+source venv/bin/activate
+export LD_LIBRARY_PATH="$(dirname $(find /nix/store -name 'libstdc++.so.6' 2>/dev/null | head -1)):$(dirname $(find /nix/store -name 'libz.so.1' 2>/dev/null | grep -v steam | head -1)):$LD_LIBRARY_PATH"
+EOF
+chmod +x activate.sh
+
+# Then use: source activate.sh (instead of source venv/bin/activate)
+```
+
+</details>
+
 ### Running the Application
 
 **Web UI (Gradio):**
+
 ```bash
 python app.py
 # Opens at http://localhost:7860
 ```
 
 **CLI:**
+
 ```bash
 python main.py "Restaurant Name" "City"
 python main.py "Pizzeria Da Michele" "Naples"
@@ -242,6 +280,7 @@ python main.py "Pizzeria Da Michele" "Naples"
 
 **Mock Mode:**
 Omit `SERPAPI_KEY` from `.env` to use built-in mock data for testing:
+
 - Pizzeria Da Michele (Naples) - Authentic
 - Olive Garden Times Square (NYC) - Tourist Trap
 - Carlo Menta (Rome) - Mixed
@@ -315,4 +354,4 @@ trapcheck/
 
 **Course:** Applied Language Models
 **Project:** Tourist Trap Detector with RAG Enhancement
-**Date:** December 2024
+**Date:** December 2025

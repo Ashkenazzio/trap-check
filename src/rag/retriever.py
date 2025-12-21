@@ -1,23 +1,20 @@
 """
-RAG Retriever for TrapCheck
+RAG Retriever for TrapCheck (Vector-based)
 
 Provides similar venue examples for few-shot context in the analyzer.
 Uses ChromaDB for vector storage and sentence-transformers for embeddings.
 
-Note: This module requires native libraries (libz, libstdc++). If you encounter
-import errors, see src/lib_setup.py for configuration options or run:
-    python -m src.lib_setup --help-setup
+Note: This module requires native libraries (libz, libstdc++). On standard
+Linux/macOS/Windows systems this works out of the box. NixOS users should
+use `source activate.sh` to set library paths before running.
+
+For a lightweight alternative without native dependencies, use
+retriever_lightweight.py instead (the production default).
 """
 
 import json
 from pathlib import Path
 from typing import Optional
-
-# Setup library paths for native dependencies (ChromaDB, sentence-transformers)
-# This must happen before importing those libraries
-# ensure_library_paths will auto-restart Python with correct LD_LIBRARY_PATH if needed
-from src.lib_setup import ensure_library_paths
-ensure_library_paths()
 
 # Lazy imports to avoid loading heavy dependencies until needed
 _embedder = None

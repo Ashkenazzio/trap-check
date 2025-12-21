@@ -10,6 +10,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
+Works out of the box on Windows, macOS, and standard Linux (Ubuntu, Fedora, etc.).
+
 ```bash
 # Setup (one-time)
 python -m venv venv
@@ -26,6 +28,8 @@ python main.py "Pizzeria Da Michele" "Naples"
 # Mock mode (no SerpAPI key needed)
 # Just omit SERPAPI_KEY from .env - app falls back to mock data automatically
 ```
+
+**NixOS:** Use `source activate.sh` instead of `source venv/bin/activate` to set library paths. See README.md for setup.
 
 ## Configuration
 
@@ -57,7 +61,7 @@ Metrics are computed BEFORE the LLM sees the data (`src/metrics.py`). This preve
 
 | File | Purpose |
 |------|---------|
-| `app.py` | Gradio web UI with dark theme |
+| `app.py` | Gradio web UI (light/dark theme toggle) |
 | `main.py` | CLI entry point |
 | `src/analyzer.py` | Core analysis pipeline, Gemini prompt construction |
 | `src/metrics.py` | Pre-LLM metrics computation (credibility, keywords, signals, venue type detection) |
@@ -105,11 +109,13 @@ Four pre-configured venues in `src/tools/mock_data.py` for testing without SerpA
 
 ## RAG System
 
-RAG integration provides similar venue examples for calibration using vector embeddings:
-- **Database:** `src/rag/data/rag_master.json` (149 examples)
-- **Module:** `src/rag/retriever.py`
-- **Dependencies:** `chromadb`, `sentence-transformers`
-- **Embedding Model:** `all-MiniLM-L6-v2` (sentence-transformers)
+RAG integration provides similar venue examples for score calibration:
+
+**Two retrievers available:**
+- **Keyword RAG** (`src/rag/retriever_lightweight.py`) - Production default, pure Python, no native deps
+- **Vector RAG** (`src/rag/retriever.py`) - Uses ChromaDB + sentence-transformers for semantic search
+
+**Database:** `src/rag/data/rag_master.json` (149 examples)
 
 **Venue type filtering:** RAG retriever maps venue types to relevant categories:
 - restaurant → restaurant, cafe, bar, street_food
@@ -119,41 +125,6 @@ RAG integration provides similar venue examples for calibration using vector emb
 - shop → market, shop
 
 **Current coverage:** Restaurants (55), attractions (39), cafes (15), street_food (13), markets (13), bars (11), tours (3)
-
-### Native Library Setup (ChromaDB/sentence-transformers)
-
-RAG requires native libraries (`libz`, `libstdc++`) which are automatically available on most systems.
-If you encounter import errors on Nix-based or minimal environments:
-
-```bash
-# Option 1: Use the wrapper script (recommended)
-./scripts/run_with_libs.sh python -m src.rag.retriever
-
-# Option 2: Set library paths manually
-eval $(python -m src.lib_setup --export)
-python -m src.rag.retriever
-
-# Option 3: Set custom paths via environment variable
-export TRAPCHECK_LIB_PATHS="/path/to/libz:/path/to/libstdc++"
-python -m src.rag.retriever
-
-# Option 4: Skip library setup if your system handles it
-export TRAPCHECK_SKIP_LIB_SETUP=1
-```
-
-The `src/lib_setup.py` module handles automatic detection for:
-- Standard Linux (Ubuntu, Fedora, etc.) - usually works out of the box
-- Conda/Miniconda environments - usually works out of the box
-- Nix-based environments - may need wrapper script
-- Custom environments - use `TRAPCHECK_LIB_PATHS`
-
-```bash
-# Test RAG retriever
-./scripts/run_with_libs.sh python -m src.rag.retriever
-
-# Run evaluation with RAG
-./scripts/run_with_libs.sh python scripts/evaluation.py --name rag_test --rag --runs 5
-```
 
 ## Testing & Experiments
 

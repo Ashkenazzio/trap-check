@@ -3,6 +3,7 @@
 .venv/
 venv/
 env/
+activate.sh
 
 # Python
 __pycache__/
@@ -23,8 +24,6 @@ dist/
 # Project specific
 chroma_db/
 screenshots/
-*.png
-*.jpg
 
 # Jupyter
 .ipynb_checkpoints/
